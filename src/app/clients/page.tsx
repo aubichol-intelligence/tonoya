@@ -1,14 +1,15 @@
+"use client"
 import Image from "next/image";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Home() {
   return (
-    <div >
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-    </div>
+    <HelmetProvider>
+        <Helmet>
+          <title>Our valuable clients</title>
+          <link rel="canonical" href="https://www.tacobell.com/" />
+        </Helmet>
+        <h1>Hello World</h1>
+    </HelmetProvider>
   );
 }
