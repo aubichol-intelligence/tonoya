@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 */
 
-import BlogList from '../../../components/BlogList';
-import blogPosts from '../../../components/data/blogs.json';
+import BlogList from '../../components/BlogList';
+import blogPosts from '../../components/data/blogs.json';
 
 const Home = () => {
   return (
@@ -32,7 +32,7 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Home;
 /*
   return (
     <div >

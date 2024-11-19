@@ -1,0 +1,16 @@
+[
+    {
+      "id": "1",
+      "title": "Introduction to Next.js",
+      "excerpt": "Learn the basics of Next.js, a React-based framework...",
+      "content": "Next.js is a React framework for building server-side rendered applications...",
+      "author": "John Doe"
+    },
+    {
+      "id": "2",
+      "title": "Understanding API Routes",
+      "excerpt": "Discover how to set up and use API routes in Next.js...",
+      "content": "API routes in Next.js allow you to build your backend logic within the same project...",
+      "author": "Jane Smith"
+    }
+  ]
