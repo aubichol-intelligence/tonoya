@@ -1,0 +1,61 @@
+.container {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for layout changes */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  transition: color 0.3s ease-in-out; /* Subtle color transition */
+}
+
+.header h1:hover {
+  color: #0070f3; /* Changes to a blue color on hover */
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scaling and visibility */
+}
+
+.section:hover {
+  transform: scale(1.02); /* Slight zoom-in effect on hover */
+  opacity: 0.95; /* Dims slightly */
+}
+
+.sectionAlt {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add hover and shadow effect */
+}
+
+.sectionAlt:hover {
+  background-color: #eaeaea; /* Slightly darker shade on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}
+
+.content {
+  flex: 1;
+  min-width: 300px;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth appearance */
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem
+}
