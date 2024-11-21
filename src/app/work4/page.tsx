@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 const sections = [
   {
@@ -41,9 +42,8 @@ const StrategySection = () => {
         {sections.map((section, index) => (
           <div
             key={section.id}
-            className={`${styles.card} ${
-              index % 2 === 0 ? styles.normal : styles.reversed
-            }`}
+            className={`${styles.card} ${index % 2 === 0 ? styles.normal : styles.reversed
+              }`}
           >
             {/* Text Block */}
             <div className={styles.textContent}>
@@ -52,7 +52,7 @@ const StrategySection = () => {
             </div>
             {/* Image Block */}
             <div className={styles.imageContainer}>
-              <img
+              <Image
                 src={section.image}
                 alt={section.alt}
                 className={styles.cardImage}

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './page.module.css';
+import Image from 'next/image';
 
 
 
@@ -36,9 +37,8 @@ const StorySection = () => {
       {storyContent.map((content, index) => (
         <div
           key={content.id}
-          className={`${styles.container} ${
-            index % 2 === 0 ? styles.normal : styles.reversed
-          }`}
+          className={`${styles.container} ${index % 2 === 0 ? styles.normal : styles.reversed
+            }`}
         >
           {/* Text Column */}
           <div className={styles.textContent}>
@@ -48,7 +48,7 @@ const StorySection = () => {
 
           {/* Image Column */}
           <div className={styles.imageContainer}>
-            <img
+            <Image
               src={content.image}
               alt={content.alt}
               className={styles.image}

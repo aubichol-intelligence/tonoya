@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import '../globals.css';
+import Image from "next/image";
 
 
 export default function HomePage() {
@@ -16,7 +17,7 @@ export default function HomePage() {
       <section className={styles.services}>
         <div className={styles.service}>
           <div className={styles.imageWrapper}>
-            <img src="https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg" alt="Service 1" />
+            <Image src="https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg" alt="Service 1" />
           </div>
           <h2>Web Design</h2>
           <p>
@@ -26,7 +27,7 @@ export default function HomePage() {
         </div>
         <div className={styles.service}>
           <div className={styles.imageWrapper}>
-            <img src="https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg" alt="Service 2" />
+            <Image src="https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg" alt="Service 2" />
           </div>
           <h2>Brand Identity</h2>
           <p>
@@ -35,7 +36,7 @@ export default function HomePage() {
         </div>
         <div className={styles.service}>
           <div className={styles.imageWrapper}>
-            <img src="https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg" alt="Service 3" />
+            <Image src="https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg" alt="Service 3" />
           </div>
           <h2>Development</h2>
           <p>
