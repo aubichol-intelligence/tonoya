@@ -78,7 +78,7 @@ export default function RegisterPage() {
 
 
     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
-    // console.log("Root URL:", rootUrl);
+    console.log("Root URL:", rootUrl);
 
     // export async function getServerSideProps() {
     //     const rootUrl = process.env.ROOT_URL; // Server-only
@@ -89,28 +89,32 @@ export default function RegisterPage() {
 
 
     interface FormData {
-        name: string;
+        firstName: string;
+        lastName: string;
         email: string;
         password: string;
         confirmPassword: string;
     }
 
     interface FormErrors {
-        name: string;
+        firstName: string;
+        lastName: string;
         email: string;
         password: string;
         confirmPassword: string;
     }
 
     const [formData, setFormData] = useState<FormData>({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         confirmPassword: "",
     });
 
     const [formErrors, setFormErrors] = useState<FormErrors>({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -137,13 +141,15 @@ export default function RegisterPage() {
 
     const validateForm = (data: FormData): FormErrors => {
         const errors: FormErrors = {
-            name: "",
+            firstName: "",
+            lastName: "",
             email: "",
             password: "",
             confirmPassword: "",
         };
 
-        if (!data.name.trim()) errors.name = "Name is required";
+        if (!data.firstName.trim()) errors.firstName = "First Name is required";
+        if (!data.lastName.trim()) errors.lastName = "Last Name is required";
         if (!data.email.trim()) errors.email = "Email is required";
         if (!data.password.trim()) errors.password = "Password is required";
         if (!data.confirmPassword.trim()) {
@@ -160,18 +166,6 @@ export default function RegisterPage() {
         const errors = validateForm(formData);
         setFormErrors(errors);
 
-        // if (Object.values(errors).every((error) => error === "")) {
-        //     const result = await sendPostRequest(SignUpApiUrl, { arg: formData });
-
-        //     localStorage.setItem("email", JSON.stringify(formData.email));
-        //     localStorage.setItem("password", JSON.stringify(formData.password));
-
-        //     if (result.success) {
-        //         context?.currentUser(result.user);
-        //         context?.login();
-        //         router.push("/");
-        //     }
-        // }
         if (Object.values(errors).every((error) => error === "")) {
             // Proceed with submission logic
             console.log("Form submitted", formData);
@@ -180,7 +174,7 @@ export default function RegisterPage() {
                 const res = await fetch(`${rootUrl}/api/v1/users/registration`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name: formData.name, email: formData.email, password: formData.password }),
+                    body: JSON.stringify({ first_name: formData.firstName, last_name: formData.lastName, email: formData.email, password: formData.password, account_type: 'admin' }),
                 });
 
                 const data = await res.json();
@@ -199,25 +193,40 @@ export default function RegisterPage() {
     };
 
 
-
     return (
         <div className={styles.container}>
             <h1 className={styles.heading}>Register</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
-                    <label htmlFor="name" className={styles.label}>
-                        Name
+                    <label htmlFor="firstName" className={styles.label}>
+                        First Name
                     </label>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
                         onChange={handleChange}
                         className={styles.input}
-                        placeholder="Type Your Name Here"
+                        placeholder="Type Your First Name Here"
                     />
-                    {formErrors.name && <p className={styles.error}>{formErrors.name}</p>}
+                    {formErrors.firstName && <p className={styles.error}>{formErrors.firstName}</p>}
+                </div>
+
+                <div className={styles.formGroup}>
+                    <label htmlFor="lastName" className={styles.label}>
+                        Last Name
+                    </label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        className={styles.input}
+                        placeholder="Type Your Last Name Here"
+                    />
+                    {formErrors.lastName && <p className={styles.error}>{formErrors.lastName}</p>}
                 </div>
 
                 <div className={styles.formGroup}>
@@ -270,7 +279,7 @@ export default function RegisterPage() {
                         value={formData.confirmPassword}
                         onChange={handleChange}
                         className={styles.input}
-                        placeholder="Type Your Desired Password Again Here"
+                        placeholder="Type Desired Password Again Here"
                     />
                     <button
                         type="button"
