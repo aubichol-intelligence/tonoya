@@ -3,6 +3,8 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Link from "next/link";
+
 
 export default function LoginPage() {
     // const [email, setEmail] = useState("");
@@ -35,6 +37,18 @@ export default function LoginPage() {
     //         setLoading(false);
     //     }
     // };
+
+
+
+    const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
+    console.log("Root URL:", rootUrl);
+
+    // export async function getServerSideProps() {
+    //     const rootUrl = process.env.ROOT_URL; // Server-only
+    //     console.log("Root URL:", rootUrl);
+
+    //     return { props: {} };
+    // }
 
     interface FormData {
         email: string;
@@ -87,21 +101,30 @@ export default function LoginPage() {
         const errors = validateForm(formData);
         setFormErrors(errors);
 
-        // if (Object.values(errors).every((error) => error === "")) {
-        //     const result = await sendPostRequest(SignUpApiUrl, { arg: formData });
-
-        //     localStorage.setItem("email", JSON.stringify(formData.email));
-        //     localStorage.setItem("password", JSON.stringify(formData.password));
-
-        //     if (result.success) {
-        //         context?.currentUser(result.user);
-        //         context?.login();
-        //         router.push("/");
-        //     }
-        // }
         if (Object.values(errors).every((error) => error === "")) {
             // Proceed with submission logic
             console.log("Form submitted", formData);
+
+            try {
+
+                const res = await fetch(`${rootUrl}/api/v1/users/login`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: formData.email, password: formData.password }),
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    alert("Login successful");
+                    window.location.href = "/";
+                } else {
+                    alert(data.message || "Login failed");
+                }
+            } catch (error) {
+                console.error("Login error:", error);
+                alert("An error occurred. Please try again.");
+            }
         }
     };
 
@@ -146,6 +169,7 @@ export default function LoginPage() {
 
         <div className={styles.container}>
             <h1 className={styles.heading}>Login</h1>
+
             <form className={styles.form} onSubmit={handleSubmit}>
 
                 <div className={styles.formGroup}>
@@ -176,6 +200,7 @@ export default function LoginPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your Password Here"
+                    // autocomplete="current-password"
                     />
                     <button
                         type="button"
@@ -192,12 +217,12 @@ export default function LoginPage() {
                 </button>
             </form>
 
-            {/* <h3>
+            <h3 className={styles.linkText}>
                 Already Registered?{" "}
-                <Link href="/auth/login" className={styles.link}>
-                    Go for Login
+                <Link href="/register" className={styles.link}>
+                    Go To Register
                 </Link>
-            </h3> */}
+            </h3>
         </div>
     );
 }

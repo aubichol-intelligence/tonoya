@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Link from "next/link";
 
 export default function RegisterPage() {
     // const [email, setEmail] = useState("");
@@ -75,6 +76,16 @@ export default function RegisterPage() {
     //     </div>
     // );
 
+
+    const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
+    // console.log("Root URL:", rootUrl);
+
+    // export async function getServerSideProps() {
+    //     const rootUrl = process.env.ROOT_URL; // Server-only
+    //     console.log("Root URL:", rootUrl);
+
+    //     return { props: {} };
+    // }
 
 
     interface FormData {
@@ -164,6 +175,26 @@ export default function RegisterPage() {
         if (Object.values(errors).every((error) => error === "")) {
             // Proceed with submission logic
             console.log("Form submitted", formData);
+
+            try {
+                const res = await fetch(`${rootUrl}/api/v1/users/registration`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name: formData.name, email: formData.email, password: formData.password }),
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    alert("Registration successful");
+                    window.location.href = "/login";
+                } else {
+                    alert(data.message || "Registration failed");
+                }
+            } catch (error) {
+                console.error("Registration error:", error);
+                alert("An error occurred during registration. Please try again.");
+            }
         }
     };
 
@@ -258,12 +289,12 @@ export default function RegisterPage() {
                 </button>
             </form>
 
-            {/* <h3>
+            <h3 className={styles.linkText}>
                 Already Registered?{" "}
-                <Link href="/auth/login" className={styles.link}>
+                <Link href="/login" className={styles.link}>
                     Go for Login
                 </Link>
-            </h3> */}
+            </h3>
         </div>
     );
 }

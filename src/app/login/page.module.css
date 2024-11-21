@@ -105,12 +105,17 @@
   border: none;
 }
 
+.linkText {
+  margin-top: 1rem;
+}
+
 .link {
   color: #3b82f6;
   /* Blue-500 */
   font-weight: 700;
   cursor: pointer;
   padding-left: 0.5rem;
+  /* margin-top: 10rem; */
 }
 
 .link:hover {

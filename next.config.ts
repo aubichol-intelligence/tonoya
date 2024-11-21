@@ -14,6 +14,9 @@ module.exports = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_ROOT_URL: process.env.NEXT_PUBLIC_ROOT_URL || "http://localhost:3000",
+  },
 }
 
 export default nextConfig;

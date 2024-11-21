@@ -104,6 +104,10 @@
   border: none;
 }
 
+.linkText {
+  margin-top: 1rem;
+}
+
 .link {
   color: #3b82f6;
   /* Blue-500 */
