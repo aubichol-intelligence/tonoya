@@ -4,44 +4,15 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Link from "next/link";
+import { useAuthActions } from "../hooks/useAuth";
 
 
 export default function LoginPage() {
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [loading, setLoading] = useState(false);
 
-    // const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     setLoading(true);
+    // const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
+    // console.log("Root URL:", rootUrl);
 
-    //     try {
-    //         const res = await fetch("/api/login", {
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json" },
-    //             body: JSON.stringify({ email, password }),
-    //         });
-
-    //         const data = await res.json();
-
-    //         if (data.success) {
-    //             alert("Login successful");
-    //             window.location.href = "/";
-    //         } else {
-    //             alert(data.message || "Login failed");
-    //         }
-    //     } catch (error) {
-    //         console.error("Login error:", error);
-    //         alert("An error occurred. Please try again.");
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-
-
-
-    const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
-    console.log("Root URL:", rootUrl);
+    const { login } = useAuthActions();
 
     // export async function getServerSideProps() {
     //     const rootUrl = process.env.ROOT_URL; // Server-only
@@ -106,67 +77,36 @@ export default function LoginPage() {
             console.log("Form submitted", formData);
 
             try {
+                await login(formData.email, formData.password);
 
-                const res = await fetch(`${rootUrl}/api/v1/users/login`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email: formData.email, password: formData.password }),
-                });
+                // const res = await fetch(`${rootUrl}/api/v1/users/login`, {
+                //     method: "POST",
+                //     headers: { "Content-Type": "application/json" },
+                //     body: JSON.stringify({ email: formData.email, password: formData.password }),
+                // });
 
-                const data = await res.json();
+                // const data = await res.json();
 
-                if (data.success) {
-                    alert("Login successful");
-                    window.location.href = "/";
+                // if (data.success) {
+                //     alert("Login successful");
+                //     window.location.href = "/";
+                // } else {
+                //     alert(data.message || "Login failed");
+                // }
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    alert(error.message);
                 } else {
-                    alert(data.message || "Login failed");
+                    alert("An unexpected error occurred.");
                 }
-            } catch (error) {
-                console.error("Login error:", error);
-                alert("An error occurred. Please try again.");
+
+                // console.error("Login error:", error);
+                // alert("An error occurred. Please try again.");
             }
         }
     };
 
     return (
-        // <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: 50 }}>
-        // <div className={styles.loginContainer}>
-        //     <h1>Login</h1>
-        //     <form onSubmit={handleLogin} style={{ width: 300 }}>
-        //         <input
-        //             type="email"
-        //             id="email"
-        //             placeholder="Email"
-        //             value={email}
-        //             onChange={(e) => setEmail(e.target.value)}
-        //             className={styles.input}
-        //             required
-        //         />
-        //         <input
-        //             type="password"
-        //             id="password"
-        //             placeholder="Password"
-        //             value={password}
-        //             onChange={(e) => setPassword(e.target.value)}
-        //             className={styles.input}
-        //             required
-        //         />
-        //         <button
-        //             type="submit"
-        //             style={{
-        //                 backgroundColor: loading ? "gray" : "blue",
-        //                 cursor: loading ? "not-allowed" : "pointer",
-        //                 opacity: loading ? 0.8 : 1,
-        //             }}
-        //             // className={`${styles.blueButton}`}
-        //             className={styles.blueButton}
-        //             disabled={loading}
-        //         >
-        //             {loading ? "Logging in..." : "Login"}
-        //         </button>
-        //     </form>
-        // </div >
-
         <div className={styles.container}>
             <h1 className={styles.heading}>Login</h1>
 
@@ -184,6 +124,8 @@ export default function LoginPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your Valid Email Address Here"
+                        autoComplete="username"
+                        required
                     />
                     {formErrors.email && <p className={styles.error}>{formErrors.email}</p>}
                 </div>
@@ -200,7 +142,8 @@ export default function LoginPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your Password Here"
-                    // autocomplete="current-password"
+                        autoComplete="current-password"
+                        required
                     />
                     <button
                         type="button"

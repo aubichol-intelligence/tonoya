@@ -4,81 +4,15 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Link from "next/link";
+import { useAuthActions } from "../hooks/useAuth";
+
 
 export default function RegisterPage() {
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [loading, setLoading] = useState(false);
 
-    // const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     setLoading(true);
+    // const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
+    // console.log("Root URL:", rootUrl);
 
-    //     try {
-    //         const res = await fetch("/api/register", {
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json" },
-    //             body: JSON.stringify({ email, password }),
-    //         });
-
-    //         const data = await res.json();
-
-    //         if (data.success) {
-    //             alert("Registration successful");
-    //             window.location.href = "/login";
-    //         } else {
-    //             alert(data.message || "Registration failed");
-    //         }
-    //     } catch (error) {
-    //         console.error("Registration error:", error);
-    //         alert("An error occurred during registration. Please try again.");
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-
-    // return (
-    //     <div className={styles.registerContainer}>
-    //         <h1>Register</h1>
-    //         <form onSubmit={handleRegister} style={{ width: 300 }}>
-    //             <input
-    //                 type="email"
-    //                 id="email"
-    //                 placeholder="Email"
-    //                 value={email}
-    //                 onChange={(e) => setEmail(e.target.value)}
-    //                 className={styles.input}
-    //                 required
-    //             />
-    //             <input
-    //                 type="password"
-    //                 id="password"
-    //                 placeholder="Password"
-    //                 value={password}
-    //                 onChange={(e) => setPassword(e.target.value)}
-    //                 className={styles.input}
-    //                 required
-    //             />
-    //             <button
-    //                 type="submit"
-    //                 style={{
-    //                     backgroundColor: loading ? "gray" : "green",
-    //                     cursor: loading ? "not-allowed" : "pointer",
-    //                     opacity: loading ? 0.8 : 1,
-    //                 }}
-    //                 // className={`${styles.greenButton}`}
-    //                 className={styles.greenButton}
-    //                 disabled={loading}
-    //             >
-    //                 {loading ? "Registering..." : "Register"}
-    //             </button>
-    //         </form>
-    //     </div>
-    // );
-
-
-    const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
-    console.log("Root URL:", rootUrl);
+    const { register } = useAuthActions();
 
     // export async function getServerSideProps() {
     //     const rootUrl = process.env.ROOT_URL; // Server-only
@@ -171,23 +105,31 @@ export default function RegisterPage() {
             console.log("Form submitted", formData);
 
             try {
-                const res = await fetch(`${rootUrl}/api/v1/users/registration`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ first_name: formData.firstName, last_name: formData.lastName, email: formData.email, password: formData.password, account_type: 'admin' }),
-                });
+                await register(formData.firstName, formData.lastName, formData.email, formData.password, 'admin');
 
-                const data = await res.json();
+                // const res = await fetch(`${rootUrl}/api/v1/users/registration`, {
+                //     method: "POST",
+                //     headers: { "Content-Type": "application/json" },
+                //     body: JSON.stringify({ first_name: formData.firstName, last_name: formData.lastName, email: formData.email, password: formData.password, account_type: 'admin' }),
+                // });
 
-                if (data.success) {
-                    alert("Registration successful");
-                    window.location.href = "/login";
+                // const data = await res.json();
+
+                // if (data.success) {
+                //     alert("Registration successful");
+                //     window.location.href = "/login";
+                // } else {
+                //     alert(data.message || "Registration failed");
+                // }
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    alert(error.message);
                 } else {
-                    alert(data.message || "Registration failed");
+                    alert("An unexpected error occurred.");
                 }
-            } catch (error) {
-                console.error("Registration error:", error);
-                alert("An error occurred during registration. Please try again.");
+
+                // console.error("Registration error:", error);
+                // alert("An error occurred during registration. Please try again.");
             }
         }
     };
@@ -209,6 +151,8 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your First Name Here"
+                        autoComplete='false'
+                        required
                     />
                     {formErrors.firstName && <p className={styles.error}>{formErrors.firstName}</p>}
                 </div>
@@ -225,6 +169,8 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your Last Name Here"
+                        autoComplete='false'
+                        required
                     />
                     {formErrors.lastName && <p className={styles.error}>{formErrors.lastName}</p>}
                 </div>
@@ -241,6 +187,8 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your Valid Email Address Here"
+                        autoComplete='false'
+                        required
                     />
                     {formErrors.email && <p className={styles.error}>{formErrors.email}</p>}
                 </div>
@@ -257,6 +205,8 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Your Desired Password Here"
+                        autoComplete='false'
+                        required
                     />
                     <button
                         type="button"
@@ -280,6 +230,8 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         className={styles.input}
                         placeholder="Type Desired Password Again Here"
+                        autoComplete='false'
+                        required
                     />
                     <button
                         type="button"
