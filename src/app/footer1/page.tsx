@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import styles from "./page.module.css";
+//import { DomUtil } from 'leaflet';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
