@@ -1,0 +1,114 @@
+.footer {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .logoSection {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+  }
+  
+  .address {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .links,
+  .socialMedia,
+  .map {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #cccccc;
+  }
+  
+  .links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .links a:hover {
+    color: #ffcc00;
+  }
+  
+  .socialMedia .icons a {
+    margin-right: 1rem;
+    display: inline-block;
+  }
+  
+  .socialMedia .icons img {
+    width: 32px;
+    transition: transform 0.3s;
+  }
+  
+  .socialMedia .icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  .map iframe {
+    border: 0;
+    border-radius: 8px;
+  }
+  
+  .bottomBar {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .bottomBar p {
+    font-size: 0.8rem;
+    color: #cccccc;
+  }
+  
+  .backToTop {
+    background: #ffcc00;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.3s;
+  }
+  
+  .backToTop:hover {
+    background: #e6b800;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .bottomBar {
+      margin-top: 1rem;
+    }
+  }
+  

@@ -1,0 +1,82 @@
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 2rem;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .mapSection {
+    flex: 1;
+  }
+  
+  .mapContainer {
+    height: 200px;
+  }
+  
+  .map {
+    height: 100%;
+    border-radius: 8px;
+  }
+  
+  .address {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .links {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .links ul li {
+    margin: 0.5rem 0;
+  }
+  
+  .links ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .socialMedia {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .icons a {
+    margin: 0 0.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .bottomBar {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .backToTop {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
