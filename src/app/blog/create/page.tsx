@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export default function CreateBlogPage() {
     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
-    console.log("Root URL:", rootUrl);
+    // console.log("Root URL:", rootUrl);
 
     const token = document.cookie
         .split('; ')
