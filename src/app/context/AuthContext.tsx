@@ -1,11 +1,16 @@
 "use client";
 
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
+import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/router';
 
 interface User {
     id: string;
-    name: string;
+    first_name: string;
+    last_name: string;
     email: string;
+    token: string;
+    account_type: string;
 }
 
 interface AuthContextType {
@@ -19,30 +24,27 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
+    // console.log(user);
 
-    // useEffect(() => {
-    //     const fetchUser = async () => {
-    //         try {
-    //             const res = await fetch("/api/auth/user");
-    //             if (res.ok) {
-    //                 const data = await res.json();
-    //                 setUser(data.user);
-    //             }
-    //         } catch (error) {
-    //             console.error("Error fetching user:", error);
-    //         }
-    //     };
+    const router = useRouter();
 
-    //     fetchUser();
-    // }, []);
+    useEffect(() => {
+        // Load user data from localStorage on app start
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
 
     const logout = async () => {
         // await fetch("/api/auth/logout", { method: "POST" });
         document.cookie = "auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
         setUser(null);
+        localStorage.removeItem('user');
 
-        window.location.href = "/login";
+        // window.location.href = "/login";
+        router.push('/login');
     };
 
     return (
