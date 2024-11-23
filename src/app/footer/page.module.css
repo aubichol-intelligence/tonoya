@@ -1,5 +1,23 @@
+.container {
+  
+  /*background:  radial-gradient(circle, #72BF78, #ACE1AF, #BFF6C3, #E0FBE2 );*/
+  width:100vw;
+  
+  background-color:#72BF78;
+  color:black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-inline: auto;
+padding:2rem;
+  
+
+}
+
+
 .footer {
-    background: #1a1a1a;
+  background-color: black;
     color: #ffffff;
     padding: 2rem;
     display: flex;
@@ -12,6 +30,7 @@
     flex: 1;
     min-width: 250px;
     margin-bottom: 1.5rem;
+    margin-inline: auto;
   }
   
   .logo {
@@ -24,8 +43,19 @@
     line-height: 1.6;
   }
   
-  .links,
-  .socialMedia,
+  .links {
+
+  }
+  .socialMedia {
+   width: 40vw;
+    margin-inline: auto;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    
+  
+    
+  }
+  
   .map {
     flex: 1;
     min-width: 200px;
@@ -48,7 +78,7 @@
   }
   
   .links a {
-    color: #ffffff;
+    color: black;
     text-decoration: none;
     transition: color 0.3s;
   }
@@ -57,10 +87,26 @@
     color: #ffcc00;
   }
   
-  .socialMedia .icons a {
-    margin-right: 1rem;
-    display: inline-block;
+  .socialMediaHeader {
+    font-size: 2.25rem; /* Adjust font size for responsiveness */
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #333;
   }
+
+  .icons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+  
+  }
+
+
+ 
   
   .socialMedia .icons img {
     width: 32px;
@@ -100,6 +146,37 @@
   .backToTop:hover {
     background: #e6b800;
   }
+
+  .follow-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .follow-link:hover {
+    color: #e53e3e; /* Red hover effect */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .follow-us-heading {
+      font-size: 1rem;
+    }
+  
+    .follow-link {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+
+  }
   
   @media (max-width: 768px) {
     .footer {
@@ -110,5 +187,6 @@
     .bottomBar {
       margin-top: 1rem;
     }
+
   }
   

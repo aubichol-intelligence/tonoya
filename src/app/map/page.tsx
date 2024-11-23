@@ -3,15 +3,15 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 //const Map = dynamic(() => import('../../components/Map'), { ssr: false }); // Disable SSR for Leaflet
 
-export default function Home() {
+export default function Map() {
   return (
     <main>
-      <h1>Welcome to the Map App</h1>
+      {/*<h1>Welcome to the Map App</h1>*/}
       <MapContainer
         center={[23.7438111, 90.3665748]} // Initial map center (latitude, longitude)
         zoom={13}
         key="map-container"
-        style={{ height: '100vh', width: '100%' }} // Full-page map
+        style={{ height: '40vh', width: '100vw' }} // Full-page map
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

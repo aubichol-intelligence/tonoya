@@ -1,82 +1,95 @@
 .footer {
-    background: #111;
-    color: #fff;
-    padding: 2rem;
-  }
-  
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-  
-  .mapSection {
-    flex: 1;
-  }
-  
-  .mapContainer {
-    height: 200px;
-  }
-  
-  .map {
-    height: 100%;
-    border-radius: 8px;
-  }
-  
-  .address {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .links {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .logo {
-    height: 50px;
-    margin-bottom: 1rem;
-  }
-  
-  .links ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .links ul li {
-    margin: 0.5rem 0;
-  }
-  
-  .links ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .socialMedia {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .icons a {
-    margin: 0 0.5rem;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  .bottomBar {
-    text-align: center;
-    margin-top: 2rem;
-    border-top: 1px solid #333;
-    padding-top: 1rem;
-    font-size: 0.8rem;
-  }
-  
-  .backToTop {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+  display:flex;
+  flex-direction:column ;
+}
+
+.links a:hover {
+  color: #ffd700;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.mapContainer {
+  flex: 1;
+  min-width: 300px;
+  height: 200px;
+}
+
+.map {
+  height: 100%;
+}
+
+.info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.info h4 {
+  margin-bottom: 10px;
+}
+
+.social a {
+  display: block;
+  color: #ffd700;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.social a:hover {
+  color: #fff;
+}
+
+.bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd700;
+  color: #111;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.backToTop:hover {
+  transform: scale(1.1);
+}

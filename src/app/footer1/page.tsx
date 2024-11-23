@@ -1,110 +1,106 @@
 "use client";
 
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaArrowUp } from "react-icons/fa";
-import dynamic from "next/dynamic";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 import styles from "./page.module.css";
 
-const Map = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), { ssr: false });
-const TileLayer = dynamic(() => import("react-leaflet").then((mod) => mod.TileLayer), { ssr: false });
-const Marker = dynamic(() => import("react-leaflet").then((mod) => mod.Marker), { ssr: false });
-const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), { ssr: false });
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+});
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className={styles.footer}>
+      {/* Schema Markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          name: "Your Company Name",
+          url: "https://yourwebsite.com",
+          logo: "https://yourwebsite.com/logo.png",
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              telephone: "+123456789",
+              contactType: "Customer Service",
+            },
+          ],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "123 Main Street",
+            addressLocality: "Your City",
+            postalCode: "12345",
+            addressCountry: "Your Country",
+          },
+          sameAs: [
+            "https://www.facebook.com/yourpage",
+            "https://twitter.com/yourpage",
+            "https://www.linkedin.com/in/yourpage",
+          ],
+        })}
+      </script>
+
       <div className={styles.container}>
-        {/* Left Section: Map and Address */}
-        <div className={styles.mapSection}>
-          <div className={styles.mapContainer}>
-            <Map center={[40.7128, -74.006]} zoom={13} scrollWheelZoom={false} className={styles.map}>
+        {/* Logo and Links */}
+        <div className={styles.top}>
+          <img src="/logo.png" alt="Company Logo" className={styles.logo} />
+          <div className={styles.links}>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#careers">Careers</a>
+          </div>
+        </div>
+
+        {/* Map and Contact Information */}
+        <div className={styles.content}>
+         {/*} <div className={styles.mapContainer}>
+            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} className={styles.map}>
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                attribution="&copy; OpenStreetMap contributors"
               />
-              <Marker position={[40.7128, -74.006]}>
-                <Popup>Our Office</Popup>
+              <Marker position={[51.505, -0.09]}>
+                <Popup>Your Office Location</Popup>
               </Marker>
-            </Map>
+            </MapContainer>
+      </div>*/}
+
+          <div className={styles.info}>
+            <h4>Contact Us</h4>
+            <p>
+              Address: 123 Main Street, Your City, 12345
+              <br />
+              Phone: +123456789
+              <br />
+              Email: contact@yourwebsite.com
+            </p>
+            <div className={styles.social}>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
           </div>
-          <address className={styles.address}>
-            <strong>Your Company Name</strong>
-            <p>123 Main Street, Your City, Your State, 12345</p>
-            <p>Phone: +1-800-555-5555</p>
-            <p>Email: contact@yourcompany.com</p>
-          </address>
         </div>
 
-        {/* Middle Section: Links */}
-        <div className={styles.links}>
-          <img src="/logo.png" alt="Logo" className={styles.logo} />
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Right Section: Social Media */}
-        <div className={styles.socialMedia}>
-          <h4>Follow Us</h4>
-          <div className={styles.icons}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-          </div>
+        {/* Footer Bottom */}
+        <div className={styles.bottom}>
+          <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+          <p>Developed by Your Name</p>
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className={styles.bottomBar}>
-        <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
-        <p>Developed by Your Developer Name</p>
-        <button onClick={scrollToTop} className={styles.backToTop}>
-          <FaArrowUp />
-        </button>
-      </div>
-
-      {/* Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Your Company Name",
-            "url": "https://yourwebsite.com",
-            "logo": "https://yourwebsite.com/logo.png",
-            "sameAs": [
-              "https://www.facebook.com/yourcompany",
-              "https://www.twitter.com/yourcompany",
-              "https://www.instagram.com/yourcompany",
-              "https://www.linkedin.com/company/yourcompany"
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-800-555-5555",
-              "contactType": "Customer Service",
-              "areaServed": "Worldwide",
-              "availableLanguage": ["English"]
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "123 Main Street",
-              "addressLocality": "Your City",
-              "addressRegion": "Your State",
-              "postalCode": "12345",
-              "addressCountry": "Your Country"
-            }
-          })
-        }}
-      />
+      {/* Back to Top Button */}
+      <button className={styles.backToTop} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        ↑ Back to Top
+      </button>
     </footer>
   );
 };

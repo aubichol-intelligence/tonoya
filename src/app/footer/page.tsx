@@ -1,19 +1,56 @@
 "use client";
 import React from "react";
 import styles from "./page.module.css";
+import Map from "../map/page"
+import Link from 'next/link'
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
+    
+
     <footer className={styles.footer}>
+      {/* Schema Markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          name: "Your Company Name",
+          url: "https://yourwebsite.com",
+          logo: "https://yourwebsite.com/logo.png",
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              telephone: "+123456789",
+              contactType: "Customer Service",
+            },
+          ],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "123 Main Street",
+            addressLocality: "Your City",
+            postalCode: "12345",
+            addressCountry: "Your Country",
+          },
+          sameAs: [
+            "https://www.facebook.com/yourpage",
+            "https://twitter.com/yourpage",
+            "https://www.linkedin.com/in/yourpage",
+          ],
+        })}
+      </script>
+
+    <div className={styles.container}>
       {/* Logo and Address */}
-      <div className={styles.logoSection}>
+      {/*<div className={styles.logoSection}>
         <img
           src="/logo.png"
           alt="Company Logo"
           className={styles.logo}
-        />
+        />*/}
+        <div className={styles.socialMedia}>
+        <h4 className={styles.socialMediaHeader}>Quick Links</h4>
         <p className={styles.address}>
           123 Office St, Business City, 56789 <br />
           Contact: (123) 456-7890 <br />
@@ -22,21 +59,22 @@ const Footer = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className={styles.links}>
-        <h4 className={styles.h4}>Quick Links</h4>
-        <ul>
-          <li><a href="/about-us">About Us</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-        </ul>
+      <div className={styles.socialMedia}>
+        <h4 className={styles.socialMediaHeader}>Quick Links</h4>
+        <div className={styles.icons}>
+          
+          <a href="/about-us">About Us</a> 
+          <a href="/services">Services</a>
+          <a href="/contact">Contact</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          </div>
       </div>
 
       {/* Social Media Links */}
       <div className={styles.socialMedia}>
-        <h1>Follow Us</h1>
+        <h1  className={styles.socialMediaHeader}>Follow Us</h1>
         <div className={styles.icons}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          {/*<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <img src="/facebook-icon.png" alt="Facebook" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -44,24 +82,40 @@ const Footer = () => {
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
             <img src="/linkedin-icon.png" alt="LinkedIn" />
-          </a>
+  </a>*/}
+   
+        <a
+          href="https://www.facebook.com/icsforum"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="follow-link"
+        >
+          Facebook
+        </a>
+        <a
+          href="https://x.com/icsforum"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="follow-link"
+        >
+          Twitter
+        </a>
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="follow-link"
+        >
+          Instagram
+        </a>
+      
         </div>
       </div>
 
-      {/* Google Map */}
-      <div className={styles.map}>
-        <h4 className={styles.h4}>Our Location</h4>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18..."
-          width="100%"
-          height="200"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          title="Office Location"
-        ></iframe>
       </div>
 
+     
+     <Map/>
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
         <p>
@@ -71,6 +125,11 @@ const Footer = () => {
         <button className={styles.backToTop} onClick={scrollToTop}>
           Back to Top
         </button>
+        <img
+          src="/logo.png"
+          alt="Company Logo"
+          className={styles.logo}
+        />
       </div>
     </footer>
   );
