@@ -1,0 +1,121 @@
+/* Main container */
+.contactContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  /*background: #f9f9f9;*/
+  border-radius: 10px;
+  
+  overflow: hidden;
+}
+
+/* Form Section */
+.formSection {
+  flex: 1;
+  min-width: 50vw;
+  max-width: 70vw;
+  padding: 4rem;
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #A5DD9B;*/
+}
+
+.formSection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.form textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #2c7ac3;
+}
+
+/* Contact Info Section */
+.contactInfoSection {
+  flex: 1;
+  min-width: 30vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: peru;
+}
+
+.contactBox {
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: #A5DD9B
+}
+
+.contactBox h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.contactBox p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formSection,
+  .contactInfoSection {
+    max-width: 100%;
+  }
+}
