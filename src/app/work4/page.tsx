@@ -35,7 +35,7 @@ const StrategySection = () => {
       <div className={styles.heading}>
         <h2 className={styles.title}>Our Expertise</h2>
         <p className={styles.subtitle}>
-          Delivering exceptional strategies and designs tailored to your brand's needs.
+          Delivering exceptional strategies and designs tailored to your brand&apos needs.
         </p>
       </div>
       <div className={styles.cards}>

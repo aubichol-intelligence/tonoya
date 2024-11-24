@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import Map from "../map/page"
-import Link from 'next/link'
+//import Link from 'next/link'
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });

@@ -1,5 +1,5 @@
 "use client"
-import Image from "next/image";
+//import Image from "next/image";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Home() {
