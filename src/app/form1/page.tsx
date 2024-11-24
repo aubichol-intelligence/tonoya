@@ -93,6 +93,7 @@ const ContactForm = () => {
 				variants={itemVariants}
 				whileHover="hover"
 			>
+                <h2>Contact Us</h2>
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<label htmlFor="name">Name</label>
 					<motion.input
