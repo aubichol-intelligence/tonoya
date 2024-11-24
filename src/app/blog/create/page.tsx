@@ -1,15 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CreateBlogPage() {
     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
 
-    const token = document.cookie
-        .split('; ')
-        .find((row) => row.startsWith('auth_token='))
-        ?.split('=')[1];
+    const [token, setToken] = useState<string | null>(null); // Store token in state
+
+    useEffect(() => {
+        // Get the token only on the client side
+        const cookieToken = document.cookie
+            .split('; ')
+            .find((row) => row.startsWith('auth_token='))?.split('=')[1];
+        setToken(cookieToken || null);
+    }, []); // Empty dependency array ensures this runs only once after initial render
 
 
     const [formData, setFormData] = useState({
