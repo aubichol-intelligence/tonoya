@@ -2,9 +2,10 @@
 .blog-page {
     font-family: 'Arial', sans-serif;
     color: #333;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Header Section */
@@ -17,10 +18,11 @@
     font-size: 2.5rem;
     color: #222;
     margin: 0;
+    line-height: 1.4;
 }
 
 .blog-subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #555;
     margin: 5px 0 0;
 }
@@ -28,12 +30,20 @@
 /* Hero Image Section */
 .blog-hero {
     margin-bottom: 30px;
-    text-align: center;
+    position: relative;
+    /* Required if using layout="fill" */
+    width: 100%;
+    height: auto;
+    padding-top: 50%;
+    /* Maintains aspect ratio */
+    overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+    /* Ensures the image doesn't stretch */
 }
 
 /* Content Section */
@@ -62,12 +72,54 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .blog-title {
         font-size: 2rem;
     }
 
+    .blog-subtitle {
+        font-size: 1rem;
+    }
+
     .blog-content {
         font-size: 1rem;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 1.5rem;
+    }
+
+    .blog-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .blog-content {
+        font-size: 0.9rem;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-title {
+        font-size: 1.2rem;
+    }
+
+    .blog-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .blog-content {
+        font-size: 0.85rem;
     }
 }

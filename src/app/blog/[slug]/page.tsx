@@ -1,9 +1,9 @@
 import Link from 'next/link';
 // import { notFound } from 'next/navigation'; // To handle 404 pages
 import blogPosts from '../../../components/data/blogs.json';
-// import Image from 'next/image';
-// import styles from "./page.module.css";
+import Image from 'next/image';
 import "./page.module.css";
+import img from "../../../../public/coupleImage.jpg";
 
 // interface Params {
 //     slug: string;
@@ -40,32 +40,33 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     }
 
     return (
-        // <div>
-        //     <h2>{post.title}</h2>
-        //     <p>{post.content}</p>
-        //     <p>Author: {post.author}</p>
-        //     <Link href="/blog">Back to Blog</Link>
-        // </div>
         <div className="blog-page">
             {/* Header Section */}
             <header className="blog-header">
-                <h1 className="blog-title">Dipika Pallikal Karthik and Dinesh Karthik</h1>
+                <h1 className="blog-title">{post.title}</h1>
                 <p className="blog-subtitle">Season 1 | Where the Heart Is</p>
+                <p>Author: {post.author}</p>
             </header>
 
             {/* Hero Image Section */}
-            {/* <div className="blog-hero">
+            <div className="blog-hero">
                 <Image
-                    src="/images/blog-image.jpg"
-                    alt="Dipika and Dinesh Karthik"
-                    width={1200}
-                    height={600}
+                    // src="../../../../public/file.svg"
+                    src={img}
+                    alt="Old Couple"
+                    priority
+                    // layout="responsive"   // Make sure the image scales
+                    width={800}
+                    height={400}
                     className="hero-image"
                 />
-            </div> */}
+            </div>
 
             {/* Content Section */}
             <article className="blog-content">
+                {/* <hr /> */}
+                <p>{post.content}</p>
+                <hr />
                 <p>
                     Nestled in the heart of their Chennai home, Dipika and Dinesh share an
                     abode filled with stories, emotions, and memories. Each corner reflects
@@ -78,6 +79,8 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 </p>
             </article>
 
+            <Link href="/blog">Back to Blog</Link>
+
             {/* Footer */}
             <footer className="blog-footer">
                 <p className="footer-note">© 2024 Blog Page. All rights reserved.</p>
@@ -88,18 +91,11 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
 // Generate static params for SSG
 // export async function generateStaticParams() {
-
-//     return blogPosts.map((post) => ({
-//         // slug: post.id.toString(), // Match `[slug]` in the route
-//         slug: post.id, // Match `[slug]` in the route
-//     }));
-// }
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
     return blogPosts.map((post) => ({
         slug: post.id,
     }));
 }
-
 
 // export const config = {
 //     dynamicParams: false,
