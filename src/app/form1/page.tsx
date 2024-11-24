@@ -1,8 +1,19 @@
 "use client";
+
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
+import { useState } from "react";
 
 const ContactForm = () => {
+  const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
+  // console.log("Root URL:", rootUrl);
+
+  // const token = document.cookie
+  //   .split('; ')
+  //   .find((row) => row.startsWith('auth_token='))
+  //   ?.split('=')[1];
+  // // console.log(token);
+
   // Variants for container animations
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -24,6 +35,60 @@ const ContactForm = () => {
     hover: { scale: 1.05 },
   };
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setMessage(''); // Clear previous message
+
+    // console.log(formData);
+
+    try {
+      const response = await fetch(`${rootUrl}/api/v1/email/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // Authorization: token || '', // Use an empty string if token is undefined
+        },
+        body: JSON.stringify({
+          ...formData,
+        }),
+      });
+
+      console.log(response);
+
+      if (response.ok) {
+        setMessage('Your message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+      } else {
+        const errorData = await response.json();
+        setMessage(`Error: ${errorData.message || 'Something went wrong.'}`);
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        setMessage(`Error: ${error.message}`);
+      } else {
+        setMessage('An unexpected error occurred.');
+      }
+    }
+  };
+
+
   return (
     <motion.div
       className={styles.contactContainer}
@@ -37,8 +102,7 @@ const ContactForm = () => {
         variants={itemVariants}
         whileHover="hover"
       >
-        
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
           <motion.input
             type="text"
@@ -47,6 +111,9 @@ const ContactForm = () => {
             placeholder="Your Name"
             className={styles.styledTextarea}
             whileFocus={{ scale: 1.03, boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)" }}
+            value={formData.name}
+            onChange={handleChange}
+            required
           />
           <label htmlFor="email">Email</label>
           <motion.input
@@ -56,6 +123,9 @@ const ContactForm = () => {
             placeholder="Your Email"
             className={styles.styledTextarea}
             whileFocus={{ scale: 1.03, boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)" }}
+            value={formData.email}
+            onChange={handleChange}
+            required
           />
           <div className={styles.inputContainer}>
             <label htmlFor="message" className={styles.dynamicLabel}>
@@ -70,11 +140,17 @@ const ContactForm = () => {
                 borderColor: "#3498db",
                 boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
               }}
+              value={formData.message}
+              onChange={handleChange}
+              required
             ></motion.textarea>
           </div>
-          <motion.button 
+
+          {message && <p>{message}</p>}
+
+          <motion.button
             className={styles.button}
-            classnametype="submit"
+            type="submit"
             whileHover={{ scale: 1.1 }}>
             Submit
           </motion.button>

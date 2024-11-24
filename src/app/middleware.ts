@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
-    const token = req.cookies.get("authToken")?.value;
+    // const token = req.cookies.get("authToken")?.value;
+    const token = document.cookie
+        .split('; ')
+        .find((row) => row.startsWith('auth_token='))
+        ?.split('=')[1];
     // const isAuthenticated = Boolean(req.cookies.get("auth_token"));
 
     // Redirect unauthenticated users from protected routes
