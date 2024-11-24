@@ -5,13 +5,11 @@ import { useState } from 'react';
 
 export default function CreateBlogPage() {
     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
-    // console.log("Root URL:", rootUrl);
 
     const token = document.cookie
         .split('; ')
         .find((row) => row.startsWith('auth_token='))
         ?.split('=')[1];
-    // console.log(token);
 
 
     const [formData, setFormData] = useState({
@@ -39,10 +37,8 @@ export default function CreateBlogPage() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // 'Authorization': token,
                     Authorization: token || '', // Use an empty string if token is undefined
                 },
-                // headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...formData,
                     tags: formData.tags.split(',').map((tag) => tag.trim()), // Convert tags to an array

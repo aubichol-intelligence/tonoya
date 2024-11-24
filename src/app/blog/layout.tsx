@@ -1,9 +1,3 @@
-// import type { Metadata } from "next";
-// import localFont from "next/font/local";
-// import 'leaflet/dist/leaflet.css';
-// import "./globals.css";
-// import { AuthProvider } from "./context/AuthContext";
-
 import Link from "next/link";
 
 export default function BlogLayout({
