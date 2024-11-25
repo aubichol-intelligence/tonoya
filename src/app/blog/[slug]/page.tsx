@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 // import { notFound } from 'next/navigation'; // To handle 404 pages
 import blogPosts from '../../../components/data/blogs.json';
 import Image from 'next/image';
@@ -40,6 +42,11 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     }
 
     return (
+        <HelmetProvider>
+            <Helmet>
+                <title>Individual Blog Page</title>
+            </Helmet>
+
         <div className="blog-page">
             {/* Header Section */}
             <header className="blog-header">
@@ -86,6 +93,8 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 <p className="footer-note">© 2024 Blog Page. All rights reserved.</p>
             </footer>
         </div>
+        </HelmetProvider>
+
     );
 }
 
