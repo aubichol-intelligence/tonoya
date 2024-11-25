@@ -15,8 +15,8 @@ const StartProject = () => {
       <div className={styles.textContainer}>
         <h2 className={styles.heading}>Starting a New Project?</h2>
         <p className={styles.description}>
-          We're here to help you bring your vision to life. Whether it's a new
-          business idea, a branding revamp, or a design challenge, let's make it
+          We are re here to help you bring your vision to life. Whether it is a new
+          business idea, a branding revamp, or a design challenge, let us make it
           happen together.
         </p>
       </div>

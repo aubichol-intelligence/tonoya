@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Form from "../form1/page";
-import Footer from "../footer1/page";
+//import Footer from "../footer1/page";
 
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(true);
