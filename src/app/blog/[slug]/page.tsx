@@ -1,10 +1,16 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation'; // To handle 404 pages
-import blogPosts from '../../../components/data/blogs.json';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-interface Params {
-    slug: string;
-}
+// import { notFound } from 'next/navigation'; // To handle 404 pages
+import blogPosts from '../../../components/data/blogs.json';
+import Image from 'next/image';
+import "./page.module.css";
+import img from "../../../../public/coupleImage.jpg";
+
+// interface Params {
+//     slug: string;
+// }
+type Params = Promise<{ slug: string }>;
 
 // Generate metadata dynamically
 export async function generateMetadata({ params }: { params: Params }) {
@@ -25,32 +31,78 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     const post = blogPosts.find((post) => post.id === slug);
 
     if (!post) {
-        // return (
-        //     <div>
-        //         <h2>Post not found</h2>
-        //         <Link href="/blog">Back to Blog</Link>
-        //     </div>
-        // );
-        notFound();
-        return null; // This is unreachable due to `notFound()`, but satisfies TypeScript
+        return (
+            <div>
+                <h2>Post not found</h2>
+                <Link href="/blog">Back to Blog</Link>
+            </div>
+        );
+        // notFound();
+        // return null; // This is unreachable due to `notFound()`, but satisfies TypeScript
     }
 
     return (
-        <div>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
-            <p>Author: {post.author}</p>
+        <HelmetProvider>
+            <Helmet>
+                <title>Individual Blog Page</title>
+            </Helmet>
+
+        <div className="blog-page">
+            {/* Header Section */}
+            <header className="blog-header">
+                <h1 className="blog-title">{post.title}</h1>
+                <p className="blog-subtitle">Season 1 | Where the Heart Is</p>
+                <p>Author: {post.author}</p>
+            </header>
+
+            {/* Hero Image Section */}
+            <div className="blog-hero">
+                <Image
+                    // src="../../../../public/file.svg"
+                    src={img}
+                    alt="Old Couple"
+                    priority
+                    // layout="responsive"   // Make sure the image scales
+                    width={800}
+                    height={400}
+                    className="hero-image"
+                />
+            </div>
+
+            {/* Content Section */}
+            <article className="blog-content">
+                {/* <hr /> */}
+                <p>{post.content}</p>
+                <hr />
+                <p>
+                    Nestled in the heart of their Chennai home, Dipika and Dinesh share an
+                    abode filled with stories, emotions, and memories. Each corner reflects
+                    their vibrant personalities and cherished moments.
+                </p>
+                <p>
+                    Their home is more than a structure; it’s a canvas of life where love,
+                    passion, and dreams converge. From intricately designed interiors to
+                    stunning outdoor spaces, it speaks of their journey.
+                </p>
+            </article>
+
             <Link href="/blog">Back to Blog</Link>
+
+            {/* Footer */}
+            <footer className="blog-footer">
+                <p className="footer-note">© 2024 Blog Page. All rights reserved.</p>
+            </footer>
         </div>
+        </HelmetProvider>
+
     );
 }
 
 // Generate static params for SSG
-export async function generateStaticParams() {
-
+// export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
     return blogPosts.map((post) => ({
-        // slug: post.id.toString(), // Match `[slug]` in the route
-        slug: post.id, // Match `[slug]` in the route
+        slug: post.id,
     }));
 }
 
