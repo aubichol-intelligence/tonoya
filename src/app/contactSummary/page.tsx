@@ -21,7 +21,7 @@ const StartProject = () => {
         </p>
       </div>
       <button className={styles.contactButton} onClick={handleContactClick}>
-      <span>Contact Us</span>
+        <span>Contact Us</span>
       </button>
     </div>
   );

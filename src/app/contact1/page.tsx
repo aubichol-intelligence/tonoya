@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Form from "../form1/page";
-//import Footer from "../footer1/page";
+// import Footer from "../footer1/page";
 
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className={styles.pageContainer}>
       {isAnimating && <div className={styles.animationOverlay}></div>}
-     <Form/>
+      <Form />
     </div>
   );
 }

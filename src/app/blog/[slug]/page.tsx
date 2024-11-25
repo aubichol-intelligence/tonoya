@@ -1,47 +1,55 @@
 import Link from 'next/link';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-
-// import { notFound } from 'next/navigation'; // To handle 404 pages
-import blogPosts from '../../../components/data/blogs.json';
+// import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Head from 'next/head';
+// import blogPosts from '../../../components/data/blogs.json';
+import blogPosts from '../../../components/data/pictures';
 import Image from 'next/image';
 import "./page.module.css";
 import img from "../../../../public/coupleImage.jpg";
-import { notFound } from 'next/navigation';
 
-// interface Params {
-//     slug: string;
-// }
-type Params = { slug: string };
+
+type Params = Promise<{ slug: string }>
 
 // Generate metadata dynamically
-export async function generateMetadata({ params }: { params: Params }) {
-    const { slug } = await params;
+export async function generateMetadata(props: { params: Params }) {
+    const params = await props.params
+    const slug = params.slug
+
     const post = blogPosts.find((post) => post.id === slug);
 
     return {
         title: post ? post.title : 'Post Not Found',
-        description: post ? post.excerpt : 'The requested blog post could not be found.',
+        description: post ? post.content : 'The requested blog post could not be found.',
     };
 }
 
 // Dynamic blog post page
-export default async function BlogPostPage({ params }: { params: Params }) {
-    const { slug } = await params;
+export default async function Page(props: { params: Params }) {
+    const params = await props.params
+    const slug = params.slug
 
     // Find the blog post
     const post = blogPosts.find((post) => post.id === slug);
 
     if (!post) {
-        notFound();
+        return (
+            <div>
+                <h2>Post not found</h2>
+                <Link href="/blog">Back to Blog</Link>
+            </div>
+        );
         // notFound();
         // return null; // This is unreachable due to `notFound()`, but satisfies TypeScript
     }
 
     return (
-        <HelmetProvider>
-            <Helmet>
-                <title>Individual Blog Page</title>
-            </Helmet>
+        // <HelmetProvider>
+        <>
+            {/* <Helmet> */}
+            <Head>
+                <title>{post.title}</title>
+            </Head>
+            {/* </Helmet> */}
 
             <div className="blog-page">
                 {/* Header Section */}
@@ -89,14 +97,15 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                     <p className="footer-note">© 2024 Blog Page. All rights reserved.</p>
                 </footer>
             </div>
-        </HelmetProvider>
-
+        </>
+        // </HelmetProvider>
     );
 }
 
 // Generate static params for SSG
-// export async function generateStaticParams() {
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
+    // const posts = await fetch('https://.../posts').then((res) => res.json())
+
     return blogPosts.map((post) => ({
         slug: post.id,
     }));

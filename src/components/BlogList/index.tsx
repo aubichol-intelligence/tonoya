@@ -47,26 +47,41 @@ export default BlogGrid;*/}
 
 // src/components/BlogGrid.jsx
 import React from "react";
-import blogs from "../data/pictures";
+// import blogs from "../data/pictures";
 import "./BlogList.css";
+import Image from "next/image";
+import Link from "next/link";
 
-const BlogGrid = () => {
+type BlogPost = {
+  imageUrl: string;
+  title: string;
+  id: string;
+  short_description: string;
+  content: string;
+  author: string;
+};
+
+type BlogListProps = {
+  posts: BlogPost[]; // Define the type of the posts prop
+};
+
+const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
   return (
     <div className="grid-container">
-      {blogs.map((blog) => (
+      {posts.map((blog) => (
         <div key={blog.id} className="blog-card">
 
-          
-            <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
-          
+          <Image src={blog.imageUrl} alt={blog.title} className="blog-image" priority width={800} height={400} />
 
-          
           <div className="blog-content">
             <h3 className="blog-title">{blog.title}</h3>
             <p className="blog-description">{blog.short_description}</p>
-            <button className="read-more-button">
-              Read More
-            </button>
+            <Link href={`/blog/${blog.id}`}>
+              <button className="read-more-button">
+                Read More
+              </button>
+            </Link>
+
           </div>
         </div>
       ))}
