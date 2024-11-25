@@ -79,20 +79,20 @@ export default function LoginPage() {
             try {
                 await login(formData.email, formData.password);
 
-                // const res = await fetch(`${rootUrl}/api/v1/users/login`, {
-                //     method: "POST",
-                //     headers: { "Content-Type": "application/json" },
-                //     body: JSON.stringify({ email: formData.email, password: formData.password }),
-                // });
+                 const res = await fetch(`https://tonoyabd.com/api/v1/users/login`, {
+                     method: "POST",
+                     headers: { "Content-Type": "application/json" },
+                     body: JSON.stringify({ email: formData.email, password: formData.password }),
+                 });
 
-                // const data = await res.json();
+                 const data = await res.json();
 
-                // if (data.success) {
-                //     alert("Login successful");
-                //     window.location.href = "/";
-                // } else {
-                //     alert(data.message || "Login failed");
-                // }
+                 if (data.success) {
+                     alert("Login successful");
+                     window.location.href = "/";
+                 } else {
+                     alert(data.message || "Login failed");
+                 }
             } catch (error: unknown) {
                 if (error instanceof Error) {
                     alert(error.message);
