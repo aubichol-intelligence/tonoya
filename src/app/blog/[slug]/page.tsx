@@ -1,4 +1,3 @@
-"use client"
 import Link from 'next/link';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
@@ -7,11 +6,12 @@ import blogPosts from '../../../components/data/blogs.json';
 import Image from 'next/image';
 import "./page.module.css";
 import img from "../../../../public/coupleImage.jpg";
+import { notFound } from 'next/navigation';
 
 // interface Params {
 //     slug: string;
 // }
-type Params = Promise<{ slug: string }>;
+type Params = { slug: string };
 
 // Generate metadata dynamically
 export async function generateMetadata({ params }: { params: Params }) {
@@ -32,12 +32,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     const post = blogPosts.find((post) => post.id === slug);
 
     if (!post) {
-        return (
-            <div>
-                <h2>Post not found</h2>
-                <Link href="/blog">Back to Blog</Link>
-            </div>
-        );
+        notFound();
         // notFound();
         // return null; // This is unreachable due to `notFound()`, but satisfies TypeScript
     }
@@ -61,7 +56,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                 <Image
                     // src="../../../../public/file.svg"
                     src={img}
-                    alt="Old Couple"
+                    alt="Blog Image"
                     priority
                     // layout="responsive"   // Make sure the image scales
                     width={800}
