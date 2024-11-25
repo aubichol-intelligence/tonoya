@@ -104,8 +104,8 @@ const Footer = () => {
 
                 {/* Footer Bottom */}
                 <div className={styles.bottom}>
-                    <p>&copy; 2024 Your Company. All Rights Reserved.</p>
-                    <p>Developed by Your Name</p>
+                    <p>&copy; 2024 Sunbeam Force Limited. All Rights Reserved.</p>
+                    <p>Developed by Aubichol</p>
                 </div>
             </div>
 
