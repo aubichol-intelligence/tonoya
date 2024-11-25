@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
+import Form from "../form1/page";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,14 +19,8 @@ export default function Home() {
       {isLoading ? (
         <div className={styles.loader}></div>
       ) : (
-        <div className={styles.mainContent}>
-          <header>
-            <h1>Welcome to the Project</h1>
-          </header>
-          <p>
-            Here is your project content. It appears with a smooth animation after the loader completes.
-          </p>
-        </div>
+        <Form/>
+        
       )}
     </div>
   );

@@ -85,6 +85,7 @@ const ContactForm = () => {
 			className={styles.contactContainer}
 			initial="hidden"
 			animate="visible"
+            style={{ overflow: "visible" }} // Ensure no overflow restrictions
 			variants={containerVariants}
 		>
 		{/* Form Section */}
@@ -93,7 +94,7 @@ const ContactForm = () => {
 				variants={itemVariants}
 				whileHover="hover"
 			>
-                <h2>Contact Us</h2>
+                
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<label htmlFor="name">Name</label>
 					<motion.input

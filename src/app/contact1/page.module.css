@@ -1,10 +1,10 @@
 /* Root container for the page */
 .pageContainer {
-    height: 100vh; /* Full screen height */
+   
     width: 100vw; /* Full screen width */
-    display: flex;
+   /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     background: #f4f4f4; /* Background color for main content */
     overflow: hidden; /* Prevent scrolling during animation */
     position: relative;

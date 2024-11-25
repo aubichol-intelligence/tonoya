@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
+import Form from "../form1/page";
+import Footer from "../footer1/page";
 
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -17,18 +19,7 @@ export default function Home() {
   return (
     <div className={styles.pageContainer}>
       {isAnimating && <div className={styles.animationOverlay}></div>}
-      <div
-        className={`${styles.mainContent} ${
-          isAnimating ? styles.hidden : styles.visible
-        }`}
-      >
-        <header>
-          <h1>Welcome to the Project</h1>
-        </header>
-        <p>
-          This is the main content that appears after the animation completes.
-        </p>
-      </div>
+     <Form/>
     </div>
   );
 }

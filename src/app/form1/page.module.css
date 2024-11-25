@@ -1,19 +1,19 @@
 /* Main container */
 .contactContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /*flex-wrap: wrap;
+    flex-direction: column;*/
+    margin-inline: auto;
+    justify-content: space-around;
     align-items: flex-start;
-    gap: 30px;
+    gap: 5px;
     padding: 20px;
-    /*background: #f9f9f9;*/
-    border-radius: 10px;
+    color:black;
+    
+    
     /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
     width: 100%;
-    box-sizing: border-box;
-    
-
-    
+    background-color: palevioletred;    
   }
   
   /* Form Section */
@@ -63,13 +63,13 @@
     padding: 12px;
     font-size: 1rem;
     color: #333;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     border-radius: 5px;
     background: transparent;
     outline: none;
     resize: none;
     transition: all 0.3s ease;
-    width: 90%;
+    width: 100%;
   }
   
   .styledTextarea:focus {
@@ -89,7 +89,7 @@
   
   /* Contact Info Section */
   .contactInfoSection {
-    flex: 1;
+    flex: 2;
     min-width: 300px;
     max-width: 600px;
     display: flex;
@@ -145,11 +145,14 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
+      padding:5px;
+      margin-inline: auto;
     }
 
     .contactBox {
         
-        width: 80vw;
+        width: 90%;
+        margin-inline: auto;
       }
     
     

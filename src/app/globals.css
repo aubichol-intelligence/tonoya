@@ -18,10 +18,10 @@ body {
   /*background: #ffffff;*/
   background-size: 400% 400%;
   animation: gradientBackground 10s infinite;
-  height: 100vh;
+  
   margin: 0;
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;

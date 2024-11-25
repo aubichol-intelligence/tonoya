@@ -22,7 +22,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 import Link from 'next/link';
 import BlogList from '../../components/BlogList';
-import blogPosts from '../../components/data/blogs.json';
+//import blogPosts from '../../components/data/blogs.json';
+import blogPosts from "../../components/data/pictures";
 
 const Home = () => {
   return (
