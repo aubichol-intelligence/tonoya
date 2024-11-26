@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import './Create.css';
+
 
 export default function CreateBlogPage() {
     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
@@ -76,15 +78,16 @@ export default function CreateBlogPage() {
     };
 
     return (
-        <div>
-            <h2>Create a New Blog</h2>
+        <div className="create-blog-container">
+            <h2 className="create-blog-title">Create a New Blog</h2>
 
-            {message && <p>{message}</p>}
+            {message && <p className="create-blog-message">{message}</p>}
 
-            <form onSubmit={handleSubmit}>
+            <form className="create-blog-form" onSubmit={handleSubmit}>
                 <div>
-                    <label>Title:</label>
+                    <label className="create-blog-label">Title:</label>
                     <input
+                        className="create-blog-input"
                         type="text"
                         name="title"
                         value={formData.title}
@@ -93,8 +96,9 @@ export default function CreateBlogPage() {
                     />
                 </div>
                 <div>
-                    <label>Author:</label>
+                    <label className="create-blog-label">Author:</label>
                     <input
+                        className="create-blog-input"
                         type="text"
                         name="author"
                         value={formData.author}
@@ -103,8 +107,9 @@ export default function CreateBlogPage() {
                     />
                 </div>
                 <div>
-                    <label>Slug:</label>
+                    <label className="create-blog-label">Slug:</label>
                     <input
+                        className="create-blog-input"
                         type="text"
                         name="slug"
                         value={formData.slug}
@@ -113,8 +118,9 @@ export default function CreateBlogPage() {
                     />
                 </div>
                 <div>
-                    <label>Short Description:</label>
+                    <label className="create-blog-label">Short Description:</label>
                     <textarea
+                        className="create-blog-textarea"
                         name="shortDescription"
                         value={formData.shortDescription}
                         onChange={handleChange}
@@ -122,8 +128,9 @@ export default function CreateBlogPage() {
                     />
                 </div>
                 <div>
-                    <label>Content:</label>
+                    <label className="create-blog-label">Content:</label>
                     <textarea
+                        className="create-blog-textarea"
                         name="content"
                         value={formData.content}
                         onChange={handleChange}
@@ -131,8 +138,9 @@ export default function CreateBlogPage() {
                     />
                 </div>
                 <div>
-                    <label>Tags (comma-separated):</label>
+                    <label className="create-blog-label">Tags (comma-separated):</label>
                     <input
+                        className="create-blog-input"
                         type="text"
                         name="tags"
                         value={formData.tags}
@@ -140,10 +148,10 @@ export default function CreateBlogPage() {
                     />
                 </div>
 
-                <button type="submit">Create Blog</button>
+                <button className="create-blog-button" type="submit">Create Blog</button>
             </form>
 
-            <Link href="/blog">Back to Blog</Link>
+            <Link href="/blog" className="create-blog-link">Back to Blog</Link>
         </div>
     );
 }

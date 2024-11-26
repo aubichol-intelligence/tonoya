@@ -12,7 +12,7 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
+        <div style={{ padding: 20 }}>
             <header>
                 <h1>My Blog </h1>
                 < nav >

@@ -4,8 +4,7 @@ import Head from 'next/head';
 // import blogPosts from '../../../components/data/blogs.json';
 import blogPosts from '../../../components/data/pictures';
 import Image from 'next/image';
-import "./page.module.css";
-import img from "../../../../public/coupleImage.jpg";
+import "./Blog.css";
 
 
 type Params = Promise<{ slug: string }>
@@ -56,19 +55,19 @@ export default async function Page(props: { params: Params }) {
                 <header className="blog-header">
                     <h1 className="blog-title">{post.title}</h1>
                     <p className="blog-subtitle">Season 1 | Where the Heart Is</p>
-                    <p>Author: {post.author}</p>
+                    <p className="blog-subtitle">Author: {post.author}</p>
                 </header>
 
                 {/* Hero Image Section */}
                 <div className="blog-hero">
                     <Image
                         // src="../../../../public/file.svg"
-                        src={img}
+                        src={post.imageUrl}
                         alt="Blog Image"
                         priority
                         // layout="responsive"   // Make sure the image scales
-                        width={800}
-                        height={400}
+                        width={600}
+                        height={300}
                         className="hero-image"
                     />
                 </div>
@@ -93,9 +92,9 @@ export default async function Page(props: { params: Params }) {
                 <Link href="/blog">Back to Blog</Link>
 
                 {/* Footer */}
-                <footer className="blog-footer">
+                {/* <footer className="blog-footer">
                     <p className="footer-note">© 2024 Blog Page. All rights reserved.</p>
-                </footer>
+                </footer> */}
             </div>
         </>
         // </HelmetProvider>

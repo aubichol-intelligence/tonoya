@@ -27,12 +27,14 @@ import blogPosts from "../../components/data/pictures";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{}}>
       <h1>Welcome to the Blog</h1>
 
-      <Link href={`/blog/create`} style={{ marginTop: 4, marginBottom: 4 }}>
-        Create New Blog
-      </Link>
+      <div style={{ marginTop: 14, marginBottom: 14, }}>
+        <Link href={`/blog/create`} style={{ backgroundColor: 'blue', padding: 10, borderRadius: 10, }}>
+          Create New Blog
+        </Link>
+      </div>
 
       <BlogList posts={blogPosts} />
     </div>

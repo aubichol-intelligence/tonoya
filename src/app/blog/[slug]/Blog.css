@@ -2,7 +2,8 @@
 .blog-page {
     font-family: 'Arial', sans-serif;
     color: #333;
-    max-width: 100%;
+    max-width: 1200px;
+    /* Limits the width for readability on large screens */
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -16,47 +17,65 @@
 
 .blog-title {
     font-size: 2.5rem;
-    color: #222;
+    color: #aca9a9;
     margin: 0;
     line-height: 1.4;
 }
 
 .blog-subtitle {
     font-size: 1.2rem;
-    color: #555;
-    margin: 5px 0 0;
+    color: #9c9a9a;
+    margin: 5px 0 15px;
+}
+
+.blog-header p {
+    margin: 0;
 }
 
 /* Hero Image Section */
 .blog-hero {
     margin-bottom: 30px;
-    position: relative;
-    /* Required if using layout="fill" */
-    width: 100%;
-    height: auto;
-    padding-top: 50%;
-    /* Maintains aspect ratio */
-    overflow: hidden;
 }
 
 .hero-image {
+    /* Ensures full width on all devices */
     width: 100%;
+    /* width: auto; */
     height: auto;
     object-fit: cover;
-    /* Ensures the image doesn't stretch */
+    border-radius: 8px;
+    /* Adds a subtle rounded corner */
 }
 
 /* Content Section */
 .blog-content {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #444;
-    margin-bottom: 50px;
+    color: #979494;
+    margin-bottom: 10px;
     text-align: justify;
 }
 
 .blog-content p {
     margin-bottom: 20px;
+}
+
+/* Back to Blog Link */
+.blog-page a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #0070f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.blog-page a:hover {
+    background-color: #005bb5;
 }
 
 /* Footer Section */
@@ -85,15 +104,14 @@
         font-size: 1rem;
     }
 
-    .hero-image {
-        width: 100%;
-        height: auto;
-    }
+    /* .hero-image {
+        width: 80%;
+    } */
 }
 
 @media (max-width: 768px) {
     .blog-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .blog-subtitle {
@@ -101,18 +119,18 @@
     }
 
     .blog-content {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
-    .hero-image {
-        width: 100%;
-        height: auto;
+    .blog-page a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 }
 
 @media (max-width: 480px) {
     .blog-title {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .blog-subtitle {
@@ -120,6 +138,11 @@
     }
 
     .blog-content {
+        font-size: 0.9rem;
+    }
+
+    .blog-page a {
         font-size: 0.85rem;
+        padding: 7px 10px;
     }
 }
