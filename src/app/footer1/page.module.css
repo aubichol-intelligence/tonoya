@@ -1,0 +1,95 @@
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+  display:flex;
+  flex-direction:column ;
+}
+
+.links a:hover {
+  color: #ffd700;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.mapContainer {
+  flex: 1;
+  min-width: 300px;
+  height: 200px;
+}
+
+.map {
+  height: 100%;
+}
+
+.info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.info h4 {
+  margin-bottom: 10px;
+}
+
+.social a {
+  display: block;
+  color: #ffd700;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.social a:hover {
+  color: #fff;
+}
+
+.bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd700;
+  color: #111;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.backToTop:hover {
+  transform: scale(1.1);
+}

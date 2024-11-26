@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 /*
 export async function generateStaticParams() {
@@ -20,13 +20,20 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 */
 
+import Link from 'next/link';
 import BlogList from '../../components/BlogList';
-import blogPosts from '../../components/data/blogs.json';
+//import blogPosts from '../../components/data/blogs.json';
+import blogPosts from "../../components/data/pictures";
 
 const Home = () => {
   return (
     <div>
       <h1>Welcome to the Blog</h1>
+
+      <Link href={`/blog/create`} style={{ marginTop: 4, marginBottom: 4 }}>
+        Create New Blog
+      </Link>
+
       <BlogList posts={blogPosts} />
     </div>
   );
