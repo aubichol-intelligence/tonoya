@@ -8,7 +8,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.ibb.co',
+        hostname: 'i.ibb.co.com',
         port: '',
         // pathname: '/account123/**',
       },
