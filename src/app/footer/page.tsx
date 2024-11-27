@@ -6,7 +6,7 @@ import Map from "../map/page"
 //import Link from 'next/link'
 
 const Footer = () => {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
 
   return (
 
