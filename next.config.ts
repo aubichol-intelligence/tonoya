@@ -12,6 +12,12 @@ module.exports = {
         port: '',
         // pathname: '/account123/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co',
+        port: '',
+        // pathname: '/account123/**',
+      },
     ],
   },
   env: {
