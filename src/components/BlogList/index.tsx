@@ -71,7 +71,7 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
       {posts.map((blog) => (
         <div key={blog.id} className="blog-card">
 
-          <Image src={blog.imageUrl} alt={blog.title} className="blog-image" priority width={800} height={400} />
+          <Image src={blog.imageUrl} alt={blog.title} className="blog-image" priority width={400} height={200} />
 
           <div className="blog-content">
             <h3 className="blog-title">{blog.title}</h3>

@@ -6,11 +6,11 @@ export default function BlogLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
+        <div style={{ padding: 20, maxWidth: 1400, }}>
             <header>
                 <h1>My Blog </h1>
                 < nav >
-                    <Link href="/protected/dashboard" > Dashboard </Link> | <Link href="/blog">Blog</Link>
+                    <Link href="/protected/dashboard" > Dashboard </Link> | <Link href="/blog">Blogs</Link>
                 </nav>
             </header>
 
@@ -21,6 +21,6 @@ export default function BlogLayout({
             < footer >
                 <p>© 2024 My Blog </p>
             </footer>
-        </div>
+        </div >
     );
 }
