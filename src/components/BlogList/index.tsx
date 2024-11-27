@@ -49,7 +49,7 @@ export default BlogGrid;*/}
 import React from "react";
 // import blogs from "../data/pictures";
 import "./BlogList.css";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 type BlogPost = {
@@ -71,7 +71,9 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
       {posts.map((blog) => (
         <div key={blog.id} className="blog-card">
 
-          <Image src={blog.imageUrl} alt={blog.title} className="blog-image" priority width={400} height={200} />
+          {/* <Image src={blog.imageUrl} alt={blog.title} className="blog-image" priority width={400} height={200} /> */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
 
           <div className="blog-content">
             <h3 className="blog-title">{blog.title}</h3>
