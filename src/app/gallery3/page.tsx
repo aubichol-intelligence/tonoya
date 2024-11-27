@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
-import Image from "next/image";
+//import Image from "next/image";
 
 const images = [
   { src: "https://i.ibb.co.com/2Pk0FsK/Wedding-Picture-Print.jpg", title: "Vivid Orange" },
@@ -34,7 +34,7 @@ const AestheticGallery = () => {
           }}
           whileHover={{ scale: 1.05 }}
         >
-          <Image src={image.src} alt={image.title} className={styles.image} />
+          <img src={image.src} alt={image.title} className={styles.image} />
           <div className={styles.overlay}>
             <h3 className={styles.title}>{image.title}</h3>
           </div>

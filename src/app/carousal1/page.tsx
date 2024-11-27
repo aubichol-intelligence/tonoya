@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
-import Image from "next/image";
+//import Image from "next/image";
 
 const svgImages = [
   { id: 1, src: "https://i.ibb.co.com/qJBw5kK/DIU.jpg", alt: "SVG 1" },
@@ -17,7 +17,9 @@ const Carousel = () => {
       <div className={styles.carousel}>
         {duplicatedImages.map((image, index) => (
           <div className={styles.carouselItem} key={`${image.id}-${index}`}>
-            <Image src={image.src} alt={image.alt} className={styles.image} />
+            <img src={image.src} alt={image.alt} className={styles.image} />
+
+           {/* <Image src={image.src} alt={image.alt} className={styles.image} /> */}
           </div>
         ))}
       </div>
