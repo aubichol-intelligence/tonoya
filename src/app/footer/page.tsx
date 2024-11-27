@@ -126,11 +126,13 @@ const Footer = () => {
         <button className={styles.backToTop} onClick={scrollToTop}>
           Back to Top
         </button>
+        {/*
         <Image
           src="/logo.png"
           alt="Company Logo"
           className={styles.logo}
         />
+*/}
       </div>
     </footer>
   );
