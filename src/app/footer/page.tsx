@@ -86,7 +86,7 @@ const Footer = () => {
   </a>*/}
 
             <a
-              href="https://www.facebook.com/icsforum"
+              href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="follow-link"
@@ -94,7 +94,7 @@ const Footer = () => {
               Facebook
             </a>
             <a
-              href="https://x.com/icsforum"
+              href="https://x.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="follow-link"
@@ -120,7 +120,7 @@ const Footer = () => {
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
         <p>
-          &copy; {new Date().getFullYear()} Company Name. All rights reserved.
+          &copy; {new Date().getFullYear()} Sun Beam Force Limited. All rights reserved.
           Developed by <a href="https://developerportfolio.com">Your Name</a>.
         </p>
         <button className={styles.backToTop} onClick={scrollToTop}>

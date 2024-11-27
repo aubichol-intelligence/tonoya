@@ -17,7 +17,7 @@ export default function Home() {
         {/* Main content */}
         <div className={styles.content}>
             <div className={styles.image}>
-            <img src="https://i.ibb.co.com/60KQ3x3/Tonoya-Product.jpg" alt="Product" />
+            <img src="https://i.ibb.co.com/qyFfTFN/file.png" alt="Product" />
             </div>
             <div className={styles.text}>
             <h1>Welcome to Tonoya</h1>
