@@ -52,7 +52,7 @@ const StrategySection = () => {
             </div>
             {/* Image Block */}
             <div className={styles.imageContainer}>
-              <Image
+              <img
                 src={section.image}
                 alt={section.alt}
                 className={styles.cardImage}
