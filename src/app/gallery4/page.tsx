@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
-import Image from "next/image";
+//import Image from "next/image";
 
 const VisualSection = () => {
   const items = [
@@ -36,7 +36,7 @@ const VisualSection = () => {
           transition={{ duration: 0.6, delay: index * 0.2 }}
         >
           <div className={styles.imageContainer}>
-            <Image src={item.image} alt={item.title} className={styles.image} />
+            <img src={item.image} alt={item.title} className={styles.image} />
           </div>
           <div className={styles.textContainer}>
             <h3 className={styles.title}>{item.title}</h3>
