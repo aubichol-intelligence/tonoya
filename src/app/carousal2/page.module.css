@@ -1,8 +1,8 @@
 .carouselWrapper {
-    width: 100%;
-    overflow: hidden; /* Hide anything outside the container */
+    width: 90%;
+    overflow: visible; /* Hide anything outside the container */
     position: relative;
-    background: #fff;
+    background: #ffff;
     margin-top: 4rem;
     margin-bottom: 4rem;
     border-width: 4px;

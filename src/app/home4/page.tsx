@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./page.module.css";
 import Product from "../product/page";
 import Speciality from "../work5/page";
+//import Institution from "../carousal2/page";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <div className={styles.container}>
         {/* 3D Animated Background */}
         <div className={styles.background}>
-            <h1>Here you go</h1>
+            
         </div>
 
         {/* Main content */}
