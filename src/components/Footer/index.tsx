@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./page.module.css";
 import Map from "../map/page"
@@ -6,7 +5,7 @@ import Map from "../map/page"
 //import Link from 'next/link'
 
 const Footer = () => {
-  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
+//  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
 
   return (
 
@@ -114,18 +113,19 @@ const Footer = () => {
         </div>
 
       </div>
+        <Map />
 
-
-      <Map />
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
         <p>
           &copy; {new Date().getFullYear()} Sun Beam Force Limited. All rights reserved.
           Developed by <a href="https://developerportfolio.com">Your Name</a>.
         </p>
+        {/*
         <button className={styles.backToTop} onClick={scrollToTop}>
           Back to Top
         </button>
+        */}
         {/*
         <Image
           src="/logo.png"

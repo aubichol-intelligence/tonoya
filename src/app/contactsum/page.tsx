@@ -2,12 +2,16 @@
 "use client";
 import React from "react";
 import styles from "./page.module.css";
+import { useRouter } from 'next/navigation';
 
 
 const StartProject = () => {
+  const router = useRouter();
+
   const handleContactClick = () => {
     // Redirect to a contact page or open a modal
-    window.location.href = "/carousal2";
+    // window.location.href = "/carousal2";
+    router.push('/carousal2');
   };
 
   return (
