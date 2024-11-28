@@ -22,7 +22,7 @@ export default function Home() {
             </div>
             <div className={styles.text}>
             <h1>Welcome to Tonoya</h1>
-            <p>Discover the amazing features of our innovative solution.</p>
+            <p>We Deliver the Premium Sanitary Pad Vending Machines</p>
             <button className={styles.button}>Learn More</button>
             </div>
         </div>
