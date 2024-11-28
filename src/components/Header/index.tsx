@@ -6,7 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import imageLocation from '../../../public/logos/CHP-LOGO-1.png';
+import imageLocation from '../../../public/logos/tonoya.png';
 import { useAuth } from '@/app/context/AuthContext';
 import { FaSearch, FaTimes, FaBars } from 'react-icons/fa';
 
@@ -48,23 +48,23 @@ const Header = () => {
                             className={styles.logoImage}
                             priority
                             width={100}
-                            height={30}
+                            height={60}
                         />
                     </button>
                 </div>
 
                 <div className={`${styles.nav} ${styles.desktopNav}`}>
                     <Link
-                        href="/"
-                        className={pathname === '/' ? styles.active : ''}
+                        href="/home4"
+                        className={pathname === '/home4' ? styles.active : ''}
                     >
                         Home
                     </Link>
                     <Link
-                        href="/protected/dashboard"
-                        className={pathname === '/protected/dashboard' ? styles.active : ''}
+                        href="/gallery3"
+                        className={pathname === '/gallery3' ? styles.active : ''}
                     >
-                        Dashboard
+                        Gallery
                     </Link>
                     <Link
                         href="/blog"
