@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import 'leaflet/dist/leaflet.css';
 import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
-//import Footer from "../components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -33,7 +34,18 @@ export default function RootLayout({
 
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<AuthProvider>
-					{children}
+					<div>
+						<Header />
+						{/* <hr></hr> */}
+
+						<div style={{ display: "flex", justifySelf: "center" }} >
+							{/* < main > {children} </main> */}
+							{children}
+						</div>
+
+						<hr></hr>
+						<Footer />
+					</div >
 				</AuthProvider>
 			</body>
 		</html>
