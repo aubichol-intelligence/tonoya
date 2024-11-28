@@ -1,3 +1,7 @@
+.containerOut {
+margin-inline: auto;
+}
+
 .container {
     height: 80vh;
     width:99vw;
