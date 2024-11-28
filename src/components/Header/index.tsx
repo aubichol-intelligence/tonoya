@@ -7,21 +7,21 @@ import styles from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import imageLocation from '../../../public/logos/CHP-LOGO-1.png';
-import { useAuth } from '@/app/context/AuthContext';
+// import { useAuth } from '@/app/context/AuthContext';
 import { FaSearch, FaTimes, FaBars } from 'react-icons/fa';
 
 const Header = () => {
     const router = useRouter();
     const pathname = usePathname(); // Get the current path
-    const { logout } = useAuth();
+    // const { logout } = useAuth();
 
     // const token = req.cookies.get("authToken")?.value;
-    const token = typeof window !== 'undefined'
-        ? document.cookie
-            .split('; ')
-            .find((row) => row.startsWith('auth_token='))
-            ?.split('=')[1]
-        : null;
+    // const token = typeof window !== 'undefined'
+    //     ? document.cookie
+    //         .split('; ')
+    //         .find((row) => row.startsWith('auth_token='))
+    //         ?.split('=')[1]
+    //     : null;
     // const isAuthenticated = Boolean(req.cookies.get("auth_token"));
 
     const [isOpen, setIsOpen] = useState(false);
@@ -85,12 +85,12 @@ const Header = () => {
                         </div>
                     </div> */}
 
-                    {
+                    {/* {
                         token &&
                         <button className={styles.logoutButton} onClick={logout}>
                             Log Out
                         </button>
-                    }
+                    } */}
                 </div>
 
                 <div style={{ display: 'flex', gap: 10 }}>
@@ -137,12 +137,12 @@ const Header = () => {
                         </div>
                     </div> */}
 
-                    {
+                    {/* {
                         token &&
                         <button className={styles.logoutButton} onClick={logout}>
                             Log Out
                         </button>
-                    }
+                    } */}
                 </div>
             )}
         </div>
