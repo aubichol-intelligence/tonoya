@@ -22,6 +22,7 @@ export default function Home() {
       {/* Main content */}
       <div className={styles.content}>
         <div className={styles.image}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/product.png" alt="Product" />
         </div>
         <div className={styles.text}>

@@ -1,11 +1,12 @@
 // Footer.tsx
 'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import styles from "./page.module.css";
 import Image from "next/image";
+import BackToTop from "./BackToTop";
 
 // // Extend Leaflet's Default Icon type using module augmentation
 // declare module "leaflet" {
@@ -24,18 +25,19 @@ L.Icon.Default.mergeOptions({
 });
 
 const Footer = () => {
-    const [isClient, setIsClient] = useState(false);
+    // const [isClient, setIsClient] = useState(false);
 
-    useEffect(() => {
-        // Set isClient to true when the component mounts (client-side only)
-        setIsClient(true);
-    }, []);
+    // useEffect(() => {
+    //     // Set isClient to true when the component mounts (client-side only)
+    //     setIsClient(true);
+    // }, []);
 
-    const handleBackToTop = () => {
-        if (isClient && typeof window !== 'undefined') {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    };
+    // const handleBackToTop = () => {
+    //     if (isClient && typeof window !== 'undefined') {
+    //         window.scrollTo({ top: 0, behavior: "smooth" });
+    //     }
+    // };
+
 
     return (
         <footer className={styles.footer}>
@@ -110,9 +112,16 @@ const Footer = () => {
             </div>
 
             {/* Back to Top Button */}
-            <button className={styles.backToTop} onClick={handleBackToTop}>
+            {/* <button className={styles.backToTop}
+                onClick={() => {
+                    if (typeof window !== "undefined") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                }}
+            >
                 ↑ Back to Top
-            </button>
+            </button> */}
+            <BackToTop />
         </footer>
     );
 };

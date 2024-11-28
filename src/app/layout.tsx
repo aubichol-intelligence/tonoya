@@ -43,7 +43,7 @@ export default function RootLayout({
 							{children}
 						</div>
 
-						<hr></hr>
+						{/* <hr></hr> */}
 						<Footer />
 					</div >
 				</AuthProvider>

@@ -16,10 +16,12 @@ const Header = () => {
     const { logout } = useAuth();
 
     // const token = req.cookies.get("authToken")?.value;
-    const token = document.cookie
-        .split('; ')
-        .find((row) => row.startsWith('auth_token='))
-        ?.split('=')[1];
+    const token = typeof window !== 'undefined'
+        ? document.cookie
+            .split('; ')
+            .find((row) => row.startsWith('auth_token='))
+            ?.split('=')[1]
+        : null;
     // const isAuthenticated = Boolean(req.cookies.get("auth_token"));
 
     const [isOpen, setIsOpen] = useState(false);
