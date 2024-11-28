@@ -38,7 +38,7 @@ export default function RootLayout({
 						<Header />
 						{/* <hr></hr> */}
 
-						<div style={{ padding: 20, maxWidth: 1400, display: "flex", justifySelf: "center" }} >
+						<div style={{ display: "flex", justifySelf: "center" }} >
 							{/* < main > {children} </main> */}
 							{children}
 						</div>
