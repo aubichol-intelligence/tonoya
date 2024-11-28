@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import imageLocation from '../../../public/logos/CHP-LOGO-1.png';
 import { useAuth } from '@/app/context/AuthContext';
+import { FaSearch, FaTimes, FaBars } from 'react-icons/fa';
 
 const Header = () => {
     const router = useRouter();
@@ -51,6 +52,7 @@ const Header = () => {
                         />
                     </button>
                 </div>
+
                 <div className={`${styles.nav} ${styles.desktopNav}`}>
                     <Link
                         href="/"
@@ -89,12 +91,19 @@ const Header = () => {
                     }
                 </div>
 
-                <div className={styles.mobileMenu}>
-                    <button onClick={toggle}>
-                        {isOpen ? 'Close' : 'Menu'}
+                <div style={{ display: 'flex', gap: 10 }}>
+                    <button className={styles.searchButton} >
+                        <FaSearch className={`${styles.icon} ${styles.searchIcon}`} />
                     </button>
+
+                    <div className={styles.mobileMenu}>
+                        <button onClick={toggle}>
+                            {isOpen ? <FaTimes className={styles.icon} /> : <FaBars className={styles.icon} />}
+                        </button>
+                    </div>
                 </div>
             </div>
+
             {isOpen && (
                 <div className={styles.mobileNav}>
                     <Link

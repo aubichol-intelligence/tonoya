@@ -36,9 +36,9 @@ export default function RootLayout({
 				<AuthProvider>
 					<div>
 						<Header />
-						<hr></hr>
+						{/* <hr></hr> */}
 
-						<div style={{ padding: 20, maxWidth: 1200, display: "flex", justifySelf: "center" }} >
+						<div style={{ padding: 20, maxWidth: 1400, display: "flex", justifySelf: "center" }} >
 							{/* < main > {children} </main> */}
 							{children}
 						</div>

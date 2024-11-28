@@ -1,5 +1,5 @@
 .header {
-    background-color: #44443e;
+    background-color: #B9B9AA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100vw;
 }
@@ -7,6 +7,7 @@
 .container {
     display: flex;
     justify-content: space-between;
+    /* justify-content: left; */
     align-items: center;
     padding: 16px;
     max-width: 98vw;
@@ -28,6 +29,8 @@
 .nav {
     display: flex;
     align-items: center;
+    /* align-items: left; */
+    justify-self: left;
     gap: 16px;
 }
 
@@ -37,23 +40,25 @@
 
 .nav a,
 .nav button {
-    color: white;
+    /* color: white; */
+    color: black;
     text-decoration: none;
     font-weight: normal;
-}
-
-.nav a:hover,
-.nav button:hover {
-    color: red;
 }
 
 /* .active {
     font-weight: bold;
     color: red;
-} */
+    } */
 .nav a.active,
 .nav button.active {
     font-weight: bold;
+    /* color: red; */
+    color: black;
+}
+
+.nav a:hover,
+.nav button:hover {
     color: red;
 }
 
@@ -103,28 +108,69 @@
     text-align: left;
 }
 
-
-.mobileMenu {
-    display: flex;
+.desktopNav>.searchButton {
+    background: transparent;
+    /* background-color: rgb(100, 100, 100); */
+    border: none;
+    color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.mobileMenu button {
+.mobileMenu {
     /* display: flex; */
+    background-color: #B9B9AA;
+    /* border: 0; */
     padding: 5px;
-    border-radius: 10px;
+}
+
+.mobileMenu>button {
+    /* background: transparent; */
+    background: #B9B9AA;
+    /* display: flex; */
+    /* padding: 5px; */
+    /* border-radius: 10px; */
+    border: 0px;
 }
 
 .mobileNav {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background: rgb(30, 29, 29);
+    /* background: rgb(30, 29, 29); */
+    background: white;
     padding: 16px;
+    color: black;
 }
 
 .mobileNav a.active {
     font-weight: bold;
-    color: red;
+    /* color: red; */
+    color: black;
+}
+
+.searchButton {
+    background: transparent;
+    /* background-color: rgb(51, 47, 47); */
+    border: none;
+    /* color: red; */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.icon {
+    transition: transform 0.2s;
+    font-size: 18px;
+    color: black;
+}
+
+.searchIcon {
+    font-size: 14px;
+    color: black;
+}
+
+.icon:hover {
+    transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
@@ -138,6 +184,7 @@
     }
 
     .container {
-        max-width: 1400px;
+        /* max-width: 1400px; */
+        max-width: 95vw;
     }
 }
