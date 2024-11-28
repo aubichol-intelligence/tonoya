@@ -57,14 +57,14 @@ const Header = () => {
 
                 <div className={`${styles.nav} ${styles.desktopNav}`}>
                     <Link
-                        href="/"
-                        className={pathname === '/' ? styles.active : ''}
+                        href="/home4"
+                        className={pathname === '/home4' ? styles.active : ''}
                     >
                         Home
                     </Link>
                     <Link
-                        href="/protected/dashboard"
-                        className={pathname === '/protected/dashboard' ? styles.active : ''}
+                        href="/gallery3"
+                        className={pathname === '/gallery3' ? styles.active : ''}
                     >
                         Dashboard
                     </Link>
@@ -109,14 +109,14 @@ const Header = () => {
             {isOpen && (
                 <div className={styles.mobileNav}>
                     <Link
-                        href="/"
-                        className={pathname === '/' ? styles.active : ''}
+                        href="/home4"
+                        className={pathname === '/home4' ? styles.active : ''}
                     >
                         Home
                     </Link>
                     <Link
-                        href="/protected/dashboard"
-                        className={pathname === '/protected/dashboard' ? styles.active : ''}
+                        href="/gallery3"
+                        className={pathname === '/gallery3' ? styles.active : ''}
                     >
                         Dashboard
                     </Link>

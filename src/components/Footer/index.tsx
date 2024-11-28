@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
-import Map from "../map/page"
+//import Map from "../map/page"
 //import Image from "next/image";
 //import Link from 'next/link'
 
@@ -113,7 +113,7 @@ const Footer = () => {
         </div>
 
       </div>
-        <Map />
+   {/*     <Map /> */}
 
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
