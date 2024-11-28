@@ -12,18 +12,21 @@
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+    /*background-color: aqua;*/
   }
   
   /* Individual Card */
   .card {
-    padding: 2rem;
+    
     width: 400px;
     height: 500px; 
+    /*background-color:navajowhite;*/
+    margin-inline: auto;
   }
   
   .card:hover {
     transform: translateY(30px);
-    background-color:#efc4d6;
+    /*background-color:#efc4d6;*/
     color:black;
     transition: transform 2s ease, box-shadow 0.6s ease;
     transform: scale(1.1);
@@ -45,6 +48,7 @@
     line-height: 1.6;
     flex-wrap: wrap;
     text-align: left;
+    padding-top:1rem;
   }
   
   /* Responsive Design */
@@ -52,11 +56,24 @@
     .cardsContainer {
       flex-direction: column;
       align-items: center;
+      width: 99%;
+      margin-bottom: 2rem;
+      margin-inline: auto;
     }
   
     .card {
-      width: 100%;
-      max-width: 400px;
+      width: 99vw;
+      padding: 1rem;
+      margin-inline: auto;
+      padding-bottom: 4rem;
+    }
+
+    .cardDescription{
+      margin: 0 auto;
+    }
+
+    .cardSection{
+      margin-inline: auto;
     }
   }
 

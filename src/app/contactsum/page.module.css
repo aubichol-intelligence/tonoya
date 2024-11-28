@@ -4,12 +4,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 50px 20px;
+  padding: 4rem;
   background: linear-gradient(to right, #f8f9fa, #e9ecef);
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
-  margin: 40px auto;
+  margin-inline: auto;
+  top: 4rem;
+  bottom: 4rem;
   
   width: 90vw;
   position: relative;
@@ -19,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* Heading Animation */
@@ -46,18 +48,19 @@
 
 /* Button Animation */
 .contactButton {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
-  background: #007bff;
+  background: black;
   border: none;
   padding: 2rem 4rem;
-  border-radius: 5px;
+  
   
     cursor: pointer;
     transition: background 0.3s, transform 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1.5s ease forwards;
+    width: 20vw;
 }
 
 .contactButton:hover {
@@ -69,7 +72,7 @@
 
 
 .contactButton::after {
-  content: "";
+  
   position: absolute;
   bottom: 0;
   left: 0;
@@ -112,19 +115,19 @@
 
 
   .container {
-    display: flex;
+    
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 50px 20px;
+    justify-content: center;
+    padding: 4rem 2rem;
     background: linear-gradient(to right, #f8f9fa, #e9ecef);
     text-align: center;
     border-radius: 10px;
-    overflow: hidden;
-    margin: 40px auto;
     
-    width: 90vw;
-    position: relative;
+    margin-inline: auto;
+    
+    width: 100vw;
+    
   }
 
 
@@ -134,8 +137,9 @@
     font-size: 1rem;
   }
 
-  .contact-button {
-    font-size: 0.9rem;
-    padding: 12px 25px;
+  .contactButton {
+    font-size: 1.2rem;
+    padding: 1.5rem 3rem;
+    width: 90vw;
   }
 }

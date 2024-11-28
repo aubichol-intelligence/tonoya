@@ -1,6 +1,6 @@
 .container {
     height: 80vh;
-    width:100vw;
+    width:99vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +9,7 @@
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #d9fdd3, #a8e6a3);
     perspective: 1000px; /* Adds 3D depth to the background animation */
+    margin-inline: auto;
   }
   
   .background {

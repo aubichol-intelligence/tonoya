@@ -13,15 +13,13 @@ const StartProject = () => {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h2 className={styles.heading}>Starting a New Project?</h2>
+        <h2 className={styles.heading}>Planning to get one?</h2>
         <p className={styles.description}>
-          We are here to help you bring your vision to life. Whether it iss a new
-          business idea, a branding revamp, or a design challenge, let uss make it
-          happen together.
+          Let us make it happen together.
         </p>
       </div>
       <button className={styles.contactButton} onClick={handleContactClick}>
-        Start Project
+        Contact us
       </button>
     </div>
   );

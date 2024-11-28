@@ -1,12 +1,13 @@
 .carouselWrapper {
-    width: 90%;
-    overflow: visible; /* Hide anything outside the container */
+    width: 94vw;
+    overflow: hidden; /* Hide anything outside the container */
     position: relative;
     background: #ffff;
     margin-top: 4rem;
     margin-bottom: 4rem;
     border-width: 4px;
     border-color: black;
+    margin-inline: auto;
   }
   
   .carousel {
@@ -30,7 +31,7 @@
     }
 
     .carouselWrapper {
-        width: 100%;
+        
         overflow: hidden; /* Hide anything outside the container */
         position: relative;
         background: #fff;
@@ -40,10 +41,11 @@
         border-color: black;
       }
 
-      .image{
-        margin:0.1rem;
-        padding:4rem;
-        border-width: 1px;
+      
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    filter: brightness(0.8) contrast(1.2) saturate(1.1); /* Add color filter */
   }
   }
 
@@ -89,11 +91,11 @@
   
   /* Keyframes for continuous scrolling */
   @keyframes scroll {
-    10% {
+    0% {
       transform: translateX(0); /* Start at initial position */
     }
     100% {
-      transform: translateX(500); /* Move left by the total width of the items */
+      transform: translateX(-100); /* Move left by the total width of the items */
     }
   }
   
