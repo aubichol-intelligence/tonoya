@@ -6,9 +6,42 @@ import Product from "../app/product/page";
 import Speciality from "../app/work5/page";
 import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
+import { NextPage } from "next";
+import dynamic from 'next/dynamic';
 
-export default function Home() {
+/*
+'use client';
+
+import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+
+import SomeText from '@/lib/components/samples/SomeText';
+
+const Home: NextPage = () => {
+  const NotSSRMaps = dynamic(() => import('@/lib/components/maps'), {
+    ssr: false,
+  });
+
   return (
+    <div className="mx-auto flex min-h-[60vh] w-full max-w-screen-lg flex-col items-center justify-center gap-8 text-center">
+      <SomeText />
+      <NotSSRMaps />
+    </div>
+  );
+};
+
+export default Home;
+
+*/
+
+const Home: NextPage = () => {
+  
+  const NotSSRMaps = dynamic(() => import('../components/map/page'), {
+    ssr: false,
+  });
+  
+  return (
+    
     <div className={styles.containerOut}>
         <div className={styles.container}>
         {/* 3D Animated Background */}
@@ -33,7 +66,10 @@ export default function Home() {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
+        <NotSSRMaps />     
        
     </div>
   );
 }
+
+export default Home;
