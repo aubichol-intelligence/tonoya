@@ -3,6 +3,8 @@
     background-color: transparent;
     padding: 4rem 2rem;
     text-align: center;
+    width: 90vw;
+    margin-inline: auto;
   }
   
   /* Cards Container */

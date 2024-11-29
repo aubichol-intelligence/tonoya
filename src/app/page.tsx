@@ -1,9 +1,39 @@
+
+"use client"
+import React from "react";
 import styles from "./page.module.css";
+import Product from "../app/product/page";
+import Speciality from "../app/work5/page";
+import Institution from "../app/carousal2/page";
+import ContactSummary from "../app/contactsum/page";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <h1>Welcome</h1>
+    <div className={styles.containerOut}>
+        <div className={styles.container}>
+        {/* 3D Animated Background */}
+        <div className={styles.background}>
+            
+        </div>
+
+        {/* Main content */}
+        <div className={styles.content}>
+            <div className={styles.image}>
+            <img src="https://i.ibb.co.com/qyFfTFN/file.png" alt="Product" />
+            </div>
+            <div className={styles.text}>
+            <h1>Welcome to Tonoya</h1>
+            <p>We Deliver the Premium Sanitary Pad Vending Machines</p>
+            <button className={styles.button}>Learn More</button>
+            </div>
+        </div>
+        </div>
+
+        <Product/>
+        <Speciality/>
+        <Institution/>
+        <ContactSummary/>
+       
     </div>
   );
 }

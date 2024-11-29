@@ -8,13 +8,15 @@
   background: linear-gradient(to right, #f8f9fa, #e9ecef);
   text-align: center;
   border-radius: 10px;
-  overflow: hidden;
+  
   margin-inline: auto;
-  top: 4rem;
-  bottom: 4rem;
+  top: 8rem;
+  bottom: 8rem;
   
   width: 90vw;
-  position: relative;
+  /*position: relative;
+    overflow: hidden;
+  */
 }
 
 .textContainer {

@@ -1,7 +1,8 @@
 .header {
     background-color: #B9B9AA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100vw;
+    width: 96vw;
+    margin-inline: auto;
 }
 
 .container {
@@ -10,11 +11,14 @@
     /* justify-content: left; */
     align-items: center;
 /*    padding: 4px; */
-    padding-top: 2rem; 
-    padding-bottom: 2rem;
-    max-width: 98vw;
-    /* max-width: 1400px; */
-    margin: auto;
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /*max-width: 98vw;
+     max-width: 1400px; */
+    margin-inline: auto;
+    width:90vw
     /* gap: 20px; */
 }
 

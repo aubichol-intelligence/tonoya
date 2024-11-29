@@ -5,8 +5,6 @@
     background: #ffff;
     margin-top: 4rem;
     margin-bottom: 4rem;
-    border-width: 4px;
-    border-color: black;
     margin-inline: auto;
   }
   
@@ -14,7 +12,7 @@
     display: flex;
     animation: scroll 20s linear infinite; /* Continuous scrolling */
     will-change: transform;
-    filter: brightness(0.8) contrast(1.2) saturate(1.1);
+    /*filter: brightness(0.8) contrast(1.2) saturate(1.1);*/
   }
   
   .carouselItem {
@@ -26,8 +24,8 @@
 
   @media (max-width: 768px) {
     .carouselItem {
-      width: 290px; /* Smaller width for smaller screens */
-      height: 290px;
+      width: 30vw; /* Smaller width for smaller screens */
+      
     }
 
     .carouselWrapper {
@@ -82,7 +80,7 @@
     object-fit: cover;
     margin: 1rem;
     border-width: 6px;
-    border-color: blanchedalmond;
+  
     padding:2rem;
 
     
@@ -95,7 +93,7 @@
       transform: translateX(0); /* Start at initial position */
     }
     100% {
-      transform: translateX(-100); /* Move left by the total width of the items */
+      transform: translateX(-50%); /* Move left by the total width of the items */
     }
   }
   
