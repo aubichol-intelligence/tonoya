@@ -3,9 +3,9 @@ import React, { useRef } from "react";
 import styles from "./page.module.css";
 
 const ClientReview = () => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLInputElement>(null);
 
-  const scroll = (direction) => {
+  const scroll = (direction:any) => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
       const scrollAmount = clientWidth;
