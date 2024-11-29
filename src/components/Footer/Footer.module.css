@@ -3,10 +3,14 @@
     /* Matches gray.800 */
     color: white;
     padding: 2rem 0;
+    width:90vw;
+    margin-inline:  auto;
+
 }
 
 .container {
-    max-width: 1200px;
+    /*max-width: 1200px;*/
+    width:90vw;
     margin: 0 auto;
     padding: 0 1rem;
 }

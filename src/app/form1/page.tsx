@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
 import { useState } from "react";
+import { AiOutlineMail } from "react-icons/ai";
 
 const ContactForm = () => {
 	const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
@@ -88,6 +89,28 @@ const ContactForm = () => {
 			style={{ overflow: "visible" }} // Ensure no overflow restrictions
 			variants={containerVariants}
 		>
+
+			{/* Contact Info Section */}
+			<motion.div
+				className={styles.contactInfoSection}
+				variants={itemVariants}
+			>
+				<motion.div
+					className={styles.contactBox}
+					whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
+				>
+					<h3>Give us a quick call</h3>
+					<p>+1 (555) 123-4567</p>
+				</motion.div>
+				<motion.div
+					className={styles.contactBox}
+					whileHover={{ scale: 1.0, }}
+				>
+					<AiOutlineMail />
+					<h3>Send us an email to start with</h3>
+					<p>contact@example.com</p>
+				</motion.div>
+			</motion.div>
 			{/* Form Section */}
 			<motion.div
 				className={styles.formSection}
@@ -150,26 +173,33 @@ const ContactForm = () => {
 				</form>
 			</motion.div>
 
-			{/* Contact Info Section */}
-			<motion.div
-				className={styles.contactInfoSection}
-				variants={itemVariants}
-			>
-				<motion.div
-					className={styles.contactBox}
-					whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
-				>
-					<h3>Give us a quick call</h3>
-					<p>+1 (555) 123-4567</p>
-				</motion.div>
-				<motion.div
-					className={styles.contactBox}
-					whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
-				>
-					<h3>Send us an email to start with</h3>
-					<p>contact@example.com</p>
-				</motion.div>
-			</motion.div>
+			
+
+{/*<div className={styles.container}>
+      
+      <div className={styles.infoSection}>
+        <div className={styles.icon}>
+		<AiOutlineMail />
+        </div>
+        <div className={styles.textContent}>
+          <p className={styles.text}>Send us an email at</p>
+          <a href="mailto:example@example.com" className={styles.email}>
+            example@example.com
+          </a>
+        </div>
+      </div>
+
+      
+      <div className={styles.infoSection}>
+        <div className={styles.icon}>
+		<AiOutlineMail />
+        </div>
+        <div className={styles.textContent}>
+          <p className={styles.text}>Give us a quick call</p>
+          <p className={styles.phone}>+123 456 7890</p>
+        </div>
+      </div>
+    </div>*/}
 		</motion.div>
 	);
 };

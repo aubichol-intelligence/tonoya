@@ -1,6 +1,11 @@
+.containerOut {
+margin-inline: auto;
+width: 94vw;
+}
+
 .container {
     height: 80vh;
-    width:99vw;
+    width:90vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +50,7 @@
     gap: 2rem;
     padding: 1rem;
     max-width: 1200px;
+    margin-inline: auto;
   }
   
   .image img {

@@ -8,8 +8,6 @@ const Footer = () => {
 //  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
 
   return (
-
-
     <footer className={styles.footer}>
       {/* Schema Markup */}
       <script type="application/ld+json">
@@ -50,11 +48,11 @@ const Footer = () => {
           className={styles.logo}
         />*/}
         <div className={styles.socialMedia}>
-          <h4 className={styles.socialMediaHeader}>Quick Links</h4>
+          <h4 className={styles.socialMediaHeader}>Address</h4>
           <p className={styles.address}>
-            123 Office St, Business City, 56789 <br />
+            Rayer Bazar High School, Sultanganj, Dhaka <br />
             Contact: (123) 456-7890 <br />
-            Email: info@company.com
+            Email: sunbeamforce@gmail.com
           </p>
         </div>
 
@@ -65,7 +63,7 @@ const Footer = () => {
 
             <a href="/about-us">About Us</a>
             <a href="/services">Services</a>
-            <a href="/contact">Contact</a>
+            <a href="/contact1">Contact</a>
             <a href="/privacy-policy">Privacy Policy</a>
           </div>
         </div>
@@ -74,16 +72,6 @@ const Footer = () => {
         <div className={styles.socialMedia}>
           <h1 className={styles.socialMediaHeader}>Follow Us</h1>
           <div className={styles.icons}>
-            {/*<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="/facebook-icon.png" alt="Facebook" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="/twitter-icon.png" alt="Twitter" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.png" alt="LinkedIn" />
-  </a>*/}
-
             <a
               href="https://www.facebook.com/"
               target="_blank"
@@ -119,7 +107,7 @@ const Footer = () => {
       <div className={styles.bottomBar}>
         <p>
           &copy; {new Date().getFullYear()} Sun Beam Force Limited. All rights reserved.
-          Developed by <a href="https://developerportfolio.com">Your Name</a>.
+          Developed by <a href="https://aubichol.com">Aubichol Intelligent Technologies</a>.
         </p>
         {/*
         <button className={styles.backToTop} onClick={scrollToTop}>

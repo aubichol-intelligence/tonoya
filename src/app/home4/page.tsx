@@ -9,7 +9,7 @@ import ContactSummary from "../contactsum/page";
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.containerOut}>
         <div className={styles.container}>
         {/* 3D Animated Background */}
         <div className={styles.background}>
