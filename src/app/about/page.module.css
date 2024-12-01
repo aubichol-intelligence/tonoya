@@ -1,5 +1,5 @@
 .container {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
   margin: 0 auto;
@@ -29,7 +29,9 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scaling and visibility */
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease; /* Transition for scaling and visibility */
 }
 
 .section:hover {
@@ -41,21 +43,25 @@
   background-color: #f9f9f9;
   padding: 2rem;
   border-radius: 8px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add hover and shadow effect */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Add hover and shadow effect */
 }
 
 .sectionAlt:hover {
   background-color: #eaeaea; /* Slightly darker shade on hover */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%); /* Adds a soft shadow */
 }
 
 .content {
   flex: 1;
   min-width: 300px;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth appearance */
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease; /* Smooth appearance */
 }
 
 .heading {
   font-size: 1.8rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
