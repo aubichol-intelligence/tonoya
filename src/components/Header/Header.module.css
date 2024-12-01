@@ -222,15 +222,15 @@
 @media (width >= 768px) {
   .desktopNav {
     display: flex;
- ;}
+ }
 
   .mobileMenu,
   .mobileNav {
     display: none;
- ;}
+ }
 
   .container {
     /* max-width: 1400px; */
     max-width: 95vw;
- ;}
+ }
 }
