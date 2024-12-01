@@ -14,9 +14,9 @@ const Footer = () => {
         {JSON.stringify({
           "@context": "http://schema.org",
           "@type": "Organization",
-          name: "Your Company Name",
+          name: "Sunbeam Force Limited",
           url: "https://yourwebsite.com",
-          logo: "https://yourwebsite.com/logo.png",
+          logo: "https://tonoyabd.com/logo.png",
           contactPoint: [
             {
               "@type": "ContactPoint",
@@ -26,10 +26,10 @@ const Footer = () => {
           ],
           address: {
             "@type": "PostalAddress",
-            streetAddress: "123 Main Street",
-            addressLocality: "Your City",
+            streetAddress: "270, Sultanganj Road, Rayer Bazar",
+            addressLocality: "Dhaka",
             postalCode: "12345",
-            addressCountry: "Your Country",
+            addressCountry: "Bangladesh",
           },
           sameAs: [
             "https://www.facebook.com/yourpage",
@@ -50,8 +50,8 @@ const Footer = () => {
         <div className={styles.socialMedia}>
           <h4 className={styles.socialMediaHeader}>Address</h4>
           <p className={styles.address}>
-            Rayer Bazar High School, Sultanganj, Dhaka <br />
-            Contact: (123) 456-7890 <br />
+            270, Sultanganj Road, Dhaka <br />
+            Contact: +8801705686655 <br />
             Email: sunbeamforce@gmail.com
           </p>
         </div>
