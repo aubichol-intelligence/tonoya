@@ -1,10 +1,10 @@
 /* Root container for the page */
 .pageContainer {
-   
     width: 100vw; /* Full screen width */
-   /*display: flex;
+
+   /* display: flex;
     justify-content: center;
-    align-items: center;*/
+    align-items: center; */
     background: #f4f4f4; /* Background color for main content */
     overflow: hidden; /* Prevent scrolling during animation */
     position: relative;
@@ -27,6 +27,7 @@
     0% {
       transform: translateY(0); /* Start from full screen */
     }
+
     100% {
       transform: translateY(-100%); /* Move out of view upwards */
     }
@@ -51,8 +52,8 @@
   .mainContent {
     text-align: center;
     padding: 20px;
-    background: #ffffff;
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   }
   

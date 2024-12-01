@@ -19,10 +19,7 @@ width: 94vw;
   
   .background {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    bottom:-50%;
-    right:-50%;
+    inset: -50%;
     width: 200%;
     height: 200%;
     background: radial-gradient(circle, #d9fdd3, #a8e6a3, #4caf50);
@@ -35,9 +32,11 @@ width: 94vw;
     0% {
       transform: rotateX(0deg) rotateY(0deg) translateZ(0);
     }
+
     50% {
       transform: rotateX(30deg) rotateY(40deg) translateZ(-50px);
     }
+
     100% {
       transform: rotateX(0deg) rotateY(0deg) translateZ(0);
     }
@@ -91,13 +90,15 @@ width: 94vw;
   
   @keyframes float {
     0% {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
+
     100% {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
   }
   

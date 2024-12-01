@@ -2,7 +2,6 @@
     padding: 2rem;
     text-align: center;
     font-family: Arial, sans-serif;
-    background-color: transparent;
     margin-inline: auto;
     width: 90vw;
     background-color: #45a045;
@@ -26,7 +25,7 @@
   
   .card {
     background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
@@ -39,7 +38,7 @@
   
   .card:hover {
     transform: translateY(-20px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
   }
   
   .cardImage {
@@ -76,7 +75,7 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .cardContainer {
       flex-direction: column;
       align-items: center;
@@ -84,7 +83,7 @@
   
     .card {
       transform: none;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
     }
   }
   

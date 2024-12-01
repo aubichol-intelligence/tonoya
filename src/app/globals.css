@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
 }
 
@@ -14,13 +14,14 @@ html,
 /* styles/globals.css */
 
 body {
-/*background: linear-gradient(135deg, #ACE1AF, #B0EBB4, #BFF6C3, #E0FBE2);*/
-  /*background: #ffffff;*/
-  /*background-size: 400% 400%;*/
+/* background: linear-gradient(135deg, #ACE1AF, #B0EBB4, #BFF6C3, #E0FBE2); */
+
+  /* background: #ffffff; */
+
+  /* background-size: 400% 400%; */
   animation: gradientBackground 10s infinite;
-  
   margin-inline:auto;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   overflow: visible;
   display: flex;
   align-items: center;
@@ -50,7 +51,6 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-    
     scroll-behavior: smooth;
   
   }

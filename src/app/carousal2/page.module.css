@@ -12,7 +12,8 @@
     display: flex;
     animation: scroll 20s linear infinite; /* Continuous scrolling */
     will-change: transform;
-    /*filter: brightness(0.8) contrast(1.2) saturate(1.1);*/
+
+    /* filter: brightness(0.8) contrast(1.2) saturate(1.1); */
   }
   
   .carouselItem {
@@ -22,14 +23,13 @@
     
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .carouselItem {
       width: 30vw; /* Smaller width for smaller screens */
       
     }
 
     .carouselWrapper {
-        
         overflow: hidden; /* Hide anything outside the container */
         position: relative;
         background: #fff;
@@ -47,9 +47,7 @@
   }
   }
 
-  @media (max-width: 768px) {
-    
-
+  @media (width <= 768px) {
       .image{
         margin:0.1rem;
         padding:1rem;
@@ -57,7 +55,7 @@
   }
   }
   
-  @media (max-width: 480px) {
+  @media (width <= 480px) {
     .carouselItem {
       width: 100px; /* Even smaller width */
       height: 100px;
@@ -65,8 +63,7 @@
     
 }
 
-@media (max-width: 480px) {
-   
+@media (width <= 480px) {
     .image{
         margin:0.1rem;
         padding:4rem;
@@ -80,7 +77,6 @@
     object-fit: cover;
     margin: 1rem;
     border-width: 6px;
-  
     padding:2rem;
 
     
@@ -92,6 +88,7 @@
     0% {
       transform: translateX(0); /* Start at initial position */
     }
+
     100% {
       transform: translateX(-50%); /* Move left by the total width of the items */
     }

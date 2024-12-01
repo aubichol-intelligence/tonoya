@@ -1,8 +1,9 @@
 /* Overall Page Styling */
 .blog-page {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     color: #333;
     max-width: 1200px;
+
     /* Limits the width for readability on large screens */
     margin: 0 auto;
     padding: 20px;
@@ -40,10 +41,12 @@
 .hero-image {
     /* Ensures full width on all devices */
     width: 100%;
+
     /* width: auto; */
     height: auto;
     object-fit: cover;
     border-radius: 8px;
+
     /* Adds a subtle rounded corner */
 }
 
@@ -91,7 +94,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .blog-title {
         font-size: 2rem;
     }
@@ -109,7 +112,7 @@
     } */
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .blog-title {
         font-size: 1.7rem;
     }
@@ -128,7 +131,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
     .blog-title {
         font-size: 1.5rem;
     }

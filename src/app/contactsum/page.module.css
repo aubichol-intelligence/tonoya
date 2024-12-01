@@ -8,13 +8,12 @@
   background: linear-gradient(to right, #f8f9fa, #e9ecef);
   text-align: center;
   border-radius: 10px;
-  
   margin-inline: auto;
   top: 8rem;
   bottom: 8rem;
-  
   width: 90vw;
-  /*position: relative;
+
+  /* position: relative;
     overflow: hidden;
   */
 }
@@ -55,8 +54,6 @@
   background: black;
   border: none;
   padding: 2rem 4rem;
-  
-  
     cursor: pointer;
     transition: background 0.3s, transform 0.3s ease;
     opacity: 0;
@@ -74,7 +71,6 @@
 
 
 .contactButton::after {
-  
   position: absolute;
   bottom: 0;
   left: 0;
@@ -110,14 +106,13 @@
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .start-project-heading {
     font-size: 2rem;
   }
 
 
   .container {
-    
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -125,9 +120,7 @@
     background: linear-gradient(to right, #f8f9fa, #e9ecef);
     text-align: center;
     border-radius: 10px;
-    
     margin-inline: auto;
-    
     width: 100vw;
     
   }

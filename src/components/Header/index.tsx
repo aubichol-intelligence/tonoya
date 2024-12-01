@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { useRouter } from 'next/router';
 import { useRouter, usePathname } from 'next/navigation';
 import styles from './Header.module.css';
@@ -30,13 +30,24 @@ const Header = () => {
     // const isSuperAdmin = true; // Replace with actual logic to determine if the user is a super admin
 
     const toggle = () => setIsOpen(!isOpen);
+
+    const [scrolling, setScrolling] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setScrolling(window.scrollY > 50);
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     // const handleLogOut = () => {
     //     // Perform logout logic
     //     console.log('User logged out');
     // };
 
     return (
-        <div className={styles.header}>
+        <div className={`${styles.header} ${scrolling ? styles.scrolling : ""}`}>
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <button

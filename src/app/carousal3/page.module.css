@@ -27,6 +27,7 @@
     0% {
       transform: translateX(0); /* Start position */
     }
+
     100% {
       transform: translateX(-100%); /* Move left by one full width */
     }

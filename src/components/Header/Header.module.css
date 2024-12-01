@@ -1,24 +1,44 @@
-.header {
-    background-color: #B9B9AA;
+.header1 {
+    /* background-color: #B9B9AA;
+    background: transparent;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 96vw;
-    margin-inline: auto;
+    margin-inline: auto; */
+
+
 }
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
+    background-color: rgb(255 255 255 / 20%); /* Transparent background */
+    backdrop-filter: blur(10px); /* Optional: Adds a frosted glass effect */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+.scrolling {
+    background-color: rgb(255 255 255 / 90%); /* Solid background when scrolling */
+  }
+  
 
 .container {
     display: flex;
     justify-content: space-between;
+
     /* justify-content: left; */
     align-items: center;
+
 /*    padding: 4px; */
-    padding-top: 1rem; 
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    /*max-width: 98vw;
+    padding: 1rem 2rem;
+
+    /* max-width: 98vw;
      max-width: 1400px; */
     margin-inline: auto;
     width:90vw
+
     /* gap: 20px; */
 }
 
@@ -36,7 +56,9 @@
 .nav {
     display: flex;
     align-items: center;
+
     /* align-items: left; */
+
     /* justify-self: left; */
     gap: 30px;
 }
@@ -60,6 +82,7 @@
 .nav a.active,
 .nav button.active {
     font-weight: bold;
+
     /* color: red; */
     color: black;
 }
@@ -90,6 +113,7 @@
 
 .desktopNav>.logoutButton {
     background: transparent;
+
     /* background-color: rgb(100, 100, 100); */
     border: none;
     color: red;
@@ -100,18 +124,23 @@
 
 .desktopNav>.logoutButton:hover {
     /* background: transparent; */
-    background: rgb(226, 77, 77);
+    background: rgb(226 77 77);
+
     /* border: none; */
     color: white;
+
     /* padding: 5px 10px; */
+
     /* justify-self: "left"; */
 }
 
 .mobileNav>.logoutButton {
     background: transparent;
+
     /* background: rgb(35, 35, 35); */
     border: none;
-    color: rgb(228, 65, 65);
+    color: rgb(228 65 65);
+
     /* padding: 5px 10px; */
     text-align: left;
     font-weight: bold;
@@ -119,6 +148,7 @@
 
 .desktopNav>.searchButton {
     background: transparent;
+
     /* background-color: rgb(100, 100, 100); */
     border: none;
     color: red;
@@ -129,6 +159,7 @@
 .mobileMenu {
     /* display: flex; */
     background-color: #B9B9AA;
+
     /* border: 0; */
     padding: 5px;
 }
@@ -136,16 +167,20 @@
 .mobileMenu>button {
     /* background: transparent; */
     background: #B9B9AA;
+
     /* display: flex; */
+
     /* padding: 5px; */
+
     /* border-radius: 10px; */
-    border: 0px;
+    border: 0;
 }
 
 .mobileNav {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
     /* background: rgb(30, 29, 29); */
     background: white;
     padding: 16px;
@@ -154,14 +189,17 @@
 
 .mobileNav a.active {
     font-weight: bold;
+
     /* color: red; */
     color: black;
 }
 
 .searchButton {
     background: transparent;
+
     /* background-color: rgb(51, 47, 47); */
     border: none;
+
     /* color: red; */
     padding: 5px 10px;
     border-radius: 5px;
@@ -182,7 +220,7 @@
     transform: scale(1.2);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .desktopNav {
         display: flex;
     }

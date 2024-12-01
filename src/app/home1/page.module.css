@@ -10,8 +10,6 @@
   }
   
   .content {
-   
-
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -19,11 +17,11 @@
     max-width: 1200px;
     margin: auto;
     position: relative;
-    /*animation: float 2s ease-in-out infinite;*/
+
+    /* animation: float 2s ease-in-out infinite; */
   }
 
   .image {
-    
     border-radius: 150px;
     border-color: black;
     border: 20px solid black;
@@ -41,7 +39,8 @@
   
   .text {
     max-width: 600px;
-    /*animation: float 7s ease-in-out infinite;*/
+
+    /* animation: float 7s ease-in-out infinite; */
   }
   
   .text h1 {
@@ -74,12 +73,14 @@
   
   @keyframes float {
     0% {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
+
     50% {
       transform: translateY(-15px);
     }
+
     100% {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
   }

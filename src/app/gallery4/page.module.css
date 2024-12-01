@@ -9,8 +9,8 @@
   .card {
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    background: #ffffff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,13 +56,13 @@
   }
   
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .section {
       grid-template-columns: 1fr 1fr;
     }
   }
   
-  @media (max-width: 480px) {
+  @media (width <= 480px) {
     .section {
       grid-template-columns: 1fr;
     }

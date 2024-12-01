@@ -2,7 +2,7 @@
     width: 100%;
     overflow: hidden; /* Hide overflowing content */
     position: relative;
-    background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+    background: linear-gradient(to bottom, #fff, #f8f8f8);
     padding: 20px;
   }
   
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   }
   
   .image {
@@ -36,6 +36,7 @@
     0% {
       transform: translateX(0); /* Start at original position */
     }
+
     100% {
       transform: translateX(-50%); /* Move left by the full width */
     }
@@ -51,11 +52,13 @@
   .carouselWrapper:hover .carousel {
     animation-play-state: paused;
   }
-  .carousel:before,
-  .carousel:after {
+
+  .carousel::before,
+  .carousel::after {
     content: "";
     flex-shrink: 0;
   }
+
   .carouselItem:last-of-type {
     margin-right: -60%; /* Prevent blank space at the end */
   }

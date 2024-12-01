@@ -1,6 +1,6 @@
 /* Page Container */
 .create-blog-container {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -8,7 +8,7 @@
     color: #333;
     background: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 }
 
 /* Page Heading */
@@ -92,7 +92,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .create-blog-container {
         padding: 15px;
     }
@@ -111,7 +111,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
     .create-blog-title {
         font-size: 1.5rem;
     }

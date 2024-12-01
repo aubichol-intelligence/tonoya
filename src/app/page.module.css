@@ -1,11 +1,11 @@
 .containerOut {
   margin-inline: auto;
-  width: 94vw;
+  width: 98vw;
   }
   
   .container {
-      height: 80vh;
-      width:90vw;
+      height: 70vh;
+      width:98vw;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,19 +19,20 @@
     
     .background {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      bottom:-50%;
-      right:-50%;
+      inset: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, #d9fdd3, #a8e6a3, #4caf50);
-      animation: animateBackground 10s infinite linear;
+
+      /* background: radial-gradient(circle, #fff, #d9fdd3, #a8e6a3, #4caf50);
+      
+      background: radial-gradient(circle,#3ade5d, #f3f3f3, #e0e0e0, #FFFFFF); */
       transform-style: preserve-3d; /* Ensures child transforms are applied in 3D */
       z-index: -1; /* Keeps the background behind the content */
+      background: linear-gradient(to top left,#4caf50,#d8ebde, #FFF);
+      animation: backgroundMove 10s radial infinite;
     }
     
-    @keyframes animateBackground {
+    /* @keyframes animateBackground {
       0% {
         transform: rotateX(0deg) rotateY(0deg) translateZ(0);
       }
@@ -40,6 +41,20 @@
       }
       100% {
         transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+      }
+    } */
+
+    @keyframes backgroundMove {
+      0% {
+        transform: translate(-50%, -50%);
+      }
+
+      50% {
+        transform: translate(0%, 0%);
+      }
+
+      100% {
+        transform: translate(-50%, -50%);
       }
     }
     
@@ -61,6 +76,7 @@
     
     .text {
       max-width: 600px;
+      
     }
     
     .text h1 {
@@ -91,13 +107,35 @@
     
     @keyframes float {
       0% {
-        transform: translateY(0px);
+        transform: translateY(0);
       }
+
       50% {
         transform: translateY(-10px);
       }
+
       100% {
-        transform: translateY(0px);
+        transform: translateY(0);
+      }
+    }
+
+    @media (width <= 768px) {
+      .container{
+        height: 90vh;
+        width:100vw;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+
+      .image img {
+        padding-top: 4rem;
+      }
+      
+      .text{
+        padding:1rem;
+        text-align: center;
       }
     }
     
