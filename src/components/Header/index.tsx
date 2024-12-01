@@ -68,8 +68,8 @@ const Header = () => {
 
                 <div className={`${styles.nav} ${styles.desktopNav}`}>
                     <Link
-                        href="/home4"
-                        className={pathname === '/home4' ? styles.active : ''}
+                        href="/"
+                        className={pathname === '/' ? styles.active : ''}
                     >
                         Home
                     </Link>
