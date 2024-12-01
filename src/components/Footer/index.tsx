@@ -28,7 +28,7 @@ const Footer = () => {
             "@type": "PostalAddress",
             streetAddress: "270, Sultanganj Road, Rayer Bazar",
             addressLocality: "Dhaka",
-            postalCode: "12345",
+            postalCode: "1209",
             addressCountry: "Bangladesh",
           },
           sameAs: [
@@ -61,10 +61,10 @@ const Footer = () => {
           <h4 className={styles.socialMediaHeader}>Quick Links</h4>
           <div className={styles.icons}>
 
-            <a href="/about-us">About Us</a>
-            <a href="/services">Services</a>
-            <a href="/contact1">Contact</a>
-            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/">Home</a>
+            <a href="/gallery3">Gallery</a>
+            <a href="/form1">Contact Us</a>
+            <a href="/blog">Blog</a>
           </div>
         </div>
 
