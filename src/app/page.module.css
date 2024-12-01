@@ -107,33 +107,33 @@
 @keyframes float {
   0% {
     transform: translateY(0);
- ;}
+ }
 
   50% {
     transform: translateY(-10px);
- ;}
+ }
 
   100% {
     transform: translateY(0);
- ;}
+ }
 }
 
 @media (width <= 768px) {
   .container {
     height: 90vh;
     width: 100vw;
- ;}
+ }
 
   .content {
     flex-direction: column;
- ;}
+ }
 
   .image img {
     padding-top: 4rem;
- ;}
+ }
 
   .text {
     padding: 1rem;
     text-align: center;
- ;}
+ }
 }
