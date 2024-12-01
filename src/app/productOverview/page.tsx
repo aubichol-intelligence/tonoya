@@ -89,8 +89,7 @@ export default function VendingMachineCard(){
       ))}
         </div>
         
-        
-    
+
   );
 };
 

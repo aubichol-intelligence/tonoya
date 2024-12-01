@@ -2,7 +2,8 @@
 "use client"
 import React from "react";
 import styles from "./page.module.css";
-import Product from "../app/product/page";
+//import Product from "../app/product/page";
+import Product from "../app/productOverview/page";
 import Speciality from "../app/work5/page";
 import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
