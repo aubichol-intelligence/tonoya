@@ -1,19 +1,19 @@
 /* Section Container */
 .cardSection {
-  background-color: transparent;
+  background-color: whitesmoke;
   padding: 4rem 2rem;
   text-align: center;
-  width: 95vw;
-  margin-inline: auto;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 /* Cards Container */
 .cardsContainer {
   display: flex;
-  flex-flow: row wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   margin-inline: auto;
+  background-color: #0e1011;
 
   /* background-color: aqua; */
 }
@@ -23,7 +23,10 @@
   /* width: 400px;
     height: 500px; 
     background-color:navajowhite; */
-  margin-inline: auto;
+  padding: 5rem 1rem;
+  margin: 0 auto;
+  background-color: #0e1011;
+  
 }
 
 .card:hover {
@@ -39,7 +42,8 @@
 .cardTitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #222;
+  /*color: #222;*/
+  color:aliceblue;
   margin-bottom: 1rem;
   text-align: left;
 }

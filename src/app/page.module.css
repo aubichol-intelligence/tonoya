@@ -1,11 +1,10 @@
 .containerOut {
   margin-inline: auto;
-  width: 98vw;
+  width: 100vw;
 }
 
 .container {
   height: 70vh;
-  width: 98vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +28,7 @@
   transform-style: preserve-3d; /* Ensures child transforms are applied in 3D */
   z-index: -1; /* Keeps the background behind the content */
   background: linear-gradient(to top left, #4caf50, #d8ebde, #fff);
-  animation: backgroundMove 10s radial infinite;
+  /*animation: backgroundMove 10s  infinite radial;*/
 }
 
 /* @keyframes animateBackground {
@@ -47,15 +46,15 @@
 @keyframes backgroundMove {
   0% {
     transform: translate(-50%, -50%);
- ;}
+ }
 
   50% {
     transform: translate(0%, 0%);
- ;}
+ }
 
   100% {
     transform: translate(-50%, -50%);
- ;}
+ }
 }
 
 .content {
@@ -119,6 +118,7 @@
 }
 
 @media (width <= 768px) {
+  
   .container {
     height: 90vh;
     width: 100vw;
@@ -126,6 +126,7 @@
 
   .content {
     flex-direction: column;
+    padding: 2rem 1rem;
  }
 
   .image img {

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaCubes, FaCreditCard, FaRulerCombined, FaStoreAlt } from "react-icons/fa";
+import { FaCubes, FaCreditCard, FaRulerCombined } from "react-icons/fa";
 import styles from "./page.module.css";
 
 const cards = [
