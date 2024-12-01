@@ -1,151 +1,151 @@
 /* Overall Page Styling */
 .blog-page {
-    font-family: Arial, sans-serif;
-    color: #333;
-    max-width: 1200px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  max-width: 1200px;
 
-    /* Limits the width for readability on large screens */
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+  /* Limits the width for readability on large screens */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Header Section */
 .blog-header {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .blog-title {
-    font-size: 2.5rem;
-    color: #aca9a9;
-    margin: 0;
-    line-height: 1.4;
+  font-size: 2.5rem;
+  color: #aca9a9;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .blog-subtitle {
-    font-size: 1.2rem;
-    color: #9c9a9a;
-    margin: 5px 0 15px;
+  font-size: 1.2rem;
+  color: #9c9a9a;
+  margin: 5px 0 15px;
 }
 
 .blog-header p {
-    margin: 0;
+  margin: 0;
 }
 
 /* Hero Image Section */
 .blog-hero {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .hero-image {
-    /* Ensures full width on all devices */
-    width: 100%;
+  /* Ensures full width on all devices */
+  width: 100%;
 
-    /* width: auto; */
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
+  /* width: auto; */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 
-    /* Adds a subtle rounded corner */
+  /* Adds a subtle rounded corner */
 }
 
 /* Content Section */
 .blog-content {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #979494;
-    margin-bottom: 10px;
-    text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #979494;
+  margin-bottom: 10px;
+  text-align: justify;
 }
 
 .blog-content p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Back to Blog Link */
 .blog-page a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background-color: #0070f3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s;
 }
 
 .blog-page a:hover {
-    background-color: #005bb5;
+  background-color: #005bb5;
 }
 
 /* Footer Section */
 .blog-footer {
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
 }
 
 .footer-note {
-    font-size: 0.9rem;
-    color: #777;
+  font-size: 0.9rem;
+  color: #777;
 }
 
 /* Responsive Design */
 @media (width <= 1024px) {
-    .blog-title {
-        font-size: 2rem;
-    }
+  .blog-title {
+    font-size: 2rem;
+ }
 
-    .blog-subtitle {
-        font-size: 1rem;
-    }
+  .blog-subtitle {
+    font-size: 1rem;
+ }
 
-    .blog-content {
-        font-size: 1rem;
-    }
+  .blog-content {
+    font-size: 1rem;
+ }
 
-    /* .hero-image {
+  /* .hero-image {
         width: 80%;
-    } */
+ ;} */
 }
 
 @media (width <= 768px) {
-    .blog-title {
-        font-size: 1.7rem;
-    }
+  .blog-title {
+    font-size: 1.7rem;
+ }
 
-    .blog-subtitle {
-        font-size: 0.9rem;
-    }
+  .blog-subtitle {
+    font-size: 0.9rem;
+ }
 
-    .blog-content {
-        font-size: 0.95rem;
-    }
+  .blog-content {
+    font-size: 0.95rem;
+ }
 
-    .blog-page a {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
+  .blog-page a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+ }
 }
 
 @media (width <= 480px) {
-    .blog-title {
-        font-size: 1.5rem;
-    }
+  .blog-title {
+    font-size: 1.5rem;
+ }
 
-    .blog-subtitle {
-        font-size: 0.8rem;
-    }
+  .blog-subtitle {
+    font-size: 0.8rem;
+ }
 
-    .blog-content {
-        font-size: 0.9rem;
-    }
+  .blog-content {
+    font-size: 0.9rem;
+ }
 
-    .blog-page a {
-        font-size: 0.85rem;
-        padding: 7px 10px;
-    }
+  .blog-page a {
+    font-size: 0.85rem;
+    padding: 7px 10px;
+ }
 }

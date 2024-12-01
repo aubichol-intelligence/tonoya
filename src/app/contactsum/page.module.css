@@ -1,4 +1,3 @@
-
 .container {
   display: flex;
   flex-direction: row;
@@ -54,12 +53,14 @@
   background: black;
   border: none;
   padding: 2rem 4rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
-    width: 20vw;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards;
+  width: 20vw;
 }
 
 .contactButton:hover {
@@ -68,7 +69,6 @@
 }
 
 /* Button Hover Effect */
-
 
 .contactButton::after {
   position: absolute;
@@ -101,16 +101,14 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
+ ;}
 }
-
 
 /* Responsive Design */
 @media (width <= 768px) {
   .start-project-heading {
     font-size: 2rem;
-  }
-
+ ;}
 
   .container {
     flex-direction: column;
@@ -122,16 +120,15 @@
     border-radius: 10px;
     margin-inline: auto;
     width: 100vw;
-    
-  }
+ ;}
 
   .start-project-description {
     font-size: 1rem;
-  }
+ ;}
 
   .contactButton {
     font-size: 1.2rem;
     padding: 1.5rem 3rem;
     width: 90vw;
-  }
+ ;}
 }

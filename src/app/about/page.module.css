@@ -29,7 +29,9 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scaling and visibility */
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease; /* Transition for scaling and visibility */
 }
 
 .section:hover {
@@ -41,7 +43,9 @@
   background-color: #f9f9f9;
   padding: 2rem;
   border-radius: 8px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add hover and shadow effect */
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease; /* Add hover and shadow effect */
 }
 
 .sectionAlt:hover {
@@ -52,10 +56,12 @@
 .content {
   flex: 1;
   min-width: 300px;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth appearance */
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease; /* Smooth appearance */
 }
 
 .heading {
   font-size: 1.8rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }

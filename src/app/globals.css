@@ -7,35 +7,39 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
+ ;}
 }
 
 html,
 /* styles/globals.css */
 
 body {
-/* background: linear-gradient(135deg, #ACE1AF, #B0EBB4, #BFF6C3, #E0FBE2); */
+  /* background: linear-gradient(135deg, #ACE1AF, #B0EBB4, #BFF6C3, #E0FBE2); */
 
   /* background: #ffffff; */
 
   /* background-size: 400% 400%; */
   animation: gradientBackground 10s infinite;
-  margin-inline:auto;
+  margin-inline: auto;
   font-family: Arial, sans-serif;
   overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
-  width:95vw;
+  width: 95vw;
 }
 
 @keyframes gradientBackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+ ;}
+  50% {
+    background-position: 100% 50%;
+ ;}
+  100% {
+    background-position: 0% 50%;
+ ;}
 }
-
-
 
 * {
   box-sizing: border-box;
@@ -52,6 +56,5 @@ a {
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
-  
-  }
+ ;}
 }

@@ -1,268 +1,257 @@
 /* Main container */
 .contactContainer {
-    display: flex;
+  display: flex;
 
-    /* flex-wrap: wrap;
+  /* flex-wrap: wrap;
     flex-direction: column; */
-    margin-inline: auto;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
-    padding-top: 14rem;
-    padding-bottom: 10rem;
-    color:black;
-    
-    
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    width: 98vw;
-    background-color: whitesmoke;    
-  }
-  
-  /* Form Section */
-  .formSection {
-    width:50vw;
-    
-  }
-  
-  .formSection h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-  }
-  
-  .form label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .inputContainer {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .dynamicLabel {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    font-size: 1rem;
-    color: #aaa;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .styledTextarea {
-    padding: 12px;
-    font-size: 1rem;
-    color: #333;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background: transparent;
-    outline: none;
-    resize: none;
-    transition: all 0.3s ease;
-    width: 100%;
-  }
-  
-  .styledTextarea:focus {
-    border-color: #3498db;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-  }
-  
-  .styledTextarea:focus + .dynamicLabel,
-  .styledTextarea:not(:placeholder-shown) + .dynamicLabel {
-    top: -8px;
-    left: 10px;
-    font-size: 0.85rem;
-    color: #3498db;
-    background: #fff;
-    padding: 0 4px;
-  }
-  
-  /* Contact Info Section */
-  .contactInfoSection {
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    background-color: aquamarine;
-    
-  }
+  margin-inline: auto;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  padding-top: 14rem;
+  padding-bottom: 10rem;
+  color: black;
 
-  .styledTextarea {
-    width: 100%;
-    padding: 2rem;
-    font-size: 1rem;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: transparent;
-    outline: none;
-    resize: none;
-    transition: all 0.3s ease;
-  }
-  
-  .contactBox {
-   /* background: #fff;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  width: 98vw;
+  background-color: whitesmoke;
+}
+
+/* Form Section */
+.formSection {
+  width: 50vw;
+}
+
+.formSection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dynamicLabel {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 1rem;
+  color: #aaa;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.styledTextarea {
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: transparent;
+  outline: none;
+  resize: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.styledTextarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+}
+
+.styledTextarea:focus + .dynamicLabel,
+.styledTextarea:not(:placeholder-shown) + .dynamicLabel {
+  top: -8px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #3498db;
+  background: #fff;
+  padding: 0 4px;
+}
+
+/* Contact Info Section */
+.contactInfoSection {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+}
+
+.styledTextarea {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: transparent;
+  outline: none;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.contactBox {
+  /* background: #fff;
     border: 1px solid #ccc;
     border-radius: 25px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
-    transition: box-shadow 0.3s ease;
-    width: 100%;
-    
-  }
-  
-  .contactBox h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #333;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .contactBox p {
-    font-size: 1rem;
-    color: #555;
-  }
-
-  .button {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  
-  /* Responsive Design */
-  @media (width <= 768px) {
-    .contactContainer {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding:1rem;
-      margin-inline: auto;
-    }
-
-    .contactBox {
-        width: 90%;
-        margin-inline: auto;
-      }
-    
-    
-    .formSection,
-    .contactInfoSection {
-      width:90vw;
-      margin-inline:auto;
-    }
-
-
-
-
-    /* extra */
-
-    /* Main Container */
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 30vw;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-}
-
-/* Individual Info Section */
-.infoSection {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background-color: #fff;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   transition: box-shadow 0.3s ease;
+  width: 100%;
 }
 
-.infoSection:hover {
-  box-shadow: 0 8px 12px rgb(0 0 0 / 20%);
-}
-
-/* Icon Styling */
-.icon {
-  width: 50px;
-  height: 50px;
-  display: flex;
+.contactBox h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
-  border-radius: 50%;
 }
 
-.icon img {
-  width: 24px;
-  height: 24px;
-}
-
-/* Text Content */
-.textContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.text {
+.contactBox p {
   font-size: 1rem;
   color: #555;
-  margin: 0;
 }
 
-.email,
-.phone {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #007bff;
-  margin: 0;
-  text-decoration: none;
-}
-
-.email:hover,
-.phone:hover {
-  text-decoration: underline;
+.button {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /* Responsive Design */
 @media (width <= 768px) {
-  .container {
+  .contactContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     padding: 1rem;
-  }
+    margin-inline: auto;
+ }
 
+  .contactBox {
+    width: 90%;
+    margin-inline: auto;
+ }
+
+  .formSection,
+  .contactInfoSection {
+    width: 90vw;
+    margin-inline: auto;
+ }
+
+  /* extra */
+
+  /* Main Container */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30vw;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+ ;}
+
+  /* Individual Info Section */
   .infoSection {
-    flex-direction: row;
-  }
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+    transition: box-shadow 0.3s ease;
+ ;}
 
+  .infoSection:hover {
+    box-shadow: 0 8px 12px rgb(0 0 0 / 20%);
+ ;}
+
+  /* Icon Styling */
   .icon {
-    width: 40px;
-    height: 40px;
-  }
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+ ;}
+
+  .icon img {
+    width: 24px;
+    height: 24px;
+ ;}
+
+  /* Text Content */
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+ ;}
 
   .text {
-    font-size: 0.9rem;
-  }
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+ ;}
 
   .email,
   .phone {
-    font-size: 1rem;
-  }
-}
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+    text-decoration: none;
+ ;}
 
-  }
-  
+  .email:hover,
+  .phone:hover {
+    text-decoration: underline;
+ ;}
+
+  /* Responsive Design */
+  @media (width <= 768px) {
+    .container {
+      padding: 1rem;
+ ;}
+
+    .infoSection {
+      flex-direction: row;
+ ;}
+
+    .icon {
+      width: 40px;
+      height: 40px;
+ ;}
+
+    .text {
+      font-size: 0.9rem;
+ ;}
+
+    .email,
+    .phone {
+      font-size: 1rem;
+ ;}
+ ;}
+}
