@@ -86,6 +86,12 @@ const Header = () => {
                     >
                         Blogs
                     </Link>
+                    <Link
+                        href="/form1"
+                        className={pathname === '/form1' ? styles.active : ''}
+                    >
+                        Contact Us
+                    </Link>
                     {/* <div className={styles.dropdown}>
                         <span className={styles.dropdownToggle}>
                             Profile
