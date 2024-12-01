@@ -100,7 +100,7 @@ const ContactForm = () => {
 					whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
 				>
 					<h3>Give us a quick call</h3>
-					<p>+1 (555) 123-4567</p>
+					<p>+8801705686655</p>
 				</motion.div>
 				<motion.div
 					className={styles.contactBox}
@@ -108,7 +108,7 @@ const ContactForm = () => {
 				>
 					<AiOutlineMail />
 					<h3>Send us an email to start with</h3>
-					<p>contact@example.com</p>
+					<p>sunbeamforce@gmail.com</p>
 				</motion.div>
 			</motion.div>
 			{/* Form Section */}
@@ -172,34 +172,6 @@ const ContactForm = () => {
 					</motion.button>
 				</form>
 			</motion.div>
-
-			
-
-{/*<div className={styles.container}>
-      
-      <div className={styles.infoSection}>
-        <div className={styles.icon}>
-		<AiOutlineMail />
-        </div>
-        <div className={styles.textContent}>
-          <p className={styles.text}>Send us an email at</p>
-          <a href="mailto:example@example.com" className={styles.email}>
-            example@example.com
-          </a>
-        </div>
-      </div>
-
-      
-      <div className={styles.infoSection}>
-        <div className={styles.icon}>
-		<AiOutlineMail />
-        </div>
-        <div className={styles.textContent}>
-          <p className={styles.text}>Give us a quick call</p>
-          <p className={styles.phone}>+123 456 7890</p>
-        </div>
-      </div>
-    </div>*/}
 		</motion.div>
 	);
 };
