@@ -34,7 +34,7 @@ export default function RootLayout({
 
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<AuthProvider>
-					<div style={{width: '100vw',overflow:'hidden'}}>
+					<div style={{overflow:'hidden'}}>
 						<Header />
 						{/* <hr></hr> */}
 
