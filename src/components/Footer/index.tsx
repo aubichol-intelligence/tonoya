@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 //import Map from "../map/page"
 //import Image from "next/image";
-//import Link from 'next/link'
+import Link from 'next/link'
 
 const Footer = () => {
 //  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
@@ -61,10 +61,11 @@ const Footer = () => {
           <h4 className={styles.socialMediaHeader}>Quick Links</h4>
           <div className={styles.icons}>
 
-            <a href="/">Home</a>
-            <a href="/gallery3">Gallery</a>
-            <a href="/form1">Contact Us</a>
-            <a href="/blog">Blog</a>
+          <Link href="/">Home</Link>
+          <Link href="/gallery3">Gallery</Link>
+          <Link href="/form1">Contact Us</Link>
+          <Link href="/blog">Blog</Link>
+ 
           </div>
         </div>
 
