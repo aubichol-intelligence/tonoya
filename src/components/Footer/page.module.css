@@ -1,6 +1,6 @@
 .container {
   /* background:  radial-gradient(circle, #72BF78, #ACE1AF, #BFF6C3, #E0FBE2 ); */
-  width: 100vw;
+  width: 90vw;
   background-color: #72bf78;
   color: black;
   display: flex;
