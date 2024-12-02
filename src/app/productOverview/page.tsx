@@ -10,14 +10,14 @@ const cards = [
     title: "energy efficient", 
     capacity: "160",
     size: "30*12*6",
-    paymentMethod: "Credit Card, Cash, Mobile Wallet",
+    paymentMethod: "Cash/Digital Payment System/RFID",
   },
   { 
     id: 2,
     title: "energy efficient", 
     capacity: "120",
     size: "30*12*6",
-    paymentMethod: "Credit Card, Cash, Mobile Wallet",
+    paymentMethod: "Cash/Digital Payment System/RFID",
     
   },
   { 
@@ -25,7 +25,7 @@ const cards = [
     title: "energy efficient", 
     capacity: "60",
     size: "30*12*6",
-    paymentMethod: "Credit Card, Cash, Mobile Wallet",
+    paymentMethod: "Cash/Digital Payment System/RFID",
     
   },
   
@@ -34,7 +34,7 @@ const cards = [
     title: "energy efficient", 
     capacity: "40",
     size: "30*12*6",
-    paymentMethod: "Credit Card, Cash, Mobile Wallet",
+    paymentMethod: "Cash/Digital Payment System/RFID",
     
   },
 ];

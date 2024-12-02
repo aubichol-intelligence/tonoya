@@ -1,9 +1,9 @@
 /* Section Container */
 .cardSection {
   background-color: whitesmoke;
-  padding: 4rem 2rem;
+  
   text-align: center;
-  width: 100vw;
+  width: 90vw;
   margin: 0 auto;
 }
 
@@ -22,8 +22,8 @@
 .card {
   /* width: 400px;
     height: 500px; 
-    background-color:navajowhite; */
-  padding: 5rem 1rem;
+    background-color:navajowhite;
+  padding: 5rem 1rem; */
   margin: 0 auto;
   background-color: #0e1011;
   
