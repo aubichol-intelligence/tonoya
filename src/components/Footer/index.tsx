@@ -47,6 +47,7 @@ const Footer: NextPage = () => {
         })}
       </script>
 
+      <NotSSRMaps />
       <div className={styles.container}>
         {/* Logo and Address */}
         {/*<div className={styles.logoSection}>
@@ -110,7 +111,6 @@ const Footer: NextPage = () => {
         </div>
 
       </div>
-      <NotSSRMaps />
 
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
