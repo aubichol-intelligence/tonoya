@@ -15,23 +15,34 @@
   perspective: 1000px; /* Adds 3D depth to the background animation */
   margin-inline: auto;
 }
+/*
+.background {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+*/
+  /* background: radial-gradient(circle, #fff, #d9fdd3, #a8e6a3, #4caf50);
+      
+  background: radial-gradient(circle,#3ade5d, #f3f3f3, #e0e0e0, #FFFFFF); */
+  /*transform-style: preserve-3d; *//* Ensures child transforms are applied in 3D */
+  /*z-index: -1;*/ /* Keeps the background behind the content */
+  /*background: linear-gradient(to top left, #4caf50, #d8ebde, #fff);*/
+  /*animation: backgroundMove 10s  infinite radial;*/
+/*}*/
 
 .background {
   position: absolute;
   inset: -50%;
   width: 200%;
   height: 200%;
-
-  /* background: radial-gradient(circle, #fff, #d9fdd3, #a8e6a3, #4caf50);
-      
-      background: radial-gradient(circle,#3ade5d, #f3f3f3, #e0e0e0, #FFFFFF); */
+  background: radial-gradient(circle, #d9fdd3, #a8e6a3, #4caf50);
+  animation: animateBackground 10s infinite linear;
   transform-style: preserve-3d; /* Ensures child transforms are applied in 3D */
   z-index: -1; /* Keeps the background behind the content */
-  background: linear-gradient(to top left, #4caf50, #d8ebde, #fff);
-  /*animation: backgroundMove 10s  infinite radial;*/
 }
 
-/* @keyframes animateBackground {
+ @keyframes animateBackground {
       0% {
         transform: rotateX(0deg) rotateY(0deg) translateZ(0);
  ;}
@@ -41,7 +52,7 @@
       100% {
         transform: rotateX(0deg) rotateY(0deg) translateZ(0);
  ;}
- ;} */
+ ;} 
 
 @keyframes backgroundMove {
   0% {

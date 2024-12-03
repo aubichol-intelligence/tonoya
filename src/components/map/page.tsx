@@ -1,5 +1,6 @@
 'use client';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+//import { Icon } from 'leaflet';
 
 //const Map = dynamic(() => import('../../components/Map'), { ssr: false }); // Disable SSR for Leaflet
 
@@ -19,7 +20,8 @@ export default function Map() {
         />
         <Marker position={[23.7438111, 90.3665748]}>
           <Popup>
-            A pretty popup! <br /> Easily customizable.
+            <b>Tonoya</b>
+            <br />270, Sultanganj Road, Rayer Bazar, Dhanmondi, Dhaka
           </Popup>
         </Marker>
       </MapContainer>
