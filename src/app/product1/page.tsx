@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Navbar from '../../components/Product/Navbar/index';
-import Sidebar from '../../components/Product/Sidebae/index';
+import Sidebar from '../../components/Product/Sidebar/index';
 import ProductView from '../../components/Product/ProductView/index';
 import styles from './page.module.css';
 
