@@ -8,7 +8,7 @@ import Speciality from "../app/work5/page";
 import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
 import { NextPage } from "next";
-import dynamic from 'next/dynamic';
+//import dynamic from 'next/dynamic';
 
 /*
 'use client';
@@ -36,11 +36,12 @@ export default Home;
 */
 
 const Home: NextPage = () => {
-  
+
+  /*
   const NotSSRMaps = dynamic(() => import('../components/map/page'), {
     ssr: false,
   });
-  
+  */
   return (
     
     <div className={styles.containerOut}>
@@ -67,7 +68,7 @@ const Home: NextPage = () => {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
-        <NotSSRMaps />     
+       {/* <NotSSRMaps /> */}    
        
     </div>
   );
