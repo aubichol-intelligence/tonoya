@@ -28,19 +28,21 @@
   /*for alternative*/
   .sideNav {
     width: 200px;
-    background-color: #555;
-    height: 100vh;
+    /*background-color: #555;*/
+    
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     position: fixed;
     top: 60px; /* Adjusted for top navigation */
     left: 0;
+    gap:1rem;
   }
   
   .navButton {
     color: white;
-    background: none;
+    background-color:#222;
     border: none;
     padding: 0.8rem;
     text-align: left;
