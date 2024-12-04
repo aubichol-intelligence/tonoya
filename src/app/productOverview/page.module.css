@@ -55,6 +55,7 @@
     padding-top:4rem;
     margin-inline: auto;
 
+
     /* background-color: darksalmon; */
 }
 
@@ -84,7 +85,7 @@
   margin: 0 auto;
   box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  top:-8rem;
+  top:-16rem;
   
 }
 
@@ -96,7 +97,7 @@
   width: 300px;
   text-align: left;
   padding: 1rem;
-  top:-10rem;
+  top:-7rem;
   margin-left: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative; /* Necessary for the hover effect */
@@ -161,7 +162,9 @@
   .cardContainer {
     padding: 0.2rem;
     gap:1rem;
-    top:2rem;
+    margin-top:2rem;
+    margin-bottom: 5rem;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
