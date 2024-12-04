@@ -5,11 +5,12 @@
   justify-content: space-around;
   padding: 4rem;
   background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  background-color: cadetblue;
   text-align: center;
   border-radius: 10px;
   margin-inline: auto;
-  top: 8rem;
-  bottom: 8rem;
+  margin-top: 15rem;
+  margin-bottom: 15rem;
   width: 90vw;
 
   /* position: relative;
@@ -119,6 +120,8 @@
     text-align: center;
     border-radius: 10px;
     margin-inline: auto;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     width: 100vw;
  ;}
 

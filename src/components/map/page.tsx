@@ -3,13 +3,13 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import {Icon} from 'leaflet'
 
-import L from 'leaflet';
+//import L from 'leaflet';
 //import { Icon } from 'leaflet';
 
 //const Map = dynamic(() => import('../../components/Map'), { ssr: false }); // Disable SSR for Leaflet
 
 export default function Map() {
-  const icon = L.icon({ iconUrl: '/logos/marker-icon.png' });
+  //const icon = L.icon({ iconUrl: '/logos/marker-icon.png' });
   return (
     <main>
       {/*<h1>Welcome to the Map App</h1>*/}
