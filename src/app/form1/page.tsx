@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 
 const ContactForm = () => {
-	const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
+//	const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
 
 	// Variants for container animations
 	const containerVariants = {
@@ -48,7 +48,7 @@ const ContactForm = () => {
 
 
 		try {
-			const response = await fetch(`${rootUrl}/api/v1/email/create`, {
+			const response = await fetch(`https://tonoyabd.com/api/v1/email/create`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
