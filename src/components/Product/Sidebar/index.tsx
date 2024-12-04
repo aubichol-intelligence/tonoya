@@ -49,7 +49,7 @@ export const products = [
 import React from "react";
 import styles from "./page.module.css";
 
-const SideNavigation = ({ onSideNavSelect }) => {
+const SideNavigation = ({ }) => {
   const navItems = [
     "Product 1",
     "Product 2",
@@ -64,7 +64,7 @@ const SideNavigation = ({ onSideNavSelect }) => {
       {navItems.map((item, index) => (
         <button
           key={index}
-          onClick={() => onSideNavSelect(index)}
+//          onClick={() => onSideNavSelect(index)}
           className={styles.navButton}
         >
           {item}
