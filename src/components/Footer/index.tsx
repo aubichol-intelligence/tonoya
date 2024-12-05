@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from 'next/link'
 import { NextPage } from "next";
 import dynamic from 'next/dynamic';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import imageLocation from '../../../public/logos/tonoya.png';
 
 const Footer: NextPage = () => {
