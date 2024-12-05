@@ -5,6 +5,7 @@ import Head from 'next/head';
 import blogPosts from '../../../components/data/pictures';
 import Image from 'next/image';
 import "./Blog.css";
+import parse from 'html-react-parser';
 
 
 type Params = Promise<{ slug: string }>
@@ -14,32 +15,55 @@ export async function generateMetadata(props: { params: Params }) {
     const params = await props.params
     const slug = params.slug
 
-    const post = blogPosts.find((post) => post.id === slug);
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`, {
+        method: 'GET',
+        headers: {
+            Authorization: process.env.API_TOKEN || '', // Use environment variable for the token
+        },
+    });
+
+    if (!response.ok) {
+        return {
+            title: 'Post Not Found',
+            description: 'The requested blog post could not be found.',
+        };
+    }
+
+    const post = await response.json();
 
     return {
-        title: post ? post.title : 'Post Not Found',
-        description: post ? post.content : 'The requested blog post could not be found.',
+        title: post.title || 'Untitled',
+        description: post.content?.slice(0, 150) + '...' || 'No description available.',
     };
 }
 
 // Dynamic blog post page
+// export default async function Page({ params }: { params: { slug: string } }) {
 export default async function Page(props: { params: Params }) {
     const params = await props.params
     const slug = params.slug
 
-    // Find the blog post
-    const post = blogPosts.find((post) => post.id === slug);
+    // const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`, {
+    //     method: 'GET',
+    //     headers: {
+    //         Authorization: process.env.API_TOKEN || '',
+    //     },
+    // });
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`);
 
-    if (!post) {
+    if (!response.ok) {
         return (
             <div>
                 <h2>Post not found</h2>
                 <Link href="/blog">Back to Blog</Link>
             </div>
         );
-        // notFound();
-        // return null; // This is unreachable due to `notFound()`, but satisfies TypeScript
     }
+
+    const post = await response.json();
+
+    const defaultImageUrl = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Ensure this file exists in the public folder.
+    const imageUrl = post.imageUrl || defaultImageUrl;
 
     return (
         // <HelmetProvider>
@@ -62,7 +86,7 @@ export default async function Page(props: { params: Params }) {
                 <div className="blog-hero">
                     <Image
                         // src="../../../../public/file.svg"
-                        src={post.imageUrl}
+                        src={imageUrl}
                         alt="Blog Image"
                         priority
                         // layout="responsive"   // Make sure the image scales
@@ -73,8 +97,7 @@ export default async function Page(props: { params: Params }) {
                 </div>
 
                 {/* Content Section */}
-                <article className="blog-content">
-                    {/* <hr /> */}
+                {/* <article className="blog-content">
                     <p>{post.content}</p>
                     <hr />
                     <p>
@@ -87,7 +110,16 @@ export default async function Page(props: { params: Params }) {
                         passion, and dreams converge. From intricately designed interiors to
                         stunning outdoor spaces, it speaks of their journey.
                     </p>
-                </article>
+                </article> */}
+
+                <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
+                    {post?.content && parse(post?.content)}
+                </div>
+
+                <div
+                    dangerouslySetInnerHTML={{ __html: post?.content }}
+                    style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}
+                />
 
                 <Link href="/blog">Back to Blog</Link>
 
