@@ -17,7 +17,7 @@ export default function Map() {
         center={[23.7438111, 90.3665748]} // Initial map center (latitude, longitude)
         zoom={13}
         key="map-container"
-        style={{ height: '40vh', width: '90vw' }} // Full-page map
+        style={{ height: '30vh', width: '100vw'}} // Full-page map
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -84,3 +84,9 @@
 
   /* Matches gray.500 */
 }
+
+.logoImage {
+  /* height: 48px; */
+  width: "auto";
+  height: "auto";
+}

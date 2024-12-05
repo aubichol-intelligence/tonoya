@@ -2,15 +2,17 @@
 import React from "react";
 import styles from "./page.module.css";
 //import Map from "../map/page"
-//import Image from "next/image";
+import Image from "next/image";
 import Link from 'next/link'
 import { NextPage } from "next";
 import dynamic from 'next/dynamic';
-
+import { useRouter, usePathname } from 'next/navigation';
+import imageLocation from '../../../public/logos/tonoya.png';
 
 const Footer: NextPage = () => {
 //  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
-  
+const router = useRouter();
+
   const NotSSRMaps = dynamic(() => import('../map/page'), {
     ssr: false,
   });
@@ -47,7 +49,7 @@ const Footer: NextPage = () => {
         })}
       </script>
 
-      <NotSSRMaps />
+      
       <div className={styles.container}>
         {/* Logo and Address */}
         {/*<div className={styles.logoSection}>
@@ -112,8 +114,26 @@ const Footer: NextPage = () => {
 
       </div>
 
+      <NotSSRMaps />
+
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
+        <div className={styles.logoFooter}>
+                      <button
+                          className={styles.logoButton}
+                          onClick={() => router.push('/')}
+                      >
+                          <Image
+                              src={imageLocation}
+                              // src="../../../public/logos/CHP-LOGO-1.png"
+                              alt="Logo"
+                              className={styles.logoImage}
+                              priority
+                              width={100}
+                              height={60}
+                          />
+                      </button>
+                  </div>
         <p>
           &copy; {new Date().getFullYear()} Sun Beam Force Limited. All rights reserved.
           Developed by <a href="https://aubichol.com">Aubichol Intelligent Technologies</a>.

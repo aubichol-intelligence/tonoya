@@ -53,6 +53,12 @@
   height: "auto";
 }
 
+.logoFooter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -219,6 +225,8 @@
 .icon:hover {
   transform: scale(1.2);
 }
+
+
 
 @media (width >= 768px) {
   .desktopNav {
