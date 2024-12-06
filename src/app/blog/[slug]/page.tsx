@@ -61,9 +61,10 @@ export default async function Page(props: { params: Params }) {
     }
 
     const post = await response.json();
+    console.log(post);
 
-    const defaultImageUrl = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Ensure this file exists in the public folder.
-    const imageUrl = post.imageUrl || defaultImageUrl;
+    // const defaultImageUrl = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Ensure this file exists in the public folder.
+    // const imageUrl = post.imageUrl || defaultImageUrl;
 
     return (
         // <HelmetProvider>
@@ -78,23 +79,23 @@ export default async function Page(props: { params: Params }) {
                 {/* Header Section */}
                 <header className="blog-header">
                     <h1 className="blog-title">{post.title}</h1>
-                    <p className="blog-subtitle">Season 1 | Where the Heart Is</p>
+                    {/* <p className="blog-subtitle">Season 1 | Where the Heart Is</p> */}
                     <p className="blog-subtitle">Author: {post.author}</p>
                 </header>
 
                 {/* Hero Image Section */}
-                <div className="blog-hero">
+                {/* <div className="blog-hero">
                     <Image
                         // src="../../../../public/file.svg"
                         src={imageUrl}
                         alt="Blog Image"
                         priority
-                        // layout="responsive"   // Make sure the image scales
+                        layout="responsive"   // Make sure the image scales
                         width={600}
-                        height={300}
+                        height={200}
                         className="hero-image"
                     />
-                </div>
+                </div> */}
 
                 {/* Content Section */}
                 {/* <article className="blog-content">
@@ -116,10 +117,10 @@ export default async function Page(props: { params: Params }) {
                     {post?.content && parse(post?.content)}
                 </div>
 
-                <div
+                {/* <div
                     dangerouslySetInnerHTML={{ __html: post?.content }}
                     style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}
-                />
+                /> */}
 
                 <Link href="/blog">Back to Blog</Link>
 

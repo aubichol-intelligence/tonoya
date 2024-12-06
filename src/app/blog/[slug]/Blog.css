@@ -21,11 +21,12 @@
   font-family: Arial, sans-serif;
   color: #333;
   max-width: 1200px;
-
   /* Limits the width for readability on large screens */
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  margin-top: 6rem;
+  background-color: white;
 }
 
 /* Header Section */
@@ -35,16 +36,18 @@
 }
 
 .blog-title {
-  font-size: 2.5rem;
-  color: #aca9a9;
+  font-size: 2.0rem;
+  /* color: #aca9a9; */
   margin: 0;
   line-height: 1.4;
+  color: black;
 }
 
 .blog-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   color: #9c9a9a;
   margin: 5px 0 15px;
+  text-align: left;
 }
 
 .blog-header p {
@@ -58,13 +61,11 @@
 
 .hero-image {
   /* Ensures full width on all devices */
-  width: 100%;
-
-  /* width: auto; */
+  /* width: 100%; */
+  width: auto;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
-
   /* Adds a subtle rounded corner */
 }
 
