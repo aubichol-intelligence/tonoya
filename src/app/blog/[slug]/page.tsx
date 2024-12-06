@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 // import blogPosts from '../../../components/data/blogs.json';
 import blogPosts from '../../../components/data/pictures';
-import Image from 'next/image';
+// import Image from 'next/image';
 import "./Blog.css";
 import parse from 'html-react-parser';
 
@@ -113,8 +113,10 @@ export default async function Page(props: { params: Params }) {
                     </p>
                 </article> */}
 
-                <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
-                    {post?.content && parse(post?.content)}
+                <div style={{ display: "flex", justifyContent: "center" }} >
+                    <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
+                        {post?.content && parse(post?.content)}
+                    </div>
                 </div>
 
                 {/* <div
