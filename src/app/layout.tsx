@@ -34,16 +34,16 @@ export default function RootLayout({
 
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<AuthProvider>
-					<div>
+					<div style={{ overflow: 'hidden' }}>
 						<Header />
 						{/* <hr></hr> */}
 
-						<div style={{ display: "flex", justifySelf: "center" }} >
+						<div >
 							{/* < main > {children} </main> */}
 							{children}
 						</div>
 
-						<hr></hr>
+						{/* <hr></hr> */}
 						<Footer />
 					</div >
 				</AuthProvider>
