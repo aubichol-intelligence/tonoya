@@ -28,22 +28,21 @@ const ThreeCards = () => {
   const cards1 = [
     { 
       id: 1,
-      title: "energy efficient", 
-      description: "An energy-efficient vending machine is designed to minimize power consumption while providing convenience. Equipped with advanced insulation, LED lighting, and energy-saving compressors, it maintains optimal cooling or heating with minimal waste. Smart sensors detect user activity and adjust power usage accordingly, reducing energy when the machine is idle. These machines often incorporate renewable energy sources, such as solar panels, to further lower their environmental impact. By combining technology and sustainability, energy-efficient vending machines offer a cost-effective and eco-friendly solution for modern snack and beverage needs.." 
+      title: "Remove Access", 
+      description: "Tonoya gives access to hygiene and health for women in remote areas. It also serves as a easy solution specially for workplaces. For instance, students in educational institutions or working women in hectic work environments are a direct benefitiary of our product." 
     },
     { 
       id: 2,
-      title: "energy efficient", 
-      description: "An energy-efficient vending machine is designed to minimize power consumption while providing convenience. Equipped with advanced insulation, LED lighting, and energy-saving compressors, it maintains optimal cooling or heating with minimal waste. Smart sensors detect user activity and adjust power usage accordingly, reducing energy when the machine is idle. These machines often incorporate renewable energy sources, such as solar panels, to further lower their environmental impact. By combining technology and sustainability, energy-efficient vending machines offer a cost-effective and eco-friendly solution for modern snack and beverage needs.." 
+      title: "Simple Payment", 
+      description: "In Tonoya, the payment process is simple. Our machine detects cash starting from 10 taka which allows customers to buy products in small amounts. Customers also feel comfort with our highly reliable cash detection mechanism that ensures safe transaction." 
     },
     { 
       id: 3,
-      title: "energy efficient", 
-      description: "An energy-efficient vending machine is designed to minimize power consumption while providing convenience. Equipped with advanced insulation, LED lighting, and energy-saving compressors, it maintains optimal cooling or heating with minimal waste. Smart sensors detect user activity and adjust power usage accordingly, reducing energy when the machine is idle. These machines often incorporate renewable energy sources, such as solar panels, to further lower their environmental impact. By combining technology and sustainability, energy-efficient vending machines offer a cost-effective and eco-friendly solution for modern snack and beverage needs.." 
+      title: "Aesthetic Pleasure", 
+      description: "Tonoya's vending machine is aesthetically pleasing and encourages with customers to use the product. Due to Tonoya's availability in public places, it encourages people to be more open about menstrual health. It creates the opportunity for women to break out of stigma that is existent around women's physical and psychological safety." 
     },
     
   ];
-
   return (
     <section className={styles.cardSection}>
       <div className={styles.cardsContainer}>
