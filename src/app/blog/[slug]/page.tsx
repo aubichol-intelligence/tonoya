@@ -7,7 +7,6 @@ import blogPosts from '../../../components/data/pictures';
 import "./Blog.css";
 import parse from 'html-react-parser';
 
-
 type Params = Promise<{ slug: string }>
 
 // Generate metadata dynamically
