@@ -20,28 +20,51 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 */
 
-import Link from 'next/link';
+// import Link from 'next/link';
 import BlogList from '../../components/BlogList';
 //import blogPosts from '../../components/data/blogs.json';
-import blogPosts from "../../components/data/pictures";
+// import blogPosts from "../../components/data/pictures";
 
-const Home = () => {
+// const Home = () => {
+export default async function Home() {
+
+  const ITEMS_PER_PAGE = 12; // Calculate skip based on the current page
+
+  // Fetch data from API (fetch runs on the server side here)
+  const fetchItems = async (currentPage: number) => {
+    const skip = currentPage * ITEMS_PER_PAGE;
+
+    const res = await fetch(
+      `https://tonoyabd.com/api/v1/blog/list/${skip}/${ITEMS_PER_PAGE}`,
+      { cache: 'no-store' } // Ensure fresh data fetch for dynamic pages
+    );
+
+    if (!res.ok) throw new Error("Failed to fetch items");
+    return res.json();
+  };
+
+  const data = await fetchItems(0); // Fetch the first page of items
+  console.log(data);
+
+
   return (
-    <div style={{}}>
-      <h1>Welcome to the Blog</h1>
+    <div style={{ marginTop: "7rem", }}>
+      <h1 style={{ justifySelf: "center", }}>Welcome to the Blog</h1>
 
-      <div style={{ marginTop: 14, marginBottom: 14, }}>
+      {/* <div style={{ marginTop: 14, marginBottom: 14, }}>
         <Link href={`/blog/create`} style={{ backgroundColor: 'blue', padding: 10, borderRadius: 10, }}>
           Create New Blog
         </Link>
-      </div>
+      </div> */}
 
-      <BlogList posts={blogPosts} />
+      <div style={{}}>
+        <BlogList posts={data} />
+      </div>
     </div>
   );
 };
 
-export default Home;
+// export default Home;
 /*
   return (
     <div >
