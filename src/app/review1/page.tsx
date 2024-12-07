@@ -53,7 +53,7 @@ const ClientReview = () => {
     },
     {
       id: 5,
-      note: "Amazing experience and fantastic support!mn jhyhfg agsfff sffsdds dsdshh gdshghgh gdds gdsggg dsfd svvcv bxcnsvhcd gshg c",
+      note: "Amazing experience and This service has revolutionized our workflow! fantastic support! mn jhyhfg agsfff sffsdds dsdshh gdshghgh gdds gdsggg dsfd svvcv bxcnsvhcd gshg.",
       clientImage: "/client2.jpg",
       clientLogo: "/logos/cu.png",
     },
@@ -71,7 +71,7 @@ const ClientReview = () => {
     },
     {
       id: 8,
-      note: "Highly recommend for any business looking to scale!",
+      note: "Highly recommend for any business looking to scale Highly recommend for any business looking to scale.nnnHighly recommend for any business looking to.",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/upazilla-porishod.png", 
     },

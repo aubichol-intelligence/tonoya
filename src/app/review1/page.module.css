@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   position: relative;
-  max-width: 90vw;
+  max-width: 100vw;
   overflow: hidden;
-  padding: 20px;
+  
   background: #f9f9f9;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .cardContainer {
@@ -24,10 +26,14 @@
 
 .card {
   background: #fff;
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  
   border-radius: 8px;
   box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   padding: 2rem;
-  width: 30%;
+  width: 33%;
   flex-shrink: 0;
   text-align: center;
 }
@@ -44,12 +50,17 @@
   font-size: 1rem;
   color: #555;
   margin-bottom: 10px;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
 .clientLogo {
   width: 50px;
   height: 50px;
   object-fit: contain;
+  margin-bottom: auto;
+  background-color: cadetblue;
+  padding-bottom: 4rem;
 }
 
 .arrowButton {
@@ -64,3 +75,21 @@
 .arrowButton:hover {
   color: #0070f3;
 }
+
+@media (max-width: 768px) {
+ 
+  .card{
+   
+    width:100%;
+  }
+
+  .cardContainer{
+    width:100vw;
+    gap:0rem;
+  }
+
+  .container{
+    width: 100vw;
+  }
+
+ }
