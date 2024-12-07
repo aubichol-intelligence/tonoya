@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 
 const ContactForm = () => {
-//	const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
+	//	const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Ensure this environment variable is defined
 
 	// Variants for container animations
 	const containerVariants = {
@@ -59,7 +59,7 @@ const ContactForm = () => {
 				}),
 			});
 
-			console.log(response);
+			// console.log(response);
 
 			if (response.ok) {
 				setMessage('Your message sent successfully!');

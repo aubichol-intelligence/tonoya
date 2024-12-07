@@ -52,7 +52,7 @@ export default function CreateBlogPage() {
                 }),
             });
 
-            console.log(response);
+            // console.log(response);
 
             if (response.ok) {
                 setMessage('Blog created successfully!');
