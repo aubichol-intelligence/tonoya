@@ -48,11 +48,11 @@ const Home: NextPage = () => {
     
     <div className={styles.containerOut}>
       <Head>
-          <title>Tonoya's Website</title>
+          <title>Tonoya&apos; Website</title>
           <meta name="description" content="The home of the largest Vending Machine producer in Bangladesh" />
           <meta name="keywords" content="awesome, website, SEO, next.js" />
-          <meta property="og:title" content="Tonoya's Website" />
-          <meta property="og:description" content="Find Bangladesh's largest Vending Machine providers" />
+          <meta property="og:title" content="Tonoya&apos; Website" />
+          <meta property="og:description" content="Find Bangladesh&apos; largest Vending Machine providers" />
           <meta property="og:image" content="/path-to-image.jpg" />
           <meta name="robots" content="index, follow" />
       </Head>
