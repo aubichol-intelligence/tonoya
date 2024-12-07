@@ -80,13 +80,10 @@
 
 .blog-image {
   width: 100%;
-
   /* width: auto; */
-
   /* height: auto; */
   aspect-ratio: 16/9;
   object-fit: cover;
-
   /* filter: brightness(70%) contrast(90%) saturate(120%);
   mix-blend-mode: multiply; 
   background-color: rgba(0, 145, 217, 151); */
@@ -94,6 +91,10 @@
 
 .blog-content {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .blog-title {
@@ -105,6 +106,7 @@
 .blog-description {
   font-size: 0.9rem;
   color: #666;
+  text-align: center;
 }
 
 .read-more-button {
@@ -120,18 +122,20 @@
 }
 
 /* Responsive Design */
-@media (width <= 1024px) {
+@media (width <=1024px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
 
     /* Two columns for medium screens */
- ;}
+    ;
+  }
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .grid-container {
     grid-template-columns: 1fr;
 
     /* One column for small screens */
- ;}
+    ;
+  }
 }

@@ -44,7 +44,7 @@ export default async function Home() {
   };
 
   const data = await fetchItems(0); // Fetch the first page of items
-  console.log(data);
+  // console.log(data);
 
 
   return (

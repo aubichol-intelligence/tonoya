@@ -48,6 +48,7 @@ export default BlogGrid;*/}
 import React from "react";
 import Link from "next/link";
 import "./BlogList.css";
+// import { useRouter } from "next/navigation";
 
 type BlogPost = {
   imageUrl: string;
@@ -63,6 +64,8 @@ type BlogListProps = {
 };
 
 const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
+  // const router = useRouter();
+
   const defaultImage = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Path to your default image
 
   return (
@@ -77,9 +80,10 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
         const imageSrc = imageUrls[0] || blog.imageUrl || defaultImage;
 
         return (
-          <div key={blog.id} className="blog-card">
+          // {/* <div className="blog-card" > */}
+          <Link key={blog.id} href={`/blog/${blog.id}`} className="blog-card" >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            < img
               src={imageSrc}
               alt={blog.title}
               className="blog-image"
@@ -94,14 +98,15 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
 
               <p className="blog-description">{blog.short_description}</p>
 
-              <Link href={`/blog/${blog.id}`}>
-                <button className="read-more-button">Read More</button>
-              </Link>
+              {/* <Link href={`/blog/${blog.id}`}> */}
+              <button className="read-more-button">Read More</button>
+              {/* </Link> */}
             </div>
-          </div>
+          </Link>
+          // {/* </div> */}
         );
       })}
-    </div>
+    </div >
   );
 };
 
