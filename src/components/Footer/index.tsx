@@ -3,11 +3,12 @@ import React from "react";
 import styles from "./page.module.css";
 //import Map from "../map/page"
 import Image from "next/image";
-import Link from 'next/link'
+import Link from 'next/link';
 import { NextPage } from "next";
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import imageLocation from '../../../public/logos/tonoya.png';
+
 
 const Footer: NextPage = () => {
 //  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
