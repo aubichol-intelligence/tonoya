@@ -5,14 +5,16 @@ import styles from "./page.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Link from "next/link";
 import { useAuthActions } from "../hooks/useAuth";
+import { useRouter } from 'next/navigation';
 
 
 export default function LoginPage() {
 
-//     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
+    //     const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL; // Client-safe
     // console.log("Root URL:", rootUrl);
 
     const { login } = useAuthActions();
+    const router = useRouter();
 
     // export async function getServerSideProps() {
     //     const rootUrl = process.env.ROOT_URL; // Server-only
@@ -74,26 +76,27 @@ export default function LoginPage() {
 
         if (Object.values(errors).every((error) => error === "")) {
             // Proceed with submission logic
-            console.log("Form submitted", formData);
+            // console.log("Form submitted", formData);
 
             try {
                 await login(formData.email, formData.password);
 
-//     -                <h2>Post not found</h2>
-                   const res = await fetch(`https://tonoyabd.com/api/v1/users/login`, {
-                     method: "POST",
-                     headers: { "Content-Type": "application/json" },
-                     body: JSON.stringify({ email: formData.email, password: formData.password }),
-                 });
+                //     -                <h2>Post not found</h2>
+                const res = await fetch(`https://tonoyabd.com/api/v1/users/login`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: formData.email, password: formData.password }),
+                });
 
-                 const data = await res.json();
+                const data = await res.json();
 
-                 if (data.success) {
-                     alert("Login successful");
-                     window.location.href = "/";
-                 } else {
-                     alert(data.message || "Login failed");
-                 }
+                if (data.success) {
+                    alert("Login successful");
+                    // window.location.href = "/";
+                    router.push('/');
+                } else {
+                    alert(data.message || "Login failed");
+                }
             } catch (error: unknown) {
                 if (error instanceof Error) {
                     alert(error.message);

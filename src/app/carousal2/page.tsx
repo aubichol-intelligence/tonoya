@@ -17,7 +17,7 @@ const svgImages = [
 
 const Carousel = () => {
   // Duplicate the images array multiple times for smooth scrolling
-	const repeatedImages = Array(5)
+	const repeatedImages = Array(8)
     .fill(svgImages)
     .flat();
 

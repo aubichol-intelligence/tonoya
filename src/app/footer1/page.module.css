@@ -26,8 +26,8 @@
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.3s;
-  display:flex;
-  flex-direction:column ;
+  display: flex;
+  flex-direction: column;
 }
 
 .links a:hover {

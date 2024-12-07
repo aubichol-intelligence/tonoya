@@ -1,0 +1,29 @@
+.productView {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    /*border: 1px dotted black;*/
+  }
+  
+  .productImage {
+    width:30vw;
+    
+  }
+  
+  .productDescription {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    
+    .productView {
+      flex-direction: column;
+      padding:0.5rem,
+    }
+    .productImage {
+      width:90vw;
+    }
+  }

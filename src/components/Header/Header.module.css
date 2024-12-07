@@ -1,195 +1,245 @@
-.header {
-    background-color: #B9B9AA;
+.header1 {
+  /* background-color: #B9B9AA;
+    background: transparent;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100vw;
+    width: 96vw;
+    margin-inline: auto; */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays above other content */
+  background-color: rgb(255 255 255 / 20%); /* Transparent background */
+  backdrop-filter: blur(10px); /* Optional: Adds a frosted glass effect */
+  /*padding: 10px 20px;*/
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 auto;
+}
+
+.scrolling {
+  background-color: rgb(
+    255 255 255 / 90%
+  ); /* Solid background when scrolling */
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    /* justify-content: left; */
-    align-items: center;
-/*    padding: 4px; */
-    padding-top: 2rem; 
-    padding-bottom: 2rem;
-    max-width: 98vw;
-    /* max-width: 1400px; */
-    margin: auto;
-    /* gap: 20px; */
+  display: flex;
+  justify-content: space-between;
+
+  /* justify-content: left; */
+  align-items: center;
+
+  /*    padding: 4px; */
+  padding: 1rem ;
+
+  /* max-width: 98vw;
+     max-width: 1400px; */
+  margin:0 auto;
+  width: 90vw;
+
+  /* gap: 20px; */
 }
 
 .logoButton {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 }
 
 .logoImage {
-    /* height: 48px; */
-    width: "auto";
-    height: "auto";
+  /* height: 48px; */
+  width: "auto";
+  height: "auto";
+}
+
+.logoFooter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    /* align-items: left; */
-    /* justify-self: left; */
-    gap: 30px;
+  display: flex;
+  align-items: center;
+
+  /* align-items: left; */
+
+  /* justify-self: left; */
+  gap: 30px;
 }
 
 .desktopNav {
-    display: none;
+  display: none;
 }
 
 .nav a,
 .nav button {
-    /* color: white; */
-    color: black;
-    text-decoration: none;
-    font-weight: normal;
+  /* color: white; */
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 /* .active {
     font-weight: bold;
     color: red;
-    } */
+ ;} */
 .nav a.active,
 .nav button.active {
-    font-weight: bold;
-    /* color: red; */
-    color: black;
+  font-weight: bold;
+
+  /* color: red; */
+  color: black;
 }
 
 .nav a:hover,
 .nav button:hover {
-    color: red;
+  color: red;
 }
 
 .dropdown {
-    position: relative;
+  position: relative;
 }
 
 .dropdownToggle {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dropdownMenu {
-    display: none;
-    position: absolute;
-    background: gray;
-    padding: 8px;
+  display: none;
+  position: absolute;
+  background: gray;
+  padding: 8px;
 }
 
 .dropdown:hover .dropdownMenu {
-    display: block;
+  display: block;
 }
 
-.desktopNav>.logoutButton {
-    background: transparent;
-    /* background-color: rgb(100, 100, 100); */
-    border: none;
-    color: red;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+.desktopNav > .logoutButton {
+  background: transparent;
+
+  /* background-color: rgb(100, 100, 100); */
+  border: none;
+  color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-.desktopNav>.logoutButton:hover {
-    /* background: transparent; */
-    background: rgb(226, 77, 77);
-    /* border: none; */
-    color: white;
-    /* padding: 5px 10px; */
-    /* justify-self: "left"; */
+.desktopNav > .logoutButton:hover {
+  /* background: transparent; */
+  background: rgb(226 77 77);
+
+  /* border: none; */
+  color: white;
+
+  /* padding: 5px 10px; */
+
+  /* justify-self: "left"; */
 }
 
-.mobileNav>.logoutButton {
-    background: transparent;
-    /* background: rgb(35, 35, 35); */
-    border: none;
-    color: rgb(228, 65, 65);
-    /* padding: 5px 10px; */
-    text-align: left;
-    font-weight: bold;
+.mobileNav > .logoutButton {
+  background: transparent;
+
+  /* background: rgb(35, 35, 35); */
+  border: none;
+  color: rgb(228 65 65);
+
+  /* padding: 5px 10px; */
+  text-align: left;
+  font-weight: bold;
 }
 
-.desktopNav>.searchButton {
-    background: transparent;
-    /* background-color: rgb(100, 100, 100); */
-    border: none;
-    color: red;
-    padding: 5px 10px;
-    border-radius: 5px;
+.desktopNav > .searchButton {
+  background: transparent;
+
+  /* background-color: rgb(100, 100, 100); */
+  border: none;
+  color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .mobileMenu {
-    /* display: flex; */
-    background-color: #B9B9AA;
-    /* border: 0; */
-    padding: 5px;
+  /* display: flex; */
+  background-color: #b9b9aa;
+
+  /* border: 0; */
+  padding: 5px;
 }
 
-.mobileMenu>button {
-    /* background: transparent; */
-    background: #B9B9AA;
-    /* display: flex; */
-    /* padding: 5px; */
-    /* border-radius: 10px; */
-    border: 0px;
+.mobileMenu > button {
+  /* background: transparent; */
+  background: #b9b9aa;
+
+  /* display: flex; */
+
+  /* padding: 5px; */
+
+  /* border-radius: 10px; */
+  border: 0;
 }
 
 .mobileNav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    /* background: rgb(30, 29, 29); */
-    background: white;
-    padding: 16px;
-    color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  /* background: rgb(30, 29, 29); */
+  background: white;
+  padding: 16px;
+  color: black;
 }
 
 .mobileNav a.active {
-    font-weight: bold;
-    /* color: red; */
-    color: black;
+  font-weight: bold;
+
+  /* color: red; */
+  color: black;
 }
 
 .searchButton {
-    background: transparent;
-    /* background-color: rgb(51, 47, 47); */
-    border: none;
-    /* color: red; */
-    padding: 5px 10px;
-    border-radius: 5px;
+  background: transparent;
+
+  /* background-color: rgb(51, 47, 47); */
+  border: none;
+
+  /* color: red; */
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .icon {
-    transition: transform 0.2s;
-    font-size: 18px;
-    color: black;
+  transition: transform 0.2s;
+  font-size: 18px;
+  color: black;
 }
 
 .searchIcon {
-    font-size: 14px;
-    color: black;
+  font-size: 14px;
+  color: black;
 }
 
 .icon:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-@media (min-width: 768px) {
-    .desktopNav {
-        display: flex;
-    }
 
-    .mobileMenu,
-    .mobileNav {
-        display: none;
-    }
 
-    .container {
-        /* max-width: 1400px; */
-        max-width: 95vw;
-    }
+@media (width >= 768px) {
+  .desktopNav {
+    display: flex;
+ }
+
+  .mobileMenu,
+  .mobileNav {
+    display: none;
+ }
+
+  .container {
+    /* max-width: 1400px; */
+    max-width: 95vw;
+ }
 }

@@ -1,105 +1,117 @@
 .container {
-    height: 70vh;
-    width:100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* To stack elements */
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #d9fdd3, #a8e6a3);
-  }
-  
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150%;
-    height: 150%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px; /* Adds a 3D effect */
-    overflow: hidden;
-  }
-  
-  .cube {
-    width: 200px;
-    height: 200px;
-    transform-style: preserve-3d; /* Preserve 3D for child elements */
-    animation: rotateCube 10s linear infinite;
-  }
-  
-  .face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Position each face */
-  .face:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
-  .face:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
-  .face:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
-  .face:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
-  .face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
-  .face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
-  
-  /* Animation for cube rotation */
-  @keyframes rotateCube {
-    0% {
-      transform: rotateX(0deg) rotateY(0deg);
-    }
-    100% {
-      transform: rotateX(360deg) rotateY(360deg);
-    }
-  }
-  
-  /* Main content to float above the background */
-  .content {
-    z-index: 2; /* Ensures content appears above the background */
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem;
-    max-width: 1200px;
-  }
-  
-  .image img {
-    max-width: 400px;
-    border-radius: 8px;
-    animation: float 5s ease-in-out infinite;
-  }
-  
-  .text {
-    max-width: 600px;
-  }
-  
-  .text h1 {
-    font-size: 2.5rem;
-    color: #2c5f2d;
-  }
-  
-  .text p {
-    margin: 1rem 0;
-    font-size: 1.25rem;
-    color: #4d7a4d;
-  }
-  
-  .button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #4caf50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #45a045;
-  }
-  
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* To stack elements */
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #d9fdd3, #a8e6a3);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; /* Adds a 3D effect */
+  overflow: hidden;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d; /* Preserve 3D for child elements */
+  animation: rotateCube 10s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgb(255 255 255 / 20%);
+  border: 2px solid rgb(255 255 255 / 10%);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
+}
+
+/* Position each face */
+.face:nth-child(1) {
+  transform: rotateY(0deg) translateZ(100px);
+}
+.face:nth-child(2) {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.face:nth-child(3) {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.face:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.face:nth-child(5) {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.face:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Animation for cube rotation */
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+ ;}
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+ ;}
+}
+
+/* Main content to float above the background */
+.content {
+  z-index: 2; /* Ensures content appears above the background */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+}
+
+.image img {
+  max-width: 400px;
+  border-radius: 8px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.text {
+  max-width: 600px;
+}
+
+.text h1 {
+  font-size: 2.5rem;
+  color: #2c5f2d;
+}
+
+.text p {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  color: #4d7a4d;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a045;
+}

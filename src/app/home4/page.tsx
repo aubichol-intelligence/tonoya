@@ -4,11 +4,12 @@ import React from "react";
 import styles from "./page.module.css";
 import Product from "../product/page";
 import Speciality from "../work5/page";
-//import Institution from "../carousal2/page";
+import Institution from "../carousal2/page";
+import ContactSummary from "../contactsum/page";
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.containerOut}>
         <div className={styles.container}>
         {/* 3D Animated Background */}
         <div className={styles.background}>
@@ -30,6 +31,9 @@ export default function Home() {
 
         <Product/>
         <Speciality/>
+        <Institution/>
+        <ContactSummary/>
+       
     </div>
   );
 }
