@@ -68,8 +68,8 @@ const Home: NextPage = () => {
             <img src="https://i.ibb.co.com/qyFfTFN/file.png" alt="Product" />
             </div>
             <div className={styles.text}>
-            <h1>Tonoya: The finest vending machine of Bangladesh</h1>
-            <p>We Deliver the Premium Sanitary Pad Vending Machines in Bangladesh. Tonoya is powered by world&apos;s finest cash machine aided by our own in-house technology. We provide quality and reliability at affordable cost.</p>
+            <h1>Welcome to Tonoya</h1>
+            <p>We Deliver the Premium Sanitary Pad Vending Machines in Bangladesh.</p>
             <button className={styles.button}>Learn More</button>
             </div>
         </div>
