@@ -5,19 +5,27 @@
   max-width: 100vw;
   overflow: hidden;
   
-  background: #f9f9f9;
-  padding-top: 10rem;
+  
+  padding-top: 20rem;
   padding-bottom: 10rem;
+  width: 100%;
+  
+  background: green;
+  background-image: linear-gradient(to bottom, green 50%, #ddf3d6 50%);
+  background-size: 100% 100%;
+  
 }
 
 .cardContainer {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  
   gap: 20px;
   scrollbar-width: none; /* Hide scrollbar for Firefox */
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-  width: "80vw";
+  width: "100vw";
+ 
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -25,10 +33,11 @@
 }
 
 .card {
+  position: relative;
   background: #fff;
   display:flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   
   border-radius: 8px;
   box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
@@ -36,15 +45,17 @@
   width: 33%;
   flex-shrink: 0;
   text-align: center;
+  top:4rem;
 }
 
-.clientImage {
-  width: 80px;
+/*.clientImage {
+  width: 120px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
-}
+  background-color: cadetblue;
+}*/
 
 .note {
   font-size: 1rem;
@@ -93,3 +104,135 @@
   }
 
  }
+
+ .clientReview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.imageContainer {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 33%;
+}
+
+.clientImage {
+  object-fit: cover;
+}
+
+.clientName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.clientDesignation {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.clientReviewText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.clientFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.logoContainer {
+  margin-top: 5px;
+}
+
+.companyLogo {
+  object-fit: contain;
+}
+
+.clientHeader{
+  flex:1;
+  padding-top:2rem;
+  
+}
+.clientFooter{
+  flex:3;
+  padding-bottom:4rem;
+  
+}
+
+.reviewText{
+  flex:6;
+  padding-top:2rem;
+  padding-bottom:2rem;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: -40px;
+  border-radius: 50%;
+  height:5rem;
+  width: 5rem;
+  background-color: none; /* Background for circular cutout */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  
+
+}
+
+.clientImage {
+  object-fit: cover;
+  width: 100%;
+  height:100%;
+  border-radius: 50%;
+  
+  
+}
+
+.greenBackground {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Covers the lower half */
+  background-color: #32cd32; /* Green background */
+  z-index: 0; /* Place it behind the content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clientReview {
+    max-width: 90%;
+  }
+
+  .clientReviewText {
+    font-size: 0.9rem;
+  }
+
+  .clientName {
+    font-size: 1rem;
+  }
+  
+}
+
+
+
