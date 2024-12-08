@@ -26,12 +26,12 @@ const router = useRouter();
           "@context": "http://schema.org",
           "@type": "Organization",
           name: "Sunbeam Force Limited",
-          url: "https://yourwebsite.com",
+          url: "https://tonoyabd.com",
           logo: "https://tonoyabd.com/logo.png",
           contactPoint: [
             {
               "@type": "ContactPoint",
-              telephone: "+123456789",
+              telephone: "8801705686655",
               contactType: "Customer Service",
             },
           ],
