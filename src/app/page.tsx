@@ -50,7 +50,7 @@ const Home: NextPage = () => {
       <Head>
           <title>Tonoya&apos; Website</title>
           <meta name="description" content="The home of the largest Vending Machine producer in Bangladesh" />
-          <meta name="keywords" content="awesome, website, SEO, next.js" />
+          <meta name="keywords" content="tonoya, website, vending machine, women" />
           <meta property="og:title" content="Tonoya&apos; Website" />
           <meta property="og:description" content="Find Bangladesh&apos; largest Vending Machine providers" />
           <meta property="og:image" content="/path-to-image.jpg" />
@@ -68,8 +68,8 @@ const Home: NextPage = () => {
             <img src="https://i.ibb.co.com/qyFfTFN/file.png" alt="Product" />
             </div>
             <div className={styles.text}>
-            <h1>Welcome to Tonoya</h1>
-            <p>We Deliver the Premium Sanitary Pad Vending Machines</p>
+            <h1>Tonoya: The finest vending machine of Bangladesh</h1>
+            <p>We Deliver the Premium Sanitary Pad Vending Machines in Bangladesh. Tonoya is powered by world's finest cash machine aided by our own in-house technology. We provide quality and reliability at affordable cost.</p>
             <button className={styles.button}>Learn More</button>
             </div>
         </div>
