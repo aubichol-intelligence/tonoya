@@ -1,0 +1,33 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 16px;
+    padding: 20px;
+
+  }
+  
+  .photoWrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .photoWrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .container{
+    padding-top:10rem;
+    padding-bottom: 20rem;
+    width: 60vw;
+    margin: 0 auto;
+  }

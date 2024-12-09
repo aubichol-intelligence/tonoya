@@ -53,11 +53,7 @@
   height: "auto";
 }
 
-.logoFooter{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .nav {
   display: flex;

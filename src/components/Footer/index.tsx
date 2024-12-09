@@ -1,4 +1,5 @@
 'use client'
+
 import React from "react";
 import styles from "./page.module.css";
 //import Map from "../map/page"
@@ -26,7 +27,7 @@ const router = useRouter();
           "@context": "http://schema.org",
           "@type": "Organization",
           name: "Sunbeam Force Limited",
-          url: "https://yourwebsite.com",
+          url: "https://tonoyabd.com",
           logo: "https://tonoyabd.com/logo.png",
           contactPoint: [
             {
