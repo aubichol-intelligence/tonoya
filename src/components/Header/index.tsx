@@ -87,7 +87,7 @@ const Header = () => {
                         Blogs
                     </Link>
                     <Link
-                        href="/contact-form"
+                        href="/contact"
                         className={pathname === '/contact' ? styles.active : ''}
                     >
                         Contact Us

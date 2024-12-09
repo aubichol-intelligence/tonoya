@@ -9,7 +9,7 @@ import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
 //import BlogSummary from "../components/blogSum/page";
 //import GalleryOverview from "../components/galleryOverview/page";
-
+import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 
 import { NextPage } from "next";
@@ -43,11 +43,20 @@ export default Home;
 
 const Home: NextPage = () => {
 
-  /*
-  const NotSSRMaps = dynamic(() => import('../components/map/page'), {
-    ssr: false,
-  });
-  */
+  const router = useRouter();
+
+  const handleContactClick = () => {
+    // Redirect to a contact page or open a modal
+    // window.location.href = "/carousal2";
+    router.push('/contact');
+  };
+
+  const handleProductClick = () => {
+    // Redirect to a contact page or open a modal
+    // window.location.href = "/carousal2";
+    router.push('/product2');
+  };
+
   return (
     
     <div className={styles.containerOut}>
@@ -67,6 +76,7 @@ const Home: NextPage = () => {
             
         </div>
 
+
         {/* Main content */}
         <div className={styles.content}>
             <div className={styles.image}>
@@ -76,8 +86,8 @@ const Home: NextPage = () => {
             <h1>Welcome to Tonoya</h1>
             <p>We Deliver the Premium Sanitary Pad Vending Machines in Bangladesh.</p>
             <div className={styles.buttonContainer}>
-            <button className={styles.button}>View Products</button>
-            <button className={styles.button1}>Contact Us</button>
+            <button className={styles.button} onClick={handleProductClick}>View Products</button>
+            <button className={styles.button1} onClick={handleContactClick}>Contact Us</button>
             </div>
             </div>
         </div>
@@ -95,3 +105,4 @@ const Home: NextPage = () => {
 }
 
 export default Home;
+
