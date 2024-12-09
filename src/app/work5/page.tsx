@@ -28,7 +28,7 @@ const ThreeCards = () => {
   const cards1 = [
     { 
       id: 1,
-      title: "Remove Access", 
+      title: "Remote Access", 
       description: "Tonoya gives access to hygiene and health for women in remote areas. It also serves as a easy solution specially for workplaces. For instance, students in educational institutions or working women in hectic work environments are a direct benefitiary of our product." 
     },
     { 

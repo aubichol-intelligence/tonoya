@@ -74,8 +74,8 @@ const Header = () => {
                         Home
                     </Link>
                     <Link
-                        href="/gallery3"
-                        className={pathname === '/gallery3' ? styles.active : ''}
+                        href="/photo-gallery"
+                        className={pathname === '/photo-gallery' ? styles.active : ''}
                     >
                         Gallery
                     </Link>
@@ -87,8 +87,8 @@ const Header = () => {
                         Blogs
                     </Link>
                     <Link
-                        href="/form1"
-                        className={pathname === '/form1' ? styles.active : ''}
+                        href="/contact-form"
+                        className={pathname === '/contact-form' ? styles.active : ''}
                     >
                         Contact Us
                     </Link>
@@ -132,10 +132,10 @@ const Header = () => {
                         Home
                     </Link>
                     <Link
-                        href="/gallery3"
-                        className={pathname === '/gallery3' ? styles.active : ''}
+                        href="/photo-gallery"
+                        className={pathname === '/photo-gallery' ? styles.active : ''}
                     >
-                        Dashboard
+                        Gallery
                     </Link>
                     <Link
                         href="/blog"

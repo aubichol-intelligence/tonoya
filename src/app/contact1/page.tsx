@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
-import Form from "../form1/page";
+import Form from "../contact-form/page";
 // import Footer from "../footer1/page";
 
 export default function Home() {

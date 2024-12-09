@@ -83,8 +83,8 @@ const Home: NextPage = () => {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
-        <BlogSummary />
-        <GalleryOverview />
+        {/*<BlogSummary /> */}
+        {/*<GalleryOverview />*/}
        {/* <NotSSRMaps /> */}    
        
     </div>
