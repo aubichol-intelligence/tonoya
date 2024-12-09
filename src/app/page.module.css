@@ -101,12 +101,29 @@
   color: #4d7a4d;
 }
 
+.buttonContainer{
+  display:flex;
+  gap:1rem;
+  
+  
+}
 .button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   color: #fff;
   background-color: #4caf50;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button1 {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -150,5 +167,9 @@
   .text {
     padding: 1rem;
     text-align: center;
+ }
+
+ .buttonContainer{
+  justify-content: center;
  }
 }
