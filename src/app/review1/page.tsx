@@ -8,7 +8,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 const ClientReview = () => {
   const scrollRef = useRef<HTMLInputElement>(null);
 
-  const scroll = (direction) => {
+  const scroll = (direction:any) => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
       const scrollAmount = clientWidth;
