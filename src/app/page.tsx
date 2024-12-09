@@ -9,6 +9,7 @@ import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
 //import BlogSummary from "../components/blogSum/page";
 //import GalleryOverview from "../components/galleryOverview/page";
+import ClientReview from "../app/review1/page";
 
 import Head from 'next/head';
 
@@ -87,6 +88,7 @@ const Home: NextPage = () => {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
+        <ClientReview/>
         <GalleryOverview/>
        {/* <NotSSRMaps /> */}    
        
