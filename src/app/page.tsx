@@ -75,6 +75,7 @@ const Home: NextPage = () => {
             <h1>Welcome to Tonoya</h1>
             <p>We Deliver the Premium Sanitary Pad Vending Machines in Bangladesh.</p>
             <button className={styles.button}>Learn More</button>
+            <button className={styles.button}>View Products</button>
             </div>
         </div>
         </div>
