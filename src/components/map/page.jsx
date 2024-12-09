@@ -14,7 +14,7 @@ export default function Map() {
     <main>
       {/*<h1>Welcome to the Map App</h1>*/}
       <MapContainer
-        center={[23.7438111, 90.3665748]} // Initial map center (latitude, longitude)
+        center={[23.74336170880335, 90.36605474563903]} // Initial map center (latitude, longitude)
         zoom={13}
         key="map-container"
         style={{ height: '30vh', width: '100vw'}} // Full-page map
