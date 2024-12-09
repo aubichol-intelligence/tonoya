@@ -7,8 +7,8 @@ import ProductOverview from "../app/productOverview/page";
 import Speciality from "../app/work5/page";
 import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
-import BlogSummary from "../components/blogSum/page";
-import GalleryOverview from "../components/galleryOverview/page";
+//import BlogSummary from "../components/blogSum/page";
+//import GalleryOverview from "../components/galleryOverview/page";
 
 import Head from 'next/head';
 
