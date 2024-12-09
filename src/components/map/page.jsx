@@ -23,7 +23,7 @@ export default function Map() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={[23.7438111, 90.3665748]} icon={icon}>
+        <Marker position={[23.74336170880335, 90.36605474563903]} icon={icon}>
           <Popup>
             <b>Tonoya</b>
             <br />270, Sultanganj Road, Rayer Bazar, Dhanmondi, Dhaka

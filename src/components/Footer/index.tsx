@@ -75,8 +75,8 @@ const router = useRouter();
           <div className={styles.icons}>
 
           <Link href="/">Home</Link>
-          <Link href="/gallery3">Gallery</Link>
-          <Link href="/form1">Contact Us</Link>
+          <Link href="/photo-gallery">Gallery</Link>
+          <Link href="/contact">Contact Us</Link>
           <Link href="/blog">Blog</Link>
  
           </div>

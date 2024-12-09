@@ -23,7 +23,8 @@ const ClientReview = () => {
           left: scrollLeft + scrollAmount,
           behavior: "smooth",
         });
-      }
+      }      const { scrollLeft, clientWidth } = scrollRef.current;
+
     }
   };
 
@@ -50,7 +51,6 @@ const ClientReview = () => {
       clientImage: "/client3.jpg",
       clientLogo: "/logos/jica.png",
     },
-
     {
       id: 4,
       name:"Ankita Sarkar chaity",
@@ -67,7 +67,7 @@ const ClientReview = () => {
     },
     {
       id: 6,
-      name:"Dalim VHai",
+      name:"Dalim Vhai",
       note: "Highly recommend for any business looking to scale!",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/lged.png",
@@ -82,7 +82,7 @@ const ClientReview = () => {
     {
       id: 8,
       name:"Trishiya Nashtaran",
-      note: "Highly recommend for any business looking to scale Highly recommend for any business looking to scale.nnnHighly recommend for any business looking to.",
+      note: "Highly recommend for any business looking to scale Highly recommend for any business looking to scale. Highly recommend for any business looking to.",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/upazilla-porishod.png", 
     },
@@ -124,7 +124,7 @@ const ClientReview = () => {
    {/*  <div className={styles.card}>
      <Image 
         src={image} 
-        alt={`${name}'s image`} 
+        alt={`${name}'s image`}   
         className={styles.clientImage} 
         width={100} 
         height={100} 
@@ -173,9 +173,7 @@ const ClientReview = () => {
    <button className={styles.arrowButton} onClick={() => scroll("right")}>
      &#8594;
    </button>
- </div>
-  
-  
+ </div>  
   );
 };
 
