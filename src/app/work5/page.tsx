@@ -2,28 +2,6 @@ import React from "react";
 import styles from "./page.module.css";
 
 const ThreeCards = () => {
-  /*
-  const cards1 = [
-    {
-      id: 1,
-      title: "Communication Strategy",
-      description:
-        "We prioritize clear and impactful communication to connect ideas with the right audience effectively.",
-    },
-    {
-      id: 2,
-      title: "Brand Quality",
-      description:
-        "Our commitment is to maintain the utmost quality in branding to represent your vision authentically.",
-    },
-    {
-      id: 3,
-      title: "Website Design",
-      description:
-        "We craft seamless, innovative websites that captivate and deliver functionality in every click.",
-    },
-  ];
-  */
  
   const cards1 = [
     { 
