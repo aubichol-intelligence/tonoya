@@ -7,6 +7,8 @@ import ProductOverview from "../app/productOverview/page";
 import Speciality from "../app/work5/page";
 import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
+import Head from 'next/head';
+
 import { NextPage } from "next";
 //import dynamic from 'next/dynamic';
 
@@ -45,6 +47,16 @@ const Home: NextPage = () => {
   return (
     
     <div className={styles.containerOut}>
+      <Head>
+          <title>Tonoya&apos; Website</title>
+          <meta name="description" content="The home of the largest Vending Machine producer in Bangladesh" />
+          <meta name="keywords" content="tonoya, website, vending machine, women" />
+          <meta property="og:title" content="Tonoya&apos; Website" />
+          <meta property="og:description" content="Find Bangladesh&apos; largest Vending Machine providers" />
+          <meta property="og:image" content="/logos/tonoya.png" />
+          <meta name="robots" content="index, follow" />
+      </Head>
+      
         <div className={styles.container}>
         {/* 3D Animated Background */}
         <div className={styles.background}>
@@ -58,7 +70,7 @@ const Home: NextPage = () => {
             </div>
             <div className={styles.text}>
             <h1>Welcome to Tonoya</h1>
-            <p>We Deliver the Premium Sanitary Pad Vending Machines</p>
+            <p>We Deliver the Premium Sanitary Pad Vending Machines in Bangladesh.</p>
             <button className={styles.button}>Learn More</button>
             </div>
         </div>
