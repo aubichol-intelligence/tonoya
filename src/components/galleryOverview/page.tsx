@@ -13,6 +13,7 @@ const photos = [
 const PhotoGallery = () => {
   return (
     <div className={styles.container}>
+        <h1 className={styles.headerText}>See our moments of success</h1>
     <div className={styles.gallery}>
       {photos.map((photo, index) => (
         <div key={index} className={styles.photoWrapper}>
