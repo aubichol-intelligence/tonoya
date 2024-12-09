@@ -135,7 +135,7 @@ const ClientReview = () => {
     <div className={styles.imageWrapper}>
         <Image 
           src="https://i.ibb.co.com/Z8cnrhJ/client.jpg"
-          alt={`${name}'s photo`} 
+          alt={`"client's photo"`} 
           className={styles.clientImage} 
           width={100} 
           height={100} 

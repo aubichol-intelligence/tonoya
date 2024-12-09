@@ -7,7 +7,6 @@ import blogPosts from '../../../components/data/pictures';
 import "./Blog.css";
 import parse from 'html-react-parser';
 
-
 type Params = Promise<{ slug: string }>
 
 // Generate metadata dynamically
@@ -61,7 +60,7 @@ export default async function Page(props: { params: Params }) {
     }
 
     const post = await response.json();
-    console.log(post);
+    // console.log(post);
 
     // const defaultImageUrl = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Ensure this file exists in the public folder.
     // const imageUrl = post.imageUrl || defaultImageUrl;
@@ -80,7 +79,13 @@ export default async function Page(props: { params: Params }) {
                 <header className="blog-header">
                     <h1 className="blog-title">{post.title}</h1>
                     {/* <p className="blog-subtitle">Season 1 | Where the Heart Is</p> */}
-                    <p className="blog-subtitle">Author: {post.author}</p>
+
+                    <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} >
+                        <p className="blog-subtitle">Author: {post.author}</p>
+                        <div style={{ display: "flex", justifyContent: "center" }} >
+                            <Link href="/blog">Back</Link>
+                        </div>
+                    </div>
                 </header>
 
                 {/* Hero Image Section */}
@@ -124,7 +129,10 @@ export default async function Page(props: { params: Params }) {
                     style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}
                 /> */}
 
-                <Link href="/blog">Back to Blog</Link>
+                <div style={{ display: "flex", justifyContent: "center" }} >
+                    <Link href="/blog">Back to Blog List</Link>
+                </div>
+
 
                 {/* Footer */}
                 {/* <footer className="blog-footer">

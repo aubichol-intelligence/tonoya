@@ -44,13 +44,11 @@ export default async function Home() {
   };
 
   const data = await fetchItems(0); // Fetch the first page of items
-  console.log(data);
+  // console.log(data);
 
 
   return (
     <div style={{ marginTop: "7rem", }}>
-      <h1 style={{ justifySelf: "center", }}>Welcome to the Blog</h1>
-
       {/* <div style={{ marginTop: 14, marginBottom: 14, }}>
         <Link href={`/blog/create`} style={{ backgroundColor: 'blue', padding: 10, borderRadius: 10, }}>
           Create New Blog

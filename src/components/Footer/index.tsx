@@ -32,7 +32,7 @@ const router = useRouter();
           contactPoint: [
             {
               "@type": "ContactPoint",
-              telephone: "+123456789",
+              telephone: "8801705686655",
               contactType: "Customer Service",
             },
           ],

@@ -20,7 +20,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
 	title: "Tonoya",
-	description: "Home of Bangladesh's best vending machine for sanitary napkins",
+	description: "Home of Bangladesh's best vending machine for sanitary napkins. ",
 };
 
 export default function RootLayout({

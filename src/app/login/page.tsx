@@ -76,7 +76,7 @@ export default function LoginPage() {
 
         if (Object.values(errors).every((error) => error === "")) {
             // Proceed with submission logic
-            console.log("Form submitted", formData);
+            // console.log("Form submitted", formData);
 
             try {
                 await login(formData.email, formData.password);
