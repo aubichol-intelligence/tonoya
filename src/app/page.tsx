@@ -10,6 +10,7 @@ import ContactSummary from "../app/contactsum/page";
 import Head from 'next/head';
 
 import { NextPage } from "next";
+import GalleryOverview from "../app/galleryOverview/page";
 //import dynamic from 'next/dynamic';
 
 /*
@@ -80,6 +81,7 @@ const Home: NextPage = () => {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
+        <GalleryOverview/>
        {/* <NotSSRMaps /> */}    
        
     </div>
