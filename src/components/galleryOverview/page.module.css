@@ -1,75 +1,75 @@
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(2, auto); /* 2 rows */
-    gap: 1rem;
-    max-width: 100vw;
-    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 1rem;
+  max-width: 100vw;
+  
 
-  }
-  
-  .photoWrapper {
-    overflow: hidden;
-    border-radius: 8px;
-   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
-    
-   box-shadow: inset 0 0 30px rgba(116, 204, 126, 0.3); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  
-  .photoWrapper:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .photo {
-    width: 100%;
-    height: 100%;
-    display: block;
-   /* box-shadow: 0 4px 10px rgba(11, 221, 36, 0.6);*/
-    /*colorFilter : ColorFilter.tint(Color.Green, blendMode = BlendMode.Darken)
-    filter: grayscale(100%) sepia(100%) hue-rotate(120deg) contrast(1.2);
-    filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(2.5);
-    filter: brightness(1) sepia(0.2) hue-rotate(90deg) saturate(1.3) opacity(0.9);*/
-    /*box-shadow: inset 0 0 30px rgba(116, 204, 126, 0.3); /* Inner green shadow */
-   
+}
 
-   /*filter: grayscale(50%);
-   filter: drop-shadow(8px 8px 10px green);*/
-   
-  }
+.photoWrapper {
+  overflow:hidden;
+  border-radius: 12px;
+ /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
   
-  .container{
-    padding-top:10rem;
-    padding-bottom: 10rem;
-    width: 75vw;
-    margin: 0 auto;
-  }
+ box-shadow: inset 0 0 30px rgba(116, 204, 126, 0.3); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .headerText{
-    /*font-size: 3em;*/
-    font-size: clamp(1.5rem, 2.5vw, 3rem);
-    text-align: center;
-    padding-bottom:3rem ;
-  }
 
-  /* Responsive Adjustments */
+.photoWrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  aspect-ratio: 1;
+  object-fit: cover; /* Ensures the image fills the container while preserving aspect ratio */
+  border-radius: inherit; /* Matches the container’s rounded corners */
+ /* box-shadow: 0 4px 10px rgba(11, 221, 36, 0.6);*/
+  /*colorFilter : ColorFilter.tint(Color.Green, blendMode = BlendMode.Darken)
+  filter: grayscale(100%) sepia(100%) hue-rotate(120deg) contrast(1.2);
+  filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(2.5);
+  filter: brightness(1) sepia(0.2) hue-rotate(90deg) saturate(1.3) opacity(0.9);*/
+  /*box-shadow: inset 0 0 30px rgba(116, 204, 126, 0.3); /* Inner green shadow */
+ 
+
+ /*filter: grayscale(50%);
+ filter: drop-shadow(8px 8px 10px green);*/
+ 
+}
+
+.container{
+  padding-top:10rem;
+  padding-bottom: 10rem;
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.headerText{
+  /*font-size: 3em;*/
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom:3rem ;
+}
+
+/* Responsive Adjustments */
 @media (width <= 768px) {
-    .gallery {
-      grid-template-columns: repeat(2, 1fr);
-   ;}
-   .container {
-    width:92vw;
-   }
-  }
-  
-  @media (width <= 480px) {
-    .gallery {
-      grid-template-columns: 1fr;
-      
-   ;}
-  }
-  
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+ ;}
+ .container {
+  width:92vw;
+ }
+}
 
-  
+@media (width <= 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    
+ ;}
+}
