@@ -14,7 +14,6 @@ const images = [
   { src: "https://i.ibb.co.com/Dtc1MWX/Whats-App-Image-2024-11-17-at-7-29-58-PM-1.jpg", title: "Tonoya Vending Machine" },
 ];
 
-
 const AestheticGallery = () => {
   return (
     <div className={styles.gallery}>
