@@ -5,14 +5,14 @@ import styles from "./page.module.css";
 //import Image from "next/image";
 
 const svgImages = [
-	{ id: 1, src: "/logos/aklom.png", alt: "SVG 1" },
-	{ id: 2, src: "/logos/CHP-LOGO-1.png", alt: "SVG 2" },
-	{ id: 3, src: "/logos/creato.png", alt: "SVG 3" },
-	{ id: 4, src: "/logos/cu.png", alt: "SVG 4" },
-	{ id: 5, src: "/logos/jica.png", alt: "SVG 5" },
-	{ id: 6, src: "/logos/lged.png", alt: "SVG 6" },
-	{ id: 7, src: "/logos/shorupkathi.png", alt: "SVG 7" },
-	{ id: 8, src: "/logos/upazilla-porishod.png", alt: "SVG 8" },
+	{ id: 1, src: "/logos/aklom.png", alt: "Aklom Logo" },
+	{ id: 2, src: "/logos/CHP-LOGO-1.png", alt: "CHP Logo" },
+	{ id: 3, src: "/logos/creato.png", alt: "Creato Logo" },
+	{ id: 4, src: "/logos/cu.png", alt: "CU logo" },
+	{ id: 5, src: "/logos/jica.png", alt: "JICA logo" },
+	{ id: 6, src: "/logos/lged.png", alt: "LGED logo" },
+	{ id: 7, src: "/logos/shorupkathi.png", alt: "Shorupkathi Logo" },
+	{ id: 8, src: "/logos/upazilla-porishod.png", alt: "Upazilla Parishad logo" },
 ];
 
 const Carousel = () => {
