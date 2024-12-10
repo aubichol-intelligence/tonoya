@@ -12,7 +12,7 @@ const StartProject = () => {
   const handleContactClick = () => {
     // Redirect to a contact page or open a modal
     // window.location.href = "/carousal2";
-    router.push('/form1');
+    router.push('/contact');
   };
 
   return (
