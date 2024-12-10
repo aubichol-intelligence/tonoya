@@ -31,59 +31,34 @@ const ClientReview = () => {
   const clientData = [
     {
       id: 1,
-      name:"Tarif Ezaz",
-      note: "Working with [Client's Name/Company] has been an absolute pleasure. Their clear communication, proactive approach, and commitment to excellence made the project seamless and enjoyable. [Highlight a specific positive aspect, e.g.,We look forward to collaborating on future projects!",
+      name:"Olonkarkathi Moniram Maddhomik Bidyaloy",
+      designation: "Head Master",
+      note: "Most of our students are female. They face sudden problems when period happens and gets immediate help from using Tonoya vending machines",
       clientImage: "/client1.jpg",
-      clientLogo: "/logos/aklom.png", 
+      clientLogo: "/logos/tonoya.png", 
     },
     {
       id: 2,
-      name:"Motu Sarkar",
-      note: "Amazing experience and fantastic support! Amazing experience and fantastic support! Amazing experience and fantastic support! Amazing experience and fantastic support!",
+      name:"Palkirhat Sher e Bangla Maddhomik Bidyaloy",
+      designation: "Student",
+      note: "We are very happy to use this machine. Whenever we face menstrual difficulties, we use this machine. We are all getting benefitted from it",
       clientImage: "/client2.jpg",
-      clientLogo: "/logos/CHP-LOGO-1.png",
-    },
-    {
-      id: 3,
-      name:"Ankita Sarkar",
-      note: "Highly recommend for any business looking to scale!",
-      clientImage: "/client3.jpg",
-      clientLogo: "/logos/jica.png",
-    },
-    {
-      id: 4,
-      name:"Ankita Sarkar chaity",
-      note: "This service has revolutionized our workflow!",
-      clientImage: "/client1.jpg",
-      clientLogo: "/logos/creato.png"
-    },
-    {
-      id: 5,
-      name:"Onto Hin",
-      note: "Amazing experience and This service has revolutionized our workflow! fantastic support! mn jhyhfg agsfff sffsdds dsdshh gdshghgh gdds gdsggg dsfd svvcv bxcnsvhcd gshg.",
-      clientImage: "/client2.jpg",
-      clientLogo: "/logos/cu.png",
-    },
-    {
-      id: 6,
-      name:"Dalim Vhai",
-      note: "Highly recommend for any business looking to scale!",
-      clientImage: "/client3.jpg",
-      clientLogo: "/logos/lged.png",
+      clientLogo: "/logos/tonoya.png",
     },
     {
       id: 7,
-      name:"Yousuf H. Showrov",
-      note: "Highly recommend for any business looking to scale!",
+      name:"Government Shorupkathi Secondary High School",
+      designation: "Assistant Teacher",
+      note: "Our students love this product. We don't have to worry about sending students home anymore. Our institution is getting bettre because of this product.",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/shorupkathi.png",
     },
     {
-      id: 8,
-      name:"Trishiya Nashtaran",
-      note: "Highly recommend for any business looking to scale Highly recommend for any business looking to scale. Highly recommend for any business looking to.",
+      id: 3,
+      name:"Shohagdal Razzab Ali Girls High School",
+      note: "After the establishment of the vending machine, when the girls have menstruation, they do not go outside. This machine helps them with adequate pads at a low cost. We thank Tonoya",
       clientImage: "/client3.jpg",
-      clientLogo: "/logos/upazilla-porishod.png", 
+      clientLogo: "/logos/tonoya.png",
     },
   ];
 
@@ -151,7 +126,7 @@ const ClientReview = () => {
       
     <div className={styles.clientHeader}>
       <h3 className={styles.clientName}>{client.name}</h3>
-      <p className={styles.clientDesignation}>General Manager</p>
+      <p className={styles.clientDesignation}>{client.designation}</p>
     </div>
 
     <div className={styles.reviewText}>
@@ -163,7 +138,7 @@ const ClientReview = () => {
 
     <div className={styles.clientFooter}>
       <h4 className={styles.clientName}>{client.name}</h4>
-      <p className={styles.clientDesignation}>General Manager</p>
+      <p className={styles.clientDesignation}>{client.designation}</p>
       <div className={styles.logoContainer}>
         <Image 
           src={client.clientLogo} 
