@@ -22,7 +22,7 @@ const carouselItems = [
 const CarouselSection = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.background}></div>
+      <div className={styles.background}><h1 className={styles.headerText}>Explore Trending Tonoya Publications</h1></div>
       <div className= {styles.cardContainer}>
         {carouselItems.map((item, index) => (
           <div key={index} className={styles.card}>
@@ -32,6 +32,7 @@ const CarouselSection = () => {
           </div>
         ))}
       </div>
+      <button className={styles.button}>Read More Thoughts</button>
     </section>
   );
 };
