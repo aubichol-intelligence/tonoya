@@ -114,9 +114,17 @@ const ClientReview = () => {
       </button>
     </div>*/
     <div className={styles.container}>
+      
+
+      <div><h1 className={styles.headerText}>Our Clients’ Satisfaction is Our Top Priority</h1>
+      <div className={styles.buttonContainer}>
       <button className={styles.arrowButton} onClick={() => scroll("left")}>
         &#8592;
       </button>
+      <button className={styles.arrowButton} onClick={() => scroll("right")}>
+        &#8594;
+      </button>
+      </div>
       <div className={styles.cardContainer} ref={scrollRef}>
         {clientData.map((client) => (
     <div className={styles.card} key={client.id}>
@@ -167,12 +175,16 @@ const ClientReview = () => {
       </div>
     </div>
   </div>
+
    ))}
    </div>
-   <button className={styles.arrowButton} onClick={() => scroll("right")}>
+   </div>
+   {/*<button className={styles.arrowButton} onClick={() => scroll("right")}>
      &#8594;
-   </button>
- </div>  
+   </button>*/}
+ </div>
+  
+  
   );
 };
 

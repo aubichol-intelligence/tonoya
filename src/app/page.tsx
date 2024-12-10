@@ -1,6 +1,7 @@
 
 "use client"
 import React from "react";
+import { useRouter } from 'next/navigation';
 import styles from "./page.module.css";
 //import Product1 from "../app/product/page";
 import ProductOverview from "../app/productOverview/page";
@@ -9,7 +10,8 @@ import Institution from "../app/carousal2/page";
 import ContactSummary from "../app/contactsum/page";
 //import BlogSummary from "../components/blogSum/page";
 //import GalleryOverview from "../components/galleryOverview/page";
-import { useRouter } from 'next/navigation';
+import ClientReview from "../app/review1/page";
+
 import Head from 'next/head';
 
 import { NextPage } from "next";
@@ -97,6 +99,7 @@ const Home: NextPage = () => {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
+        <ClientReview/>
         <GalleryOverview/>
        {/* <NotSSRMaps /> */}    
        
