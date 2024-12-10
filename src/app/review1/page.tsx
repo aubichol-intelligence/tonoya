@@ -39,7 +39,7 @@ const ClientReview = () => {
     },
     {
       id: 2,
-      name:"Palkirhat Sher e Bangla Maddhomik Bidyaloy",
+      name:"Palkirhat Sher-e-Bangla Maddhomik Bidyaloy",
       designation: "Student",
       note: "We are very happy to use this machine. Whenever we face menstrual difficulties, we use this machine. We are all getting benefitted from it",
       clientImage: "/client2.jpg",
