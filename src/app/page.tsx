@@ -101,7 +101,7 @@ const Home: NextPage = () => {
         <Institution/>
         <ContactSummary/>
         <ClientReview/>
-        <BlogOverview/>
+        {/*<BlogOverview/>*/}
         <GalleryOverview/>
        {/* <NotSSRMaps /> */}    
        
