@@ -1,17 +1,22 @@
 .container {
-  padding: 10rem 5rem;
+  padding: 10rem 10rem;
+ /* background: linear-gradient(145deg, #8ae490, #e1e1e1);*/
+  width: 100vw;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  padding: 2rem;
-  background: linear-gradient(145deg, #f3f3f3, #e1e1e1);
-  border-radius: 15px;
+  padding: 5rem;
+  /*background: linear-gradient(145deg, #27c52f, #e1e1e1);
   box-shadow:
     10px 10px 20px #d0d0d0,
     -10px -10px 20px #fff;
+    z-index: 2;
+  */
+  border-radius: 15px;
+  
 }
 
 .card {
@@ -21,12 +26,18 @@
   box-shadow: 0 10px 15px rgb(0 0 0 / 10%);
   cursor: pointer;
   transform-origin: center;
+  
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 1;
+  display: block;
+  backdrop-filter:'';
+  object-fit: cover; /* Ensures the image fills the container while preserving aspect ratio */
+  
 }
 
 .overlay {
@@ -39,10 +50,11 @@
   justify-content: center;
   align-items: center;
   background: rgb(0 0 0 / 50%);
+
   color: #fff;
-  opacity: 0;
+  opacity: -3;
   transition: opacity 0.4s ease;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(0px);
 }
 
 .card:hover .overlay {
@@ -57,11 +69,34 @@
   text-shadow: 2px 2px 10px rgb(0 0 0 / 70%);
 }
 
+.headerText{
+  /*font-size: 3em;*/
+  
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom:2rem ;
+}
+
 /* Responsive Adjustments */
 @media (width <= 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1rem; 
  ;}
+
+ .container{
+  padding-left:0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 2rem;
+  padding-top: 8rem;
+ }
+
+ .headerText{
+  padding-bottom: 0.5rem;
+ }
+ 
 }
 
 @media (width <= 480px) {
