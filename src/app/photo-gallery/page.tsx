@@ -17,8 +17,8 @@ const images = [
 const AestheticGallery = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.headerText}>When our achievements
-speak for themselves</h1>
+      <h1 className={styles.headerText}>When Our Achievements
+Speak for Themselves</h1>
     <div className={styles.gallery}>
       {images.map((image, index) => (
         <motion.div
