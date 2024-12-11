@@ -56,7 +56,7 @@
   .carouselItem {
     width: 100px; /* Even smaller width */
     height: 100px;
- }
+ ;}
 }
 
 @media (width <= 480px) {
@@ -64,7 +64,7 @@
     margin: 0.1rem;
     padding: 4rem;
     border-width: 1px;
- }
+ ;}
 }
 
 .image {
