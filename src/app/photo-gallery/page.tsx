@@ -17,7 +17,8 @@ const images = [
 const AestheticGallery = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Photo Gallery</h1>
+      <h1 className={styles.headerText}>When our achievements
+speak for themselves</h1>
     <div className={styles.gallery}>
       {images.map((image, index) => (
         <motion.div
@@ -34,8 +35,8 @@ const AestheticGallery = () => {
         >
           <img src={image.src} alt={image.title} className={styles.image} />
             <div className={styles.overlay}>
-              <h3 className={styles.title}>{image.title}
-              </h3></div>
+              <h3 className={styles.title}>{image.title}</h3>
+            </div>
         </motion.div>
       ))}
     </div>
