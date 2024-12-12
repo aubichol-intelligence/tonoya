@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./page.module.css";
 import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactForm = () => {
 	
@@ -83,6 +84,10 @@ const ContactForm = () => {
 	};
 
 	return (
+	<div className={styles.containers}>
+		<div className={styles.background}>
+				<h1 className={styles.headerText}>Contact Our Friendly Team</h1>
+			</div>
 		<motion.div
 			className={styles.contactContainer}
 			initial="hidden"
@@ -91,32 +96,47 @@ const ContactForm = () => {
 			variants={containerVariants}
 		>
 
+			
 			{/* Contact Info Section */}
 			<motion.div
 				className={styles.contactInfoSection}
 				variants={itemVariants}
 			>
-				<motion.div
+				<div
 					className={styles.contactBox}
-					whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
 				>
-					<h3>Give us a quick call</h3>
-					<p>+8801705686655</p>
-				</motion.div>
-				<motion.div
+					<FaPhoneAlt className={styles.icon} />
+					<div className={styles.textContainer}>
+						<h3>Give us a quick call</h3>
+						<p>+8801705686655</p>
+					</div>
+				</div>
+				
+				<div
 					className={styles.contactBox}
-					whileHover={{ scale: 1.0, }}
 				>
-					<AiOutlineMail />
-					<h3>Send us an email to start with</h3>
-					<p>sunbeamforce@gmail.com</p>
-				</motion.div>
+					<FaEnvelope className={styles.icon} />
+					<div className={styles.textContainer}>
+						<h3>Send us an email to start with</h3>
+						<p>sunbeamforce@gmail.com</p>
+					</div>
+				</div>
+
+				<div
+					className={styles.contactBox}
+				>
+					<FaMapMarkerAlt className={styles.icon} />
+					<div className={styles.textContainer}>
+						<h3>Come visit us</h3>
+						<p>270, Sultanganj Road, Dhaka</p>
+					</div>
+				</div>
 			</motion.div>
 			{/* Form Section */}
 			<motion.div
 				className={styles.formSection}
 				variants={itemVariants}
-				whileHover="hover"
+				/*whileHover="hover"*/
 			>
 
 				<form className={styles.form} onSubmit={handleSubmit}>
@@ -174,6 +194,7 @@ const ContactForm = () => {
 				</form>
 			</motion.div>
 		</motion.div>
+		</div>	
 	);
 };
 
