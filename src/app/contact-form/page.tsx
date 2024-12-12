@@ -111,6 +111,7 @@ const ContactForm = () => {
 						<p>+8801705686655</p>
 					</div>
 				</div>
+				
 				<div
 					className={styles.contactBox}
 				>
