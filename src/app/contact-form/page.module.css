@@ -1,26 +1,46 @@
 /* Main container */
+.continer{
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://i.ibb.co.com/86BnBqw/freepik-upload-11824.jpg);
+}
+
 .contactContainer {
   display: flex;
 
   /* flex-wrap: wrap;
     flex-direction: column; */
+  
   margin-inline: auto;
+  gap:4rem;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
-  padding: 2rem;
-  padding-top: 14rem;
+  padding-top: 6rem;
   padding-bottom: 10rem;
   color: black;
 
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   width: 98vw;
-  background-color: whitesmoke;
+  
+}
+
+
+.icon {
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 25px;
+  margin-right: 15px;
+  background-color:black ;
 }
 
 /* Form Section */
 .formSection {
   width: 50vw;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 2rem;
+  /*background-color: #555;*/
 }
 
 .formSection h2 {
@@ -33,6 +53,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin:0 auto;
 }
 
 .form label {
@@ -80,7 +101,7 @@
   top: -8px;
   left: 10px;
   font-size: 0.85rem;
-  color: #3498db;
+  color: #059725;
   background: #fff;
   padding: 0 4px;
 }
@@ -88,9 +109,17 @@
 /* Contact Info Section */
 .contactInfoSection {
   width: 30vw;
+  padding-top: 2rem;
+  padding-bottom: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  gap:2rem;
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
-  background-color: aquamarine;
+   /*background-image:url(https://i.ibb.co.com/9HnBcDy/background-Photo.jpg) ;
+ background-color: aquamarine;*/
 }
 
 .styledTextarea {
@@ -113,6 +142,14 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
   transition: box-shadow 0.3s ease;
   width: 100%;
+  display:flex;
+}
+
+.textContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .contactBox h3 {
@@ -131,18 +168,21 @@
 .button {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  background-color: black;
+  color: white;
+}
+
+
+.headerText{
+  /*font-size: 3em;*/
+  padding-top:8rem;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom:1rem ;
 }
 
 /* Responsive Design */
 @media (width <= 768px) {
-  .contactContainer {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-    margin-inline: auto;
- }
-
   .contactBox {
     width: 90%;
     margin-inline: auto;
@@ -150,25 +190,11 @@
 
   .formSection,
   .contactInfoSection {
-    width: 90vw;
-    margin-inline: auto;
+    width: 98vw;
+    margin: 0 auto;
  }
 
-  /* extra */
-
-  /* Main Container */
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 30vw;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
- ;}
+  
 
   /* Individual Info Section */
   .infoSection {
@@ -188,7 +214,7 @@
  ;}
 
   /* Icon Styling */
-  .icon {
+  .icon1 {
     width: 50px;
     height: 50px;
     display: flex;
@@ -232,9 +258,43 @@
 
   /* Responsive Design */
   @media (width <= 768px) {
-    .container {
-      padding: 1rem;
- ;}
+
+    .contactContainer {
+      display: flex;
+    width: 99vw;
+      /* flex-wrap: wrap;
+        flex-direction: column; */
+        flex-direction: column;
+      margin: 0 auto;
+      
+      justify-content: center;
+      align-items: center;
+      padding-top: 0.2rem;
+      padding-bottom: 2rem;
+      color: black;
+    
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       background-color: rgb(168, 100, 100);
+      */
+      width: 100vw;
+     
+    }
+
+
+ .formSection {
+  width: 100vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+  
+
+}
+
+.form{
+  width:90vw;
+  margin: 0 auto;
+}
 
     .infoSection {
       flex-direction: row;
