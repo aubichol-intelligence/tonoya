@@ -33,6 +33,7 @@ const ClientReview = () => {
       id: 1,
       name:"Olonkarkathi Moniram Maddhomik Bidyaloy",
       designation: "Head Master",
+      image: "https://i.ibb.co.com/vmZRdPz/head-master.jpg",
       note: "Most of our students are female. They face sudden problems when period happens and gets immediate help from using Tonoya vending machines",
       clientImage: "/client1.jpg",
       clientLogo: "/logos/tonoya.png", 
@@ -41,6 +42,7 @@ const ClientReview = () => {
       id: 2,
       name:"Palkirhat Sher-e-Bangla Maddhomik Bidyaloy",
       designation: "Student",
+      image: "https://i.ibb.co.com/CJJWKLY/student-photoaidcom-cropped.jpg",
       note: "We are very happy to use this machine. Whenever we face menstrual difficulties, we use this machine. We are all getting benefitted from it",
       clientImage: "/client2.jpg",
       clientLogo: "/logos/tonoya.png",
@@ -51,11 +53,13 @@ const ClientReview = () => {
       designation: "Assistant Teacher",
       note: "Our students love this product. We don't have to worry about sending students home anymore. Our institution is getting bettre because of this product.",
       clientImage: "/client3.jpg",
+      image: null,
       clientLogo: "/logos/shorupkathi.png",
     },
     {
       id: 3,
       name:"Shohagdal Razzab Ali Girls High School",
+      image: "https://i.ibb.co.com/RDy2DLb/sir-photoaidcom-cropped.jpg",
       note: "After the establishment of the vending machine, when the girls have menstruation, they do not go outside. This machine helps them with adequate pads at a low cost. We thank Tonoya",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/tonoya.png",
@@ -116,7 +120,7 @@ const ClientReview = () => {
      {/* Green background */}
     <div className={styles.imageWrapper}>
         <Image 
-          src="https://i.ibb.co.com/Z8cnrhJ/client.jpg"
+          src={client.image}
           alt={`"client's photo"`} 
           className={styles.clientImage} 
           width={100} 
