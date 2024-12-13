@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
 import { useState } from "react";
-import { AiOutlineMail } from "react-icons/ai";
+//import { AiOutlineMail } from "react-icons/ai";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactForm = () => {
