@@ -51,7 +51,7 @@ const ClientReview = () => {
       id: 7,
       name:"Government Shorupkathi Secondary High School",
       designation: "Assistant Teacher",
-      image: "https://i.ibb.co.com/CJJWKLY/student-photoaidcom-cropped.jpg",
+      image: "https://i.ibb.co.com/LRfHKr9/lady-teacher.jpg",
       note: "Our students love this product. We don't have to worry about sending students home anymore. Our institution is getting bettre because of this product.",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/shorupkathi.png",
