@@ -24,7 +24,7 @@ const images = [
 const PhotoGallery = () => {
   return (
     <div className={styles.container}>
-        <h1 className={styles.headerText}>See our moments of success</h1>
+        <h2 className={styles.headerText}>See Our Moments of Success</h2>
     <div className={styles.gallery}>
       {images.map((photo, index) => (
         <div key={index} className={styles.photoWrapper}>
