@@ -11,6 +11,7 @@ import ContactSummary from "../app/contactsum/page";
 //import BlogSummary from "../components/blogSum/page";
 //import GalleryOverview from "../components/galleryOverview/page";
 import ClientReview from "../app/review1/page";
+import VideoOverview from "../app/videoOverview/page";
 //import BlogOverview from "../app/blogSum1/page"
 
 import Head from 'next/head';
@@ -100,6 +101,7 @@ const Home: NextPage = () => {
         <Speciality/>
         <Institution/>
         <ContactSummary/>
+        <VideoOverview />
         <ClientReview/>
         {/*<BlogOverview/>*/}
         <GalleryOverview/>
