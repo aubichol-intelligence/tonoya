@@ -1,45 +1,157 @@
 "use client"
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
 //import Image from "next/image";
+// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
-const images = [
-  { src: "https://i.ibb.co.com/6wNwM5D/Whats-App-Image-2024-11-17-at-7-29-58-PM.jpg", title: "Tonoya Vending Machine" },
-  { src: "https://i.ibb.co.com/9N3LtmV/Whats-App-Image-2024-11-17-at-7-30-01-PM.jpg", title: "Tonoya Vending Machine" },
-  { src: "https://i.ibb.co.com/DK2wbJ5/Whats-App-Image-2024-11-17-at-7-29-56-PM.jpg", title: "Tonoya Vending Machine" },
-  { src: "https://i.ibb.co.com/8MgfNkw/Whats-App-Image-2024-11-17-at-7-29-50-PM.jpg", title: "Tonoya Vending Machine" },
-  { src: "https://i.ibb.co.com/p0nQgbG/Whats-App-Image-2024-11-17-at-7-29-42-PM.jpg", title: "Tonoya Vending Machine" },
-  { src: "https://i.ibb.co.com/Dtc1MWX/Whats-App-Image-2024-11-17-at-7-29-58-PM-1.jpg", title: "Tonoya Vending Machine" },
-];
+
+interface ImageData {
+  file_name: string;
+  image_id?: string;
+  tags: string[];
+}
 
 const AestheticGallery = () => {
+  const [imagesWithData, setImagesWithData] = useState<ImageData[]>([]);
+  // console.log(imagesWithData);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(0);
+
+  const ITEMS_PER_PAGE = 6;
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      setLoading(true);
+      try {
+        const skip = currentPage * ITEMS_PER_PAGE;
+        const response = await fetch(`https://tonoyabd.com/api/v1/image/list/${skip}/${ITEMS_PER_PAGE}`, {
+          method: 'GET',
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          // console.log(data.list);
+
+          setImagesWithData(data?.list || []);
+        } else {
+          const errorData = await response.json();
+          console.error("Error fetching images:", errorData.message || "Unknown error");
+          alert(`Error: ${errorData.message || "Failed to fetch images."}`);
+        }
+      } catch (error) {
+        console.error("Error fetching images:", error);
+        alert("An unexpected error occurred while fetching images.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchImages();
+  }, [currentPage]);
+
+  // prev
+  const handlePrevious = () => {
+    if (currentPage > 0) setCurrentPage(currentPage - 1);
+  };
+
+  // next
+  const isNextDisabled = imagesWithData?.length < ITEMS_PER_PAGE || imagesWithData?.length === 0;
+  const handleNext = () => {
+    if (imagesWithData?.length <= ITEMS_PER_PAGE) setCurrentPage(currentPage + 1);
+    // setCurrentPage(currentPage + 1);
+  };
+
+
   return (
     <div className={styles.container}>
       <h1 className={styles.headerText}>When Our Achievements
-Speak for Themselves</h1>
-    <div className={styles.gallery}>
-      {images.map((image, index) => (
-        <motion.div
-          className={styles.card}
-          key={index}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: index * 0.2,
-            duration: 0.6,
-            type: "spring",
+        Speak for Themselves
+      </h1>
+
+      {loading ? (
+        <p className={styles.loading}>Loading...</p>
+      ) :
+        <div className={styles.gallery}>
+          {imagesWithData.map((image, index) => (
+            <motion.div
+              className={styles.card}
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.2,
+                duration: 0.6,
+                type: "spring",
+              }}
+              whileHover={{ scale: 1.05 }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`https://tonoyabd.com/api/v1/image/read/${image.image_id}`} alt='Tonoya Vending Machine' className={styles.image} />
+
+              <div className={styles.overlay}>
+                <h3 className={styles.title}>Tonoya Vending Machine</h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      }
+
+      <div className={styles.paginationContainer}>
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevious}
+          disabled={currentPage <= 0}
+          className={styles.prevButton}
+          style={{
+            backgroundColor: currentPage <= 0 ? "#d1d5db" : "#3b82f6",
+            color: currentPage <= 0 ? "#6b7280" : "#ffffff",
+            cursor: currentPage <= 0 ? "not-allowed" : "pointer",
+            transition: "background-color 0.3s",
           }}
-          whileHover={{ scale: 1.05 }}
+          onMouseEnter={(e) => {
+            if (currentPage > 0) e.currentTarget.style.backgroundColor = "#2563eb";
+          }}
+          onMouseLeave={(e) => {
+            if (currentPage > 0) e.currentTarget.style.backgroundColor = "#3b82f6";
+          }}
         >
-          <img src={image.src} alt={image.title} className={styles.image} />
-            <div className={styles.overlay}>
-              <h3 className={styles.title}>{image.title}</h3>
-            </div>
-        </motion.div>
-      ))}
-    </div>
+          {/* <FaArrowLeft /> */}
+          <GrCaretPrevious />
+          Previous
+        </button>
+
+        {/* Page Number */}
+        <p className={styles.pageNo}>
+          Page No. {currentPage + 1}
+        </p>
+
+        {/* Next Button */}
+        <button
+          onClick={handleNext}
+          disabled={isNextDisabled}
+          className={styles.nextButton}
+          style={{
+            backgroundColor: isNextDisabled ? "#d1d5db" : "#3b82f6",
+            color: isNextDisabled ? "#6b7280" : "#ffffff",
+            cursor: isNextDisabled ? "not-allowed" : "pointer",
+            transition: "background-color 0.3s",
+          }}
+          onMouseEnter={(e) => {
+            if (!isNextDisabled) e.currentTarget.style.backgroundColor = "#2563eb";
+          }}
+          onMouseLeave={(e) => {
+            if (!isNextDisabled) e.currentTarget.style.backgroundColor = "#3b82f6";
+          }}
+        >
+          Next
+          {/* <FaArrowRight /> */}
+          <GrCaretNext />
+        </button>
+      </div>
+
     </div>
   );
 };

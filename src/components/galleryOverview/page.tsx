@@ -1,5 +1,7 @@
 import React from "react";
 import styles from './page.module.css';
+import Link from "next/link";
+import { GrGallery } from "react-icons/gr";
 
 /*
 const photos = [
@@ -24,14 +26,24 @@ const images = [
 const PhotoGallery = () => {
   return (
     <div className={styles.container}>
-        <h2 className={styles.headerText}>See Our Moments of Success</h2>
-    <div className={styles.gallery}>
-      {images.map((photo, index) => (
-        <div key={index} className={styles.photoWrapper}>
-          <img src={photo.src} alt={`Photo ${index + 1}`} className={styles.photo} />
-        </div>
-      ))}
-    </div>
+      <h2 className={styles.headerText}>See Our Moments of Success</h2>
+
+      <div className={styles.gallery}>
+        {images.map((photo, index) => (
+          <div key={index} className={styles.photoWrapper}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photo.src} alt={`Photo ${index + 1}`} className={styles.photo} />
+          </div>
+        ))}
+      </div>
+
+      <Link
+        href="/photo-gallery"
+        className={styles.galleryButton}
+      >
+        Go to Gallery
+        <GrGallery />
+      </Link>
     </div>
   );
 };

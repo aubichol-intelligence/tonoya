@@ -1,174 +1,175 @@
-.outerContainer{
+.outerContainer {
   background-color: #bfc5c0;
 }
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-  }
-  
-  .card {
-    position: relative;
-    width: 100%;
-    /*padding-top: 56.25%;  16:9 Aspect Ratio */
-    padding-top: 90%;
-    background: #333;
-    color: white;
-   /* border-radius: 10px;*/
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 
-  .headerText{
-    /*font-size: 3em;*/
-    
-    font-size: clamp(1.5rem, 2.5vw, 3rem);
-    text-align: center;
-    padding-bottom:6rem;
-  }
-  
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
+}
 
-  .thumbnailText{
-    display: flex;
-    padding-bottom: 1rem;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin:0 auto;
-    
-  }
-  
-  .card:hover .overlay {
-    opacity: 1;
-  }
-  
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  /*padding-top: 56.25%;  16:9 Aspect Ratio */
+  padding-top: 90%;
+  background: #333;
+  color: white;
+  /* border-radius: 10px;*/
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.headerText {
+  /*font-size: 3em;*/
+
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnailText {
+  display: flex;
+  padding-bottom: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.playButton {
+  font-size: 1rem;
+  margin: 1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #11b849;
+  background: #d5ecde;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  width: 90%;
+  height: 50%;
+  max-width: 800px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .playButton {
-    font-size: 1rem;
-    margin: 1rem;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #11b849;
-    background: #d5ecde;
-    border: none;
-    cursor: pointer;
-    z-index:2;
+    font-size: 1.5rem;
   }
 
-  .card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
   .card p {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    margin: 0;
+    font-size: 0.9rem;
   }
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+
   .modalContent {
-    position: relative;
-    width: 90%;
-    height: 50%;
-    max-width: 800px;
-    background: #000;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 95%;
   }
-  
-  .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    color: white;
-    border: none;
-    font-size: 2.5rem;
-    cursor: pointer;
-    z-index: 1001;
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  .videoPlayer {
-    width: 100%;
-    height: 100%;
+
+  .playButton {
+    font-size: 1.2rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .playButton {
-      font-size: 1.5rem;
-    }
-  
-    .card p {
-      font-size: 0.9rem;
-    }
-  
-    .modalContent {
-      width: 95%;
-    }
+
+  .card p {
+    font-size: 0.8rem;
   }
-  
-  @media (max-width: 480px) {
-    .grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  
-    .playButton {
-      font-size: 1.2rem;
-    }
-  
-    .card p {
-      font-size: 0.8rem;
-    }
-  }
+}
