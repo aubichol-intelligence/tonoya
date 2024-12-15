@@ -29,11 +29,11 @@ export async function generateMetadata(props: { params: Params }) {
     }
 
     const post = await response.json();
-    console.log(post);
+    // console.log(post);
 
     return {
-        title: post.title || 'Untitled',
-        description: post.content?.slice(0, 150) + '...' || 'No description available.',
+        title: post.meta_title || post.title || 'Untitled',
+        description: post.meta_description?.slice(0, 150) + '...' || post.short_description?.slice(0, 150) + '...' || 'No description available.',
     };
 }
 
