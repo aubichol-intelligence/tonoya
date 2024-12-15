@@ -45,12 +45,10 @@ const BlogGrid = () => {
 export default BlogGrid;*/}
 
 
-// src/components/BlogGrid.jsx
 import React from "react";
-// import blogs from "../data/pictures";
-import "./BlogList.css";
-// import Image from "next/image";
 import Link from "next/link";
+import "./BlogList.css";
+// import { useRouter } from "next/navigation";
 
 type BlogPost = {
   imageUrl: string;
@@ -66,30 +64,52 @@ type BlogListProps = {
 };
 
 const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
+  // const router = useRouter();
+
+  const defaultImage = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Path to your default image
+
   return (
     <div className="grid-container">
-      {posts.map((blog) => (
-        <div key={blog.id} className="blog-card">
+      {posts.map((blog) => {
+        // Extract image URLs from blog content
+        const imageUrls = [...blog.content.matchAll(/<img[^>]+src="([^">]+)"/g)].map(
+          (match) => match[1]
+        );
 
-          {/* <Image src={blog.imageUrl} alt={blog.title} className="blog-image" priority width={400} height={200} /> */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
+        // Use the first extracted image, blog.imageUrl, or the default image
+        const imageSrc = imageUrls[0] || blog.imageUrl || defaultImage;
 
-          <div className="blog-content">
-            <h3 className="blog-title">{blog.title}</h3>
-            <p className="blog-description">{blog.short_description}</p>
-            <Link href={`/blog/${blog.id}`}>
-              <button className="read-more-button">
-                Read More
-              </button>
-            </Link>
+        return (
+          // {/* <div className="blog-card" > */}
+          <Link key={blog.id} href={`/blog/${blog.id}`} className="blog-card" >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            < img
+              src={imageSrc}
+              alt={blog.title}
+              className="blog-image"
+            // onError={(e) => {
+            //   // Fallback to the default image if the image fails to load
+            //   (e.target as HTMLImageElement).src = defaultImage;
+            // }}
+            />
 
-          </div>
-        </div>
-      ))}
-    </div>
+            <div className="blog-content">
+              <h3 className="blog-title">{blog.title}</h3>
+
+              <p className="blog-description">{blog.short_description}</p>
+
+              {/* <Link href={`/blog/${blog.id}`}> */}
+              <button className="read-more-button">Read More</button>
+              {/* </Link> */}
+            </div>
+          </Link>
+          // {/* </div> */}
+        );
+      })}
+    </div >
   );
 };
 
 export default BlogGrid;
+
 

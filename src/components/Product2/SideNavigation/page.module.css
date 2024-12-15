@@ -1,0 +1,40 @@
+.sideNav {
+    display: flex;
+    /*background-color: blueviolet;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding:1rem;
+    margin-inline: auto;
+}
+  
+  .navButton {
+    color:azure;
+    background-color: black;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 10rem;
+    border-radius: 0.5rem;
+
+  }
+
+  .navButton:hover {
+    background: #bbb;
+  }
+  
+  @media (max-width: 768px) {
+    
+    .sideNav{
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap:0.002rem;
+
+    }
+
+    .navButton{
+      padding: 0.5rem;
+      margin: 1rem;
+    }
+  }
