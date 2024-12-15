@@ -4,11 +4,13 @@ import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
 interface Item {
-  id: string;
+  // id: string;
   video_id: string;
   file_name: string;
   tags: string[];
-  // thumbnail: string;
+  thumbnail: string;
+  slug: string;
+  title: string;
 }
 
 const Videos = () => {
@@ -20,7 +22,7 @@ const Videos = () => {
   // const [currentPage, setCurrentPage] = useState<number>(0); // Pagination state
   // const [totalItems, setTotalItems] = useState<number>(0);
   // const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
-  console.log(items);
+  // console.log(items);
   const ITEMS_PER_PAGE = 6;
 
 
@@ -71,14 +73,13 @@ const Videos = () => {
             <div key={i} className={styles.card}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={'https://via.placeholder.com/300x170'}
-                // src={thumbnails[video.video_id] || "https://via.placeholder.com/300x170"}
+                // src={'https://via.placeholder.com/300x170'}
+                src={`${video?.thumbnail}` || "https://via.placeholder.com/300x170"}
                 alt='Video Thumbnail'
               />
 
               <div className={styles.overlay}>
                 <div className={styles.thumbnailText}>
-
                   <button onClick={() => openModal(video.video_id)} className={styles.playButton}>
                     ▶
                   </button>

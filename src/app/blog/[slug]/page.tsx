@@ -29,6 +29,7 @@ export async function generateMetadata(props: { params: Params }) {
     }
 
     const post = await response.json();
+    console.log(post);
 
     return {
         title: post.title || 'Untitled',

@@ -11,6 +11,9 @@ import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 interface ImageData {
   file_name: string;
   image_id?: string;
+  slug?: string;
+  alt?: string;
+  title?: string;
   tags: string[];
 }
 
@@ -89,10 +92,10 @@ const AestheticGallery = () => {
               whileHover={{ scale: 1.05 }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`https://tonoyabd.com/api/v1/image/read/${image.image_id}`} alt='Tonoya Vending Machine' className={styles.image} />
+              <img src={`https://tonoyabd.com/api/v1/image/read/${image.image_id}`} alt={image?.alt} className={styles.image} />
 
               <div className={styles.overlay}>
-                <h3 className={styles.title}>Tonoya Vending Machine</h3>
+                <h3 className={styles.title}>{image?.title || "Tonoya Vending Machine"}</h3>
               </div>
             </motion.div>
           ))}
@@ -106,16 +109,16 @@ const AestheticGallery = () => {
           disabled={currentPage <= 0}
           className={styles.prevButton}
           style={{
-            backgroundColor: currentPage <= 0 ? "#d1d5db" : "#3b82f6",
+            backgroundColor: currentPage <= 0 ? "#c7e5c3" : "#4caf50",
             color: currentPage <= 0 ? "#6b7280" : "#ffffff",
             cursor: currentPage <= 0 ? "not-allowed" : "pointer",
             transition: "background-color 0.3s",
           }}
           onMouseEnter={(e) => {
-            if (currentPage > 0) e.currentTarget.style.backgroundColor = "#2563eb";
+            if (currentPage > 0) e.currentTarget.style.backgroundColor = "#367137";
           }}
           onMouseLeave={(e) => {
-            if (currentPage > 0) e.currentTarget.style.backgroundColor = "#3b82f6";
+            if (currentPage > 0) e.currentTarget.style.backgroundColor = "#4caf50";
           }}
         >
           {/* <FaArrowLeft /> */}
@@ -134,16 +137,16 @@ const AestheticGallery = () => {
           disabled={isNextDisabled}
           className={styles.nextButton}
           style={{
-            backgroundColor: isNextDisabled ? "#d1d5db" : "#3b82f6",
+            backgroundColor: isNextDisabled ? "#c7e5c3" : "#4caf50",
             color: isNextDisabled ? "#6b7280" : "#ffffff",
             cursor: isNextDisabled ? "not-allowed" : "pointer",
             transition: "background-color 0.3s",
           }}
           onMouseEnter={(e) => {
-            if (!isNextDisabled) e.currentTarget.style.backgroundColor = "#2563eb";
+            if (!isNextDisabled) e.currentTarget.style.backgroundColor = "#367137";
           }}
           onMouseLeave={(e) => {
-            if (!isNextDisabled) e.currentTarget.style.backgroundColor = "#3b82f6";
+            if (!isNextDisabled) e.currentTarget.style.backgroundColor = "#4caf50";
           }}
         >
           Next
