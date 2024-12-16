@@ -1,0 +1,59 @@
+/* styles/vendingMachineSpec.module.css */
+.container {
+    max-width: 1200px;
+    width: 90vw;
+    margin: 20px auto;
+    padding: 1px;
+    padding-top: 4rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 2rem;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 1.8rem;
+    padding-bottom: 40px;
+    color: #333;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th {
+    background-color: #0dd366;
+    color: #fff;
+    text-align: left;
+    padding: 25px;
+    font-size: 1rem;
+  }
+  
+  .table td {
+    padding: 25px;
+    font-size: 0.9rem;
+    color: black;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:hover {
+    background-color: #ccf0bf;
+  }
+  
+  @media (max-width: 600px) {
+    .table th, .table td {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+  

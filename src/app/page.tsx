@@ -12,7 +12,7 @@ import ContactSummary from "../app/contactsum/page";
 //import GalleryOverview from "../components/galleryOverview/page";
 import ClientReview from "../app/review1/page";
 import VideoOverview from "../app/videoOverview/page";
-//import BlogOverview from "../app/blogSum1/page"
+import BlogOverview from "../app/blogSum1/page"
 
 import Head from 'next/head';
 
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
         <ContactSummary/>
         <VideoOverview />
         <ClientReview/>
-        {/*<BlogOverview/>*/}
+        <BlogOverview/>
         <GalleryOverview/>
        {/* <NotSSRMaps /> */}    
        

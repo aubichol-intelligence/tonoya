@@ -1,6 +1,6 @@
 export const products = {
     TSPVM0160: [
-      { name: "0160D", image: "https://i.ibb.co.com/qyFfTFN/file.png", description: "A high-quality vending machine." },
+      { name: "0160D", image: "https://i.ibb.co.com/qyFfTFN/file.png", description: "A high-quality vending machine." }, 
       { name: "0160B", image: "https://i.ibb.co.com/qyFfTFN/file.png", description: "A powerful vending machine for professionals." },
       { name: "0160R", image: "https://i.ibb.co.com/qyFfTFN/file.png", description: "A powerful vending machine for professionals." },
       { name: "0160C", image: "https://i.ibb.co.com/qyFfTFN/file.png", description: "A powerful vending machine for professionals." },

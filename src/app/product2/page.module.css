@@ -1,20 +1,25 @@
 .container {
     padding-top: 10rem;
     padding-bottom: 10rem;
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    
+    gap:1rem;
     width: 96vw; 
   }
   
   .content {
     display: flex;
-    margin-top: 60px;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 70vw;
+
+    
+   /* background-color: burlywood;*/
   }
 
   @media (max-width: 768px) {
@@ -22,6 +27,8 @@
    .content {
     flex-direction: column;
     margin: 0 auto;
+    width: 98vw;
+    
   
    }
    .container{

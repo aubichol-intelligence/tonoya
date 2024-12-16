@@ -13,7 +13,8 @@ const TopNavigation = ({ onTopNavSelect, activeIndex }) => {
           className={`${styles.navButton} ${index === activeIndex ? styles.active : ""}`}
           onClick={() => onTopNavSelect(index)}
         >
-          {item}
+          <h3 className={styles.text}>{item}</h3>
+          
         </button>
       ))}
     </div>
