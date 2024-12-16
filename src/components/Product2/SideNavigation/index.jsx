@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./page.module.css";
 
-const SideNavigation = ({ items, onSideNavSelect }) => {
+const SideNavigation = ({ items, onSideNavSelect, activeIndex }) => {
   return (
     <div className={styles.sideNav}>
       {items.map((item, index) => (
         <button
           key={index}
-          className={styles.navButton}
-          onClick={() => onSideNavSelect(item)}
+          className={`${styles.navButton} ${index === activeIndex ? styles.active : ""}`}
+          
+          onClick={() => onSideNavSelect(item,index)}
         >
-          {item.name}
+          <h3 className={styles.text}>{item.name}</h3>
         </button>
       ))}
     </div>

@@ -39,7 +39,7 @@
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, #d9fdd3, #a8e6a3, #4caf50);
-/*  animation: animateBackground 10s infinite linear;*/
+  animation: animateBackground 10s infinite linear;
   transform-style: preserve-3d; /* Ensures child transforms are applied in 3D */
   z-index: -1; /* Keeps the background behind the content */
 }
