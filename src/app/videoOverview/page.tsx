@@ -1,22 +1,61 @@
 "use client";
-import React, { useState } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
+
+interface Item {
+  // id: string;
+  video_id: string;
+  file_name: string;
+  tags: string[];
+  thumbnail: string;
+  slug: string;
+  title: string;
+}
 
 const Videos = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState("");
 
-  const videos = [
-    { id: 1,  thumbnail: 'https://via.placeholder.com/300x170', url: 'https://tonoyabd.com/api/v1/video/read/675d31bac42d118498ec378c' },
-    { id: 2,  thumbnail: 'https://via.placeholder.com/300x170', url: 'https://tonoyabd.com/api/v1/video/read/675d31afc42d118498ec378b' },
-    { id: 3,  thumbnail: 'https://via.placeholder.com/300x170', url: 'https://tonoyabd.com/api/v1/video/read/675d3187c42d118498ec3787' },
-    { id: 4,  thumbnail: 'https://via.placeholder.com/300x170', url: 'https://tonoyabd.com/api/v1/video/read/675d31a8c42d118498ec3789' },
-    { id: 5,  thumbnail: 'https://via.placeholder.com/300x170', url: 'https://tonoyabd.com/api/v1/video/read/675d318cc42d118498ec3788' },
-    { id: 6,  thumbnail: 'https://via.placeholder.com/300x170', url: 'https://tonoyabd.com/api/v1/video/read/675d317ec42d118498ec3785' },
-  ];
+  const [items, setItems] = useState<Item[]>([]);
+  // const [loading, setLoading] = useState<boolean>(true);
+  // const [currentPage, setCurrentPage] = useState<number>(0); // Pagination state
+  // const [totalItems, setTotalItems] = useState<number>(0);
+  // const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
+  // console.log(items);
+  const ITEMS_PER_PAGE = 6;
 
-  const openModal = (videoUrl :any) => {
-    setCurrentVideo(videoUrl);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      // setLoading(true);
+      try {
+        // const skip = currentPage * ITEMS_PER_PAGE; // Calculate skip based on the current page
+        const response = await fetch(
+          // `https://tonoyabd.com/api/v1/video/list/${skip}/${ITEMS_PER_PAGE}`
+          `https://tonoyabd.com/api/v1/video/list/0/${ITEMS_PER_PAGE}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch items");
+        }
+        const data = await response.json();
+        // console.log(data);
+        setItems(data?.list || []);
+        // setTotalItems(data.length || 0)
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    fetchItems();
+  }, []);
+  // }, [currentPage]);
+
+
+  const openModal = (videoUrl: any) => {
+    setCurrentVideo(`http://tonoyabd.com/api/v1/video/read/${videoUrl}`);
     setIsModalOpen(true);
   };
 
@@ -27,39 +66,43 @@ const Videos = () => {
 
   return (
     <div className={styles.outerContainer}>
-    <div className={styles.container}>
-      <h1 className={styles.headerText}>Why Organizations Choose Tonoya</h1>
-      <div className={styles.grid}>
-        {videos.map((video) => (
-          <div key={video.id} className={styles.card}>
-           <img src={video.thumbnail}></img>
-            <div className={styles.overlay}>
-              <div className={styles.thumbnailText}>
-              
-              <button onClick={() => openModal(video.url)} className={styles.playButton}>
-                ▶
-              </button>
-              <h3>Watch the video</h3>
+      <div className={styles.container}>
+        <h1 className={styles.headerText}>Why Organizations Choose Tonoya</h1>
+        <div className={styles.grid}>
+          {items.map((video, i) => (
+            <div key={i} className={styles.card}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                // src={'https://via.placeholder.com/300x170'}
+                src={`${video?.thumbnail}` || "https://via.placeholder.com/300x170"}
+                alt='Video Thumbnail'
+              />
+
+              <div className={styles.overlay}>
+                <div className={styles.thumbnailText}>
+                  <button onClick={() => openModal(video.video_id)} className={styles.playButton}>
+                    ▶
+                  </button>
+                  <h3>Watch the video</h3>
+                </div>
               </div>
             </div>
-            
-          </div>
-        ))}
-      </div>
-
-      {isModalOpen && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <button className={styles.closeButton} onClick={closeModal}>
-              ✖
-            </button>
-            <video src={currentVideo} controls autoPlay className={styles.videoPlayer}></video>
-          </div>
+          ))}
         </div>
-      )}
+
+        {isModalOpen && (
+          <div className={styles.modal}>
+            <div className={styles.modalContent}>
+              <button className={styles.closeButton} onClick={closeModal}>
+                ✖
+              </button>
+              <video src={currentVideo} controls autoPlay className={styles.videoPlayer}></video>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
-</div>    
-    
+
 
   );
 };
