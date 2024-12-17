@@ -301,6 +301,10 @@
   text-align: left;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 .blog-header p {
   margin: 0;
 }

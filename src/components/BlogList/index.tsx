@@ -57,6 +57,7 @@ type BlogPost = {
   short_description: string;
   content: string;
   author: string;
+  alt: string;
 };
 
 type BlogListProps = {
@@ -85,7 +86,7 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             < img
               src={imageSrc}
-              alt={blog.title}
+              alt={blog.alt || blog.title}
               className="blog-image"
             // onError={(e) => {
             //   // Fallback to the default image if the image fails to load
@@ -94,9 +95,11 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
             />
 
             <div className="blog-content">
-              <h3 className="blog-title">{blog.title}</h3>
+              <div className="blog-text-container">
+                <h3 className="blog-title">{blog.title}</h3>
 
-              <p className="blog-description">{blog.short_description}</p>
+                <p className="blog-description">{blog.short_description}</p>
+              </div>
 
               {/* <Link href={`/blog/${blog.id}`}> */}
               <button className="read-more-button">Read More</button>
