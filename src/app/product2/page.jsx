@@ -10,20 +10,22 @@ import MachineSpecification from "../machineSpecification1/page";
 const Home = () => {
   const [activeTopNav, setActiveTopNav] = useState(0);
   const [activeSideNav, setActiveSideNav] = useState(0);
+  const [topNavName, setTopNavName] = useState("TSPVM0160");
   const [selectedProduct, setSelectedProduct] = useState(products["TSPVM0160"][0]);
 
   const handleTopNavSelect = (index) => {
     setActiveTopNav(index);
     const category = Object.keys(products)[index];
     setSelectedProduct(products[category][0]);
+    setTopNavName(category)
   };
 
   const handleSideNavSelect = (product, index) => {
     setSelectedProduct(product);
 
     setActiveSideNav(index);
-    const category = Object.keys(products)[index];
-    setSelectedProduct(products[category][0]);
+//    const category = Object.keys(products)[index];
+    setSelectedProduct(products[topNavName][index]);
   };
 
   const sideNavItems = products[Object.keys(products)[activeTopNav]];
@@ -36,7 +38,7 @@ const Home = () => {
         <SideNavigation items={sideNavItems} onSideNavSelect={handleSideNavSelect} activeIndex={activeSideNav}/>
         <ProductView product={selectedProduct} />
       </div>
-      <MachineSpecification/>
+      <MachineSpecification product={products[topNavName][activeSideNav]}/>
     </div>
   );
 };

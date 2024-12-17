@@ -34,7 +34,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Capacity</h3>
-              <p className={styles.description}>card.capacity</p>
+              <p className={styles.description}>{product.capacity}</p>
             </div>
           </div>
 
@@ -45,7 +45,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Payment Methods</h3>
-              <p className={styles.description}>card.paymentMethod</p>
+              <p className={styles.description}>{product.payment}</p>
             </div>
           </div>
 
@@ -56,7 +56,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Size</h3>
-              <p className={styles.description}>card.size</p>
+              <p className={styles.description}>{product.size}</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Display Size</h3>
-              <p className={styles.description}>card.capacity</p>
+              <p className={styles.description}>{product.display}</p>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Material</h3>
-              <p className={styles.description}>card.capacity</p>
+              <p className={styles.description}>{product.material}</p>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Online Connectivity</h3>
-              <p className={styles.description}>card.capacity</p>
+              <p className={styles.description}>No</p>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ const ProductView = ({ product }) => {
             </div>
             <div>
               <h3 className={styles.title}>Operating Voltage</h3>
-              <p className={styles.description}>card.capacity</p>
+              <p className={styles.description}>220</p>
             </div>
           </div>
 
