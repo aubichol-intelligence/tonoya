@@ -58,7 +58,7 @@ const Home: NextPage = () => {
   const handleProductClick = () => {
     // Redirect to a contact page or open a modal
     // window.location.href = "/carousal2";
-    router.push('/product2');
+    router.push('/product');
   };
 
   return (
