@@ -20,7 +20,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
 	title: "Tonoya",
-	description: "Home of Bangladesh's best vending machine for sanitary napkins",
+	description: "Home of Bangladesh's best vending machine for sanitary napkins. ",
 };
 
 export default function RootLayout({
@@ -38,12 +38,12 @@ export default function RootLayout({
 						<Header />
 						{/* <hr></hr> */}
 
-						<div style={{ display: "flex", justifySelf: "center" }} >
+						<div >
 							{/* < main > {children} </main> */}
 							{children}
 						</div>
 
-						<hr></hr>
+						{/* <hr></hr> */}
 						<Footer />
 					</div >
 				</AuthProvider>

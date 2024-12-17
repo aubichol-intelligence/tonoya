@@ -1,0 +1,105 @@
+/* Section Container */
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fallback if image doesn't load */
+}
+
+/* Background Image */
+.background {
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-image: url('https://i.ibb.co.com/N3bpRkr/Backround-Color2.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(1); /* Darkens the image for better text contrast */
+  z-index: -1;
+}
+
+/* Carousel Wrapper */
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2rem;
+  scroll-snap-type: x mandatory; /* Smooth scrolling for cards */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome and Edge */
+}
+
+/* Individual Card */
+.card {
+  flex: 0 0 300px; /* Cards have a fixed width */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 1rem;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Image */
+.image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Card Headline */
+.headline {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+/* Card Description */
+.description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel {
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .card {
+    flex: 0 0 90%; /* Cards take up more width on smaller screens */
+    padding: 0.75rem;
+  }
+
+  .image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+}

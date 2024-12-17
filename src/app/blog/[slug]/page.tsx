@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Head from 'next/head';
 // import blogPosts from '../../../components/data/blogs.json';
 import blogPosts from '../../../components/data/pictures';
-import Image from 'next/image';
+// import Image from 'next/image';
 import "./Blog.css";
-
+import parse from 'html-react-parser';
 
 type Params = Promise<{ slug: string }>
 
@@ -14,32 +14,57 @@ export async function generateMetadata(props: { params: Params }) {
     const params = await props.params
     const slug = params.slug
 
-    const post = blogPosts.find((post) => post.id === slug);
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`, {
+        method: 'GET',
+        headers: {
+            Authorization: process.env.API_TOKEN || '', // Use environment variable for the token
+        },
+    });
+
+    if (!response.ok) {
+        return {
+            title: 'Post Not Found',
+            description: 'The requested blog post could not be found.',
+        };
+    }
+
+    const post = await response.json();
+    // console.log(post);
 
     return {
-        title: post ? post.title : 'Post Not Found',
-        description: post ? post.content : 'The requested blog post could not be found.',
+        title: post.meta_title || post.title || 'Untitled',
+        description: post.meta_description?.slice(0, 150) + '...' || post.short_description?.slice(0, 150) + '...' || 'No description available.',
     };
 }
 
 // Dynamic blog post page
+// export default async function Page({ params }: { params: { slug: string } }) {
 export default async function Page(props: { params: Params }) {
     const params = await props.params
     const slug = params.slug
 
-    // Find the blog post
-    const post = blogPosts.find((post) => post.id === slug);
+    // const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`, {
+    //     method: 'GET',
+    //     headers: {
+    //         Authorization: process.env.API_TOKEN || '',
+    //     },
+    // });
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`);
 
-    if (!post) {
+    if (!response.ok) {
         return (
             <div>
                 <h2>Post not found</h2>
                 <Link href="/blog">Back to Blog</Link>
             </div>
         );
-        // notFound();
-        // return null; // This is unreachable due to `notFound()`, but satisfies TypeScript
     }
+
+    const post = await response.json();
+    // console.log(post);
+
+    // const defaultImageUrl = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Ensure this file exists in the public folder.
+    // const imageUrl = post.imageUrl || defaultImageUrl;
 
     return (
         // <HelmetProvider>
@@ -54,27 +79,35 @@ export default async function Page(props: { params: Params }) {
                 {/* Header Section */}
                 <header className="blog-header">
                     <h1 className="blog-title">{post.title}</h1>
-                    <p className="blog-subtitle">Season 1 | Where the Heart Is</p>
-                    <p className="blog-subtitle">Author: {post.author}</p>
+                    {/* <p className="blog-subtitle">Season 1 | Where the Heart Is</p> */}
+
+                    <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} >
+                        <div>
+                            <p className="blog-subtitle"><span className='text-bold'>Author:</span> {post.author}</p>
+                            <p className="blog-subtitle"><span className='text-bold'>Tags:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
+                        </div>
+                        <div style={{ display: "flex", justifyContent: "center" }} >
+                            <Link href="/blog">Back</Link>
+                        </div>
+                    </div>
                 </header>
 
                 {/* Hero Image Section */}
-                <div className="blog-hero">
+                {/* <div className="blog-hero">
                     <Image
                         // src="../../../../public/file.svg"
-                        src={post.imageUrl}
+                        src={imageUrl}
                         alt="Blog Image"
                         priority
-                        // layout="responsive"   // Make sure the image scales
+                        layout="responsive"   // Make sure the image scales
                         width={600}
-                        height={300}
+                        height={200}
                         className="hero-image"
                     />
-                </div>
+                </div> */}
 
                 {/* Content Section */}
-                <article className="blog-content">
-                    {/* <hr /> */}
+                {/* <article className="blog-content">
                     <p>{post.content}</p>
                     <hr />
                     <p>
@@ -87,9 +120,23 @@ export default async function Page(props: { params: Params }) {
                         passion, and dreams converge. From intricately designed interiors to
                         stunning outdoor spaces, it speaks of their journey.
                     </p>
-                </article>
+                </article> */}
 
-                <Link href="/blog">Back to Blog</Link>
+                <div style={{ display: "flex", justifyContent: "center" }} >
+                    <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
+                        {post?.content && parse(post?.content)}
+                    </div>
+                </div>
+
+                {/* <div
+                    dangerouslySetInnerHTML={{ __html: post?.content }}
+                    style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}
+                /> */}
+
+                <div style={{ display: "flex", justifyContent: "center" }} >
+                    <Link href="/blog">Back to Blog List</Link>
+                </div>
+
 
                 {/* Footer */}
                 {/* <footer className="blog-footer">

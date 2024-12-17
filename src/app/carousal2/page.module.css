@@ -1,99 +1,102 @@
 .carouselWrapper {
-    width: 90%;
-    overflow: visible; /* Hide anything outside the container */
-    position: relative;
-    background: #ffff;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    border-width: 4px;
-    border-color: black;
-  }
-  
-  .carousel {
-    display: flex;
-    animation: scroll 20s linear infinite; /* Continuous scrolling */
-    will-change: transform;
-    filter: brightness(0.8) contrast(1.2) saturate(1.1);
-  }
-  
+  width: 99vw;
+  overflow: hidden; /* Hide anything outside the container */
+  position: relative;
+  background: #f1f7f3;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  margin-inline: auto;
+}
+
+.carousel {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Continuous scrolling */
+  will-change: transform;
+  /* filter: brightness(0.8) contrast(1.2) saturate(1.1); */
+}
+
+.carouselItem {
+  flex: 0 0 auto; /* Prevent flexbox shrinking */
+  width: 300px; /* Width of each image */
+  height: 300px; /* Height of each image */
+}
+
+.headerText{
+  /*font-size: 3em;*/
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom:1rem ;
+}
+
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 3rem;
+  line-height: 1.5;
+}
+
+@media (width <= 768px) {
   .carouselItem {
-    flex: 0 0 auto; /* Prevent flexbox shrinking */
-    width: 300px; /* Width of each image */
-    height: 300px; /* Height of each image */
-    
-  }
+    width: 30vw; /* Smaller width for smaller screens */
+ }
 
-  @media (max-width: 768px) {
-    .carouselItem {
-      width: 290px; /* Smaller width for smaller screens */
-      height: 290px;
-    }
+  .carouselWrapper {
+    overflow: hidden; /* Hide anything outside the container */
+    position: relative;
+    background: #fff;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    border-width: 0.5rem;
+    border-color: black;
+ }
 
-    .carouselWrapper {
-        width: 100%;
-        overflow: hidden; /* Hide anything outside the container */
-        position: relative;
-        background: #fff;
-        margin-top: 0.1rem;
-        margin-bottom: 0.1rem;
-        border-width: 0.5rem;
-        border-color: black;
-      }
-
-      .image{
-        margin:0.1rem;
-        padding:4rem;
-        border-width: 1px;
-  }
-  }
-
-  @media (max-width: 768px) {
-    
-
-      .image{
-        margin:0.1rem;
-        padding:1rem;
-        border-width: 0.1px;
-  }
-  }
-  
-  @media (max-width: 480px) {
-    .carouselItem {
-      width: 100px; /* Even smaller width */
-      height: 100px;
-    }
-    
-}
-
-@media (max-width: 480px) {
-   
-    .image{
-        margin:0.1rem;
-        padding:4rem;
-        border-width: 1px;
-  }
-}
-  
   .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin: 1rem;
-    border-width: 6px;
-    border-color: blanchedalmond;
-    padding:2rem;
+    max-width: 100%;
+    max-height: 100%;
+    filter: brightness(0.8) contrast(1.2) saturate(1.1); /* Add color filter */
+ }
+}
 
-    
-  }
-  
-  
-  /* Keyframes for continuous scrolling */
-  @keyframes scroll {
-    10% {
-      transform: translateX(0); /* Start at initial position */
-    }
-    100% {
-      transform: translateX(500); /* Move left by the total width of the items */
-    }
-  }
-  
+@media (width <= 768px) {
+  .image {
+    margin: 0.1rem;
+    padding: 1rem;
+    border-width: 0.1px;
+ }
+}
+
+@media (width <= 480px) {
+  .carouselItem {
+    width: 150px; /* Even smaller width */
+    height: 150px;
+ ;}
+}
+
+@media (width <= 480px) {
+  .image {
+    margin: 0.1rem;
+    padding: 4rem;
+    border-width: 1px;
+ ;}
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 1rem;
+  border-width: 6px;
+  padding: 2rem;
+}
+
+/* Keyframes for continuous scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start at initial position */
+ }
+
+  100% {
+    transform: translateX(-50%); /* Move left by the total width of the items */
+ }
+}
