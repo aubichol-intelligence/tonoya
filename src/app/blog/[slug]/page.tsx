@@ -82,7 +82,10 @@ export default async function Page(props: { params: Params }) {
                     {/* <p className="blog-subtitle">Season 1 | Where the Heart Is</p> */}
 
                     <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} >
-                        <p className="blog-subtitle">Author: {post.author}</p>
+                        <div>
+                            <p className="blog-subtitle"><span className='text-bold'>Author:</span> {post.author}</p>
+                            <p className="blog-subtitle"><span className='text-bold'>Tags:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
+                        </div>
                         <div style={{ display: "flex", justifyContent: "center" }} >
                             <Link href="/blog">Back</Link>
                         </div>

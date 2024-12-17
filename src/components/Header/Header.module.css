@@ -1,45 +1,36 @@
-.header1 {
-  /* background-color: #B9B9AA;
-    background: transparent;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 96vw;
-    margin-inline: auto; */
-}
-
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensures it stays above other content */
-  background-color: rgb(255 255 255 / 20%); /* Transparent background */
-  backdrop-filter: blur(10px); /* Optional: Adds a frosted glass effect */
+  z-index: 1000;
+  /* Ensures it stays above other content */
+  background-color: rgb(255 255 255 / 20%);
+  /* Transparent background */
+  backdrop-filter: blur(10px);
+  /* Optional: Adds a frosted glass effect */
   /*padding: 10px 20px;*/
   transition: background-color 0.3s ease-in-out;
   margin: 0 auto;
 }
 
 .scrolling {
-  background-color: rgb(
-    255 255 255 / 90%
-  ); /* Solid background when scrolling */
+  background-color: rgb(255 255 255 / 90%);
+  /* Solid background when scrolling */
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-
   /* justify-content: left; */
   align-items: center;
-
   /*    padding: 4px; */
-  padding: 1rem ;
-
+  padding: 1rem;
   /* max-width: 98vw;
      max-width: 1400px; */
-  margin:0 auto;
+  margin: 0 auto;
   width: 90vw;
-
   /* gap: 20px; */
+  position: relative;
 }
 
 .logoButton {
@@ -58,9 +49,7 @@
 .nav {
   display: flex;
   align-items: center;
-
   /* align-items: left; */
-
   /* justify-self: left; */
   gap: 30px;
 }
@@ -74,17 +63,13 @@
   /* color: white; */
   color: black;
   text-decoration: none;
-  font-weight: normal;
+  /* font-weight: normal; */
 }
 
-/* .active {
-    font-weight: bold;
-    color: red;
- ;} */
-.nav a.active,
-.nav button.active {
+/* .nav a.active, */
+/* .nav button.active { */
+.nav a.active {
   font-weight: bold;
-
   /* color: red; */
   color: black;
 }
@@ -94,123 +79,66 @@
   color: red;
 }
 
-.dropdown {
+
+/* .dropdown {
   position: relative;
-}
+} */
 
-.dropdownToggle {
+/* .dropdownToggle {
   cursor: pointer;
-}
+} */
 
-.dropdownMenu {
+/* .dropdownMenu {
   display: none;
   position: absolute;
   background: gray;
   padding: 8px;
-}
+} */
 
-.dropdown:hover .dropdownMenu {
+/* .dropdown:hover .dropdownMenu {
   display: block;
-}
+} */
 
-.desktopNav > .logoutButton {
+
+
+/* .desktopNav>.logoutButton {
   background: transparent;
-
-  /* background-color: rgb(100, 100, 100); */
   border: none;
   color: red;
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
-}
+} */
 
-.desktopNav > .logoutButton:hover {
-  /* background: transparent; */
+/* .desktopNav>.logoutButton:hover {
   background: rgb(226 77 77);
-
-  /* border: none; */
   color: white;
+} */
 
-  /* padding: 5px 10px; */
-
-  /* justify-self: "left"; */
-}
-
-.mobileNav > .logoutButton {
+/* .mobileNav>.logoutButton {
   background: transparent;
-
-  /* background: rgb(35, 35, 35); */
   border: none;
   color: rgb(228 65 65);
-
-  /* padding: 5px 10px; */
   text-align: left;
   font-weight: bold;
-}
+} */
 
-.desktopNav > .searchButton {
+
+
+.desktopNav>.searchButton {
   background: transparent;
-
   /* background-color: rgb(100, 100, 100); */
   border: none;
   color: red;
   padding: 5px 10px;
   border-radius: 5px;
-}
-
-.mobileMenu {
-  /* display: flex; */
-  background-color: #b9b9aa;
-
-  /* border: 0; */
-  padding: 5px;
-}
-
-.mobileMenu > button {
-  /* background: transparent; */
-  background: #b9b9aa;
-
-  /* display: flex; */
-
-  /* padding: 5px; */
-
-  /* border-radius: 10px; */
-  border: 0;
-}
-
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  /* background: rgb(30, 29, 29); */
-  background: white;
-  padding: 16px;
-  color: black;
-}
-
-.mobileNav a.active {
-  font-weight: bold;
-
-  /* color: red; */
-  color: black;
 }
 
 .searchButton {
   background: transparent;
-
-  /* background-color: rgb(51, 47, 47); */
   border: none;
-
-  /* color: red; */
   padding: 5px 10px;
   border-radius: 5px;
-}
-
-.icon {
-  transition: transform 0.2s;
-  font-size: 18px;
-  color: black;
 }
 
 .searchIcon {
@@ -218,24 +146,118 @@
   color: black;
 }
 
-.icon:hover {
-  transform: scale(1.2);
+
+
+.sideIcon {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* gap: 5px; */
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.sideIconBar {
+  width: 20px;
+  height: 25px;
+  /* background-color: black; */
+  color: #000;
+}
+
+
+/* Backdrop overlay for the rest of the screen */
+/* .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1999;
+  display: none;
+}
+
+.backdrop.show {
+  display: block;
+} */
+
+
+
+/* Drawer styling */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  /* height: 100%; */
+  height: 100vh;
+  /* background: rgba(83, 71, 71, 0.9); */
+  background: rgb(104, 146, 82);
+  /* Semi-transparent white */
+  z-index: 2000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+  /* transform: translateX(-100%); */
+  /* Initially hidden (off-screen) */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth slide-in effect */
+  /* overflow-y: auto; */
+}
+
+/* Transition animation for the drawer */
+.drawer.open {
+  transform: translateX(0);
+  /* Slide in when open */
+}
+
+.drawer.closed {
+  transform: translateX(-100%);
+  /* Slide out when closed */
 }
 
 
 
-@media (width >= 768px) {
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  align-self: flex-end;
+  cursor: pointer;
+  color: black;
+}
+
+.drawerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drawerLinks a {
+  color: black;
+  text-decoration: none;
+}
+
+.drawerLinks a.active {
+  font-weight: bold;
+}
+
+
+
+@media (min-width: 768px) {
   .desktopNav {
     display: flex;
- }
-
-  .mobileMenu,
-  .mobileNav {
-    display: none;
- }
+  }
 
   .container {
     /* max-width: 1400px; */
     max-width: 95vw;
- }
+  }
+
+  .sideIcon,
+  .drawer {
+    display: none;
+  }
 }
