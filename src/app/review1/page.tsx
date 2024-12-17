@@ -52,7 +52,7 @@ const ClientReview = () => {
       name:"Government Shorupkathi Secondary High School",
       designation: "Assistant Teacher",
       image: "https://i.ibb.co.com/LRfHKr9/lady-teacher.jpg",
-      note: "Our students love this product. We don't have to worry about sending students home anymore. Our institution is getting bettre because of this product.",
+      note: "Our students love this product. We don't have to worry about sending students home anymore. Our institution is getting better because of this product.",
       clientImage: "/client3.jpg",
       clientLogo: "/logos/shorupkathi.png",
     },
@@ -97,7 +97,7 @@ const ClientReview = () => {
 
       <div>
         <h1 className={styles.headerText}>Our Clients’ Satisfaction is Our Top Priority</h1>
-        <p className={styles.secondaryText}>We have a reputation for helping clients around the world find success on their most important projects</p>
+        <p className={styles.secondaryText}>We have a reputation for helping clients around the country with our Tonoya vending machines.</p>
       <div className={styles.buttonContainer}>
       <button className={styles.arrowButton} onClick={() => scroll("left")}>
         &#8592;
