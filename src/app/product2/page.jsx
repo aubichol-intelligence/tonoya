@@ -5,7 +5,7 @@ import SideNavigation from "../../components/Product2/SideNavigation/index";
 import ProductView from "../../components/Product2/ProductView/index";
 import { products } from "../../../public/data";
 import styles from "./page.module.css";
-import MachineSpecification from "../machineSpecification1/page";
+import MachineSpecification from "../../components/machineSpecification1/page";
 
 const Home = () => {
   const [activeTopNav, setActiveTopNav] = useState(0);
@@ -38,7 +38,7 @@ const Home = () => {
         <SideNavigation items={sideNavItems} onSideNavSelect={handleSideNavSelect} activeIndex={activeSideNav}/>
         <ProductView product={selectedProduct} />
       </div>
-      <MachineSpecification product={products[topNavName][activeSideNav]}/>
+      <MachineSpecification product={selectedProduct}/>
     </div>
   );
 };

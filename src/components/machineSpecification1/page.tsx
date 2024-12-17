@@ -1,8 +1,16 @@
-"use client";
 import React from 'react';
 import styles from './page.module.css';
 
-const VendingMachineSpecifications = ({product}) => {
+const ProductView = ({
+  product,
+}: {
+  product: {
+    name: string;
+    capacity: number;
+    weight: number;
+    payment: string;
+  };
+}) => {
   const specifications = [
     { key: "Model", value: product.name },
     {key: "Single Pad Capacity", value: product.capacity },
@@ -44,4 +52,4 @@ const VendingMachineSpecifications = ({product}) => {
   );
 };
 
-export default VendingMachineSpecifications;
+export default ProductView;
