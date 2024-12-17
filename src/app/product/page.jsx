@@ -1,4 +1,5 @@
 'use client';
+
 import React,  {useState } from "react";
 import TopNavigation from "../../components/Product2/TopNavigation/index";
 import SideNavigation from "../../components/Product2/SideNavigation/index";
