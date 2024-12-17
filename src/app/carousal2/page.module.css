@@ -1,10 +1,10 @@
 .carouselWrapper {
-  width: 94vw;
+  width: 99vw;
   overflow: hidden; /* Hide anything outside the container */
   position: relative;
-  background: #ffff;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  background: #f1f7f3;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
   margin-inline: auto;
 }
 
@@ -12,7 +12,6 @@
   display: flex;
   animation: scroll 20s linear infinite; /* Continuous scrolling */
   will-change: transform;
-
   /* filter: brightness(0.8) contrast(1.2) saturate(1.1); */
 }
 
@@ -20,6 +19,21 @@
   flex: 0 0 auto; /* Prevent flexbox shrinking */
   width: 300px; /* Width of each image */
   height: 300px; /* Height of each image */
+}
+
+.headerText{
+  /*font-size: 3em;*/
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom:1rem ;
+}
+
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 3rem;
+  line-height: 1.5;
 }
 
 @media (width <= 768px) {
@@ -54,8 +68,8 @@
 
 @media (width <= 480px) {
   .carouselItem {
-    width: 100px; /* Even smaller width */
-    height: 100px;
+    width: 150px; /* Even smaller width */
+    height: 150px;
  ;}
 }
 

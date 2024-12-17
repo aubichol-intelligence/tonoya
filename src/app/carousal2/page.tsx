@@ -23,6 +23,9 @@ const Carousel = () => {
 
 	return (
 		<div className={styles.carouselWrapper}>
+
+			<h2 className={styles.headerText}>Collaborations With Leading Brands</h2>
+			<p className={styles.secondaryText}>secondary text goes here</p>
 			<div className={styles.carousel}>
 			{repeatedImages.map((image, index) => (
 				<div className={styles.carouselItem} key={`${image.id}-${index}`}>

@@ -23,6 +23,8 @@ const ThreeCards = () => {
   ];
   return (
     <section className={styles.cardSection}>
+      <h2 className={styles.headerText}>Tonoya Solves Your Problems</h2>
+      <p className={styles.secondaryText}>secondary text goes here</p>
       <div className={styles.cardsContainer}>
         {cards1.map((card) => (
           <div key={card.id} className={styles.card}>

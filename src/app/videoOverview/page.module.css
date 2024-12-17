@@ -31,14 +31,22 @@
   cursor: pointer;
 }
 
-.headerText {
-  /*font-size: 3em;*/
 
+.headerText{
+  /*font-size: 3em;*/
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   text-align: center;
-  padding-bottom: 6rem;
+  font-weight: bold ;
+  padding-bottom:1rem ;
 }
 
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 3rem;
+  line-height: 1.5;
+}
 
 .overlay {
   position: absolute;

@@ -95,7 +95,9 @@ const ClientReview = () => {
     <div className={styles.container}>
       
 
-      <div><h1 className={styles.headerText}>Our Clients’ Satisfaction is Our Top Priority</h1>
+      <div>
+        <h1 className={styles.headerText}>Our Clients’ Satisfaction is Our Top Priority</h1>
+        <p className={styles.secondaryText}>We have a reputation for helping clients around the world find success on their most important projects</p>
       <div className={styles.buttonContainer}>
       <button className={styles.arrowButton} onClick={() => scroll("left")}>
         &#8592;

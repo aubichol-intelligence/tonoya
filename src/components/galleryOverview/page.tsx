@@ -58,7 +58,7 @@ const PhotoGallery = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.headerText}>See Our Moments of Success</h2>
-      <p className={styles.bodyText}>Relive Some of the Moments After Deployment of Our Vending Machines in Various Organizations </p>
+      <p className={styles.secondaryText}>Relive Some of the Moments After Deployment of Our Vending Machines in Various Organizations </p>
 
       <div className={styles.gallery}>
         {imagesWithData.map((photo, index) => (

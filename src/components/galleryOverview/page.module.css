@@ -48,8 +48,8 @@
 }
 
 .container {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
   width: 75vw;
   margin: 0 auto;
 }
@@ -58,7 +58,16 @@
   /*font-size: 3em;*/
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   text-align: center;
+  padding-bottom: 1rem;
+}
+
+
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: normal;
   padding-bottom: 3rem;
+  line-height: 1.5;
 }
 
 .galleryButton {
@@ -81,6 +90,11 @@
   font-size: clamp(0.5rem, 1.0vw, 1.5rem);
   text-align: center;
   padding-bottom:3rem ;
+}
+
+.mask1 {
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient(black, transparent);
 }
 
 /* Responsive Adjustments */

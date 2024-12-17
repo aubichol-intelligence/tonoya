@@ -4,9 +4,9 @@
 }
 
 .container {
-  height: 80vh;
+  /*height: 80vh;
   
-  /*padding:10rem 5rem;*/
+  padding:10rem 5rem;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, #d9fdd3, #a8e6a3, #4caf50);
-  animation: animateBackground 10s infinite linear;
+  animation: animateBackground 10s infinite linear;   
   transform-style: preserve-3d; /* Ensures child transforms are applied in 3D */
   z-index: -1; /* Keeps the background behind the content */
 }
@@ -78,6 +78,10 @@
   padding: 1rem;
   max-width: 1200px;
   margin-inline: auto;
+  /*padding-top: clamp(4rem, 3vw, 18rem);
+  padding-bottom: clamp(4rem, 3vw, 10rem);*/
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .image img {
@@ -150,14 +154,17 @@
 @media (width <= 768px) {
   
   .container {
-    height: 120vh;
+   /* height: 120vh;*/
     
     width: 100vw;
  }
 
   .content {
+  
     flex-direction: column;
-    padding: 2rem 1rem;
+   /* padding: 2rem 1rem;*/
+   padding-top: 4rem;
+  padding-bottom: 4rem;
  }
 
   .image img {

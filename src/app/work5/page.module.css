@@ -17,7 +17,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   width: 80vw;
-  margin-bottom: 10rem;
+  
   /*background-color: gray;
   background-color: #0e1011;
 
@@ -33,6 +33,12 @@
   margin: 0 auto;
   background-color: #0e1011;
   
+}
+
+.cardSection{
+ /* background-color: darkturquoise;*/
+  padding-top: 6rem;
+  padding-bottom: 4rem;
 }
 
 .card:hover {
@@ -76,6 +82,23 @@
   padding-top: 1rem;
 }
 
+
+.headerText{
+  /*font-size: 3em;*/
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  text-align: center;
+  padding-bottom:1rem ;
+}
+
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 3rem;
+  line-height: 1.5;
+}
+
+
 /* Responsive Design */
 @media (width <= 768px) {
   .cardsContainer {
@@ -100,6 +123,8 @@
 
   .cardSection {
     margin-inline: auto;
+  
+
  ;}
 }
 

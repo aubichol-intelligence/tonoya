@@ -8,8 +8,8 @@
   overflow: hidden;
   margin: 0 auto;
   
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
   
   
   background: rgb(209, 241, 209);
@@ -101,8 +101,17 @@
   /*font-size: 3em;*/
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   text-align: center;
-  padding-bottom:3rem ;
+  padding-bottom:1rem ;
 }
+
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 3rem;
+  line-height: 1.5;
+}
+
 
 @media (max-width: 768px) {
  
@@ -119,7 +128,7 @@
   .container{
     width: 100vw;
     flex-direction: column;
-    padding-top: 4rem;
+  
   }
 
  }
