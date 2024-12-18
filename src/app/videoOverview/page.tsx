@@ -68,7 +68,7 @@ const Videos = () => {
     <div className={styles.outerContainer}>
       <div className={styles.container}>
         <h1 className={styles.headerText}>Why Organizations Choose Tonoya</h1>
-        <p className={styles.secondaryText}>We have a reputation for helping clients around the world find success on their most important projects</p>
+        <p className={styles.secondaryText}>We ensure trust, communication and mutual understanding to support our clients</p>
         <div className={styles.grid}>
           {items.map((video, i) => (
             <div key={i} className={styles.card}>
