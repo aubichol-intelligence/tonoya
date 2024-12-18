@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
   /* Ensures it stays above other content */
   background-color: rgb(255 255 255 / 20%);
@@ -28,7 +28,7 @@
   /* max-width: 98vw;
      max-width: 1400px; */
   margin: 0 auto;
-  width: 90vw;
+
   /* gap: 20px; */
   position: relative;
 }
