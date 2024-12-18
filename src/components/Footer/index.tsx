@@ -60,22 +60,47 @@ const router = useRouter();
           alt="Company Logo"
           className={styles.logo}
         />*/}
+
+       <div className={styles.socialMedia}>
+          <div className={styles.logoFooter1}>
+                      <button
+                          className={styles.logoButton}
+                          onClick={() => router.push('/')}
+                      >
+                          <Image
+                              src={imageLocation}
+                              // src="../../../public/logos/CHP-LOGO-1.png"
+                              alt="Logo"
+                              className={styles.logoImage}
+                              priority
+                              width={100}
+                              height={60}
+                          />
+                      </button>
+                  </div>
+          <div className={styles.icons}>
+            <p>Tonoya is the leading brand for sanitary pad vending machines. </p>
+          </div>
+        </div>
+
         <div className={styles.socialMedia}>
-          <h4 className={styles.socialMediaHeader}>Address</h4>
-          <p className={styles.address}>
-            270, Sultanganj Road, Dhaka <br />
-            Contact: +8801705686655 <br />
-            Email: sunbeamforce@gmail.com
-          </p>
+          <h4 className={styles.socialMediaHeader}>GET IN TOUCH</h4>
+          <div className={styles.icons}>
+            <p>270, Sultanganj Road, Dhaka </p>
+            <p>Contact: +8801705686655 </p>
+            <p>Email: sunbeamforce@gmail.com</p>
+          </div>
         </div>
 
         {/* Navigation Links */}
         <div className={styles.socialMedia}>
-          <h4 className={styles.socialMediaHeader}>Quick Links</h4>
+          <h4 className={styles.socialMediaHeader}>QUICK LINKS</h4>
           <div className={styles.icons}>
 
           <Link href="/">Home</Link>
+          <Link href="/photo-gallery">Products</Link>
           <Link href="/photo-gallery">Gallery</Link>
+          <Link href="/photo-gallery">Videos</Link>
           <Link href="/contact">Contact Us</Link>
           <Link href="/blog">Blog</Link>
  
@@ -84,7 +109,7 @@ const router = useRouter();
 
         {/* Social Media Links */}
         <div className={styles.socialMedia}>
-          <h1 className={styles.socialMediaHeader}>Follow Us</h1>
+          <h1 className={styles.socialMediaHeader}>FOLLOW US</h1>
           <div className={styles.icons}>
             <a
               href="https://www.facebook.com/"

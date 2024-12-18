@@ -5,10 +5,14 @@
   color: black;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
-  margin-inline: auto;
-  padding: 2rem 4rem;
+  margin: 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  padding-left: 8rem ;
+  padding-right: 8rem;
+  gap:1rem;
 }
 
 .footer {
@@ -17,8 +21,7 @@
   padding-Bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+ 
   overflow-y: hidden;
 }
 
@@ -43,10 +46,16 @@
 }
 
 .socialMedia {
-  width: 40vw;
-  margin-inline: auto;
-  text-align: left;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
+  
   font-family: Montserrat, sans-serif;
+  padding-bottom: 2rem;
+ /* background-color:aqua;*/
 }
 
 .map {
@@ -81,10 +90,12 @@
 }
 
 .socialMediaHeader {
-  font-size: 2.25rem; /* Adjust font size for responsiveness */
-  font-weight: 800;
+  font-size: 1.4rem; /* Adjust font size for responsiveness */
+  font-weight: 900;
   margin-bottom: 16px;
   color: #333;
+  text-align: center;
+  /*background-color: #fc0;*/
 }
 
 .icons {
@@ -93,6 +104,9 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
+  font-size: 1rem;
+  text-align: left;
+ /* background-color: bisque;*/
 }
 
 .socialMedia .icons img {
@@ -148,18 +162,30 @@
 @media (width <= 768px) {
   .follow-us-heading {
     font-size: 1rem;
- ;}
+ }
 
   .follow-link {
     font-size: 0.9rem;
- ;}
+ }
 }
 
 @media (width <= 768px) {
   .container {
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
- ;}
+    
+    padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem ;
+  padding-right: 1rem;
+ }
+
+ .socialMedia {
+  width: 98vw;
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+}
 }
 
 @media (width <= 768px) {
@@ -189,4 +215,11 @@
   justify-content: center;
   align-items: center;
   padding:2rem;
+}
+
+.logoFooter1{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom:0.5rem;
 }
