@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import imageLocation from '../../../public/logos/tonoya.png';
 // import { useAuth } from '@/app/context/AuthContext';
-import { FaAngleLeft, FaBars, FaSearch, } from 'react-icons/fa';
+import { FaAngleRight, FaBars, FaSearch, } from 'react-icons/fa';
 
 const Header = () => {
     const router = useRouter();
@@ -133,7 +133,7 @@ const Header = () => {
                     {/* // <div className={styles.drawer}> */}
                     <div className={`${styles.drawer} ${isDrawerOpen ? 'open' : 'closed'}`}>
                         <button className={styles.closeButton} onClick={toggleDrawer}>
-                            <FaAngleLeft />
+                            <FaAngleRight />
                         </button>
 
                         {/* <div className={styles.mobileNav}> */}
