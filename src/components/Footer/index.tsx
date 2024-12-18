@@ -79,7 +79,7 @@ const router = useRouter();
                       </button>
                   </div>
           <div className={styles.icons}>
-            <p>Tonoya is a one stop solution for sanitary pads </p>
+            <p>Tonoya is the leading brand for sanitary pad vending machines. </p>
           </div>
         </div>
 
