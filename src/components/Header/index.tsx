@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import imageLocation from '../../../public/logos/tonoya.png';
 // import { useAuth } from '@/app/context/AuthContext';
-import { FaAngleLeft, FaAngleRight, FaSearch, } from 'react-icons/fa';
+import { FaAngleLeft, FaBars, FaSearch, } from 'react-icons/fa';
 
 const Header = () => {
     const router = useRouter();
@@ -33,9 +33,9 @@ const Header = () => {
         <div className={`${styles.header} ${scrolling ? styles.scrolling : ""}`}>
             {/* <div className={styles.header}> */}
             <div className={styles.container}>
-                <div className={styles.sideIcon} onClick={toggleDrawer}>
+                {/* <div className={styles.sideIcon} onClick={toggleDrawer}>
                     <FaAngleRight className={styles.sideIconBar} />
-                </div>
+                </div> */}
 
                 <div className={styles.logo}>
                     <button
@@ -108,6 +108,9 @@ const Header = () => {
                             {isOpen ? <FaTimes className={styles.icon} /> : <FaBars className={styles.icon} />}
                         </button>
                     </div> */}
+                    <div className={styles.sideIcon} onClick={toggleDrawer}>
+                        {isDrawerOpen ? "" : <FaBars className={styles.sideIconBar} />}
+                    </div>
                 </div>
             </div>
 

@@ -29,16 +29,24 @@ const PhotoGallery = () => {
     const fetchImages = async () => {
       // setLoading(true);
       try {
-        // const skip = currentPage * ITEMS_PER_PAGE;
-        const response = await fetch(`https://tonoyabd.com/api/v1/image/list/0/6`, {
-          method: 'GET',
+        const response = await fetch(`https://tonoyabd.com/api/v1/image/findtag`, {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json"
+            //   Authorization: process.env.API_TOKEN || '',
+          },
+          body: JSON.stringify({
+            skip: "0",
+            limit: "6",
+            tags: ["main"],
+          }),
         });
 
         if (response.ok) {
           const data = await response.json();
-          // console.log(data.list);
+          // console.log(data.results);
 
-          setImagesWithData(data?.list || []);
+          setImagesWithData(data?.results || []);
         } else {
           const errorData = await response.json();
           console.error("Error fetching images:", errorData.message || "Unknown error");
