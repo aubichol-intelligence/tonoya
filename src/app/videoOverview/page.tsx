@@ -23,24 +23,31 @@ const Videos = () => {
   // const [totalItems, setTotalItems] = useState<number>(0);
   // const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
   // console.log(items);
-  const ITEMS_PER_PAGE = 6;
+  const ITEMS_PER_PAGE = "6";
 
 
   useEffect(() => {
     const fetchItems = async () => {
       // setLoading(true);
       try {
-        // const skip = currentPage * ITEMS_PER_PAGE; // Calculate skip based on the current page
-        const response = await fetch(
-          // `https://tonoyabd.com/api/v1/video/list/${skip}/${ITEMS_PER_PAGE}`
-          `https://tonoyabd.com/api/v1/video/list/0/${ITEMS_PER_PAGE}`
-        );
+        const response = await fetch(`https://tonoyabd.com/api/v1/video/findtag`, {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json"
+            //   Authorization: process.env.API_TOKEN || '',
+          },
+          body: JSON.stringify({
+            skip: "0",
+            limit: ITEMS_PER_PAGE,
+            tags: ["main"],
+          }),
+        });
         if (!response.ok) {
           throw new Error("Failed to fetch items");
         }
         const data = await response.json();
-        // console.log(data);
-        setItems(data?.list || []);
+        // console.log(data.results);
+        setItems(data?.results || []);
         // setTotalItems(data.length || 0)
       } catch (error) {
         console.error("Error fetching items:", error);
