@@ -77,13 +77,15 @@ const PhotoGallery = () => {
         ))}
       </div>
 
-      <Link
+      {/*<Link
         href="/photo-gallery"
         className={styles.galleryButton}
       >
         Go to Gallery
         <GrGallery />
-      </Link>
+        </Link>*/}
+
+    <button className={styles.button} >View Products</button>
     </div>
   );
 };
