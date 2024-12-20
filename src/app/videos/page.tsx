@@ -39,7 +39,7 @@ const Videos = () => {
           body: JSON.stringify({
             skip: "0",
             limit: ITEMS_PER_PAGE,
-            tags: ["main"],
+            tags: ["gallery"],
           }),
         });
         if (!response.ok) {
