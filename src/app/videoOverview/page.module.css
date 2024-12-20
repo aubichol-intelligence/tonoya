@@ -1,5 +1,5 @@
 .outerContainer {
-  background-color: #bfc5c0;
+  background-color: #f5f5f5;
 }
 
 .container {
@@ -46,6 +46,27 @@
   font-weight: normal;
   padding-bottom: 3rem;
   line-height: 1.5;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #37c26c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-left:auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.buttonCont {
+  display: flex;
+  justify-content: center;
+  align-items: 'center';
 }
 
 .overlay {

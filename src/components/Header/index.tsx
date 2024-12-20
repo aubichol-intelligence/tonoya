@@ -68,6 +68,12 @@ const Header = () => {
                         Gallery
                     </Link>
                     <Link
+                        href="/videos"
+                        className={pathname === '/videos' ? styles.active : ''}
+                    >
+                        Videos
+                    </Link>
+                    <Link
                         href="/blog"
                         className={pathname === '/blog' || pathname?.startsWith('/blog/') ? styles.active : ''}
                     // className={pathname?.startsWith('/blog') ? styles.active : ''}
@@ -148,6 +154,13 @@ const Header = () => {
                             <Link
                                 href="/photo-gallery"
                                 className={pathname === '/photo-gallery' ? styles.active : ''}
+                                onClick={toggleDrawer}
+                            >
+                                Gallery
+                            </Link>
+                            <Link
+                                href="/videos"
+                                className={pathname === 'videos' ? styles.active : ''}
                                 onClick={toggleDrawer}
                             >
                                 Gallery

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
+import { useRouter } from 'next/navigation';
 
 interface Item {
   // id: string;
@@ -18,6 +19,12 @@ const Videos = () => {
   const [currentVideo, setCurrentVideo] = useState("");
 
   const [items, setItems] = useState<Item[]>([]);
+
+  const router = useRouter();
+
+  const handleVideoClick = () => {
+    router.push('/videos');
+  };
   // const [loading, setLoading] = useState<boolean>(true);
   // const [currentPage, setCurrentPage] = useState<number>(0); // Pagination state
   // const [totalItems, setTotalItems] = useState<number>(0);
@@ -108,7 +115,12 @@ const Videos = () => {
             </div>
           </div>
         )}
+        <div className={styles.buttonCont}>
+        <button className={styles.button} onClick={handleVideoClick}>See More Videos </button>
       </div>
+      </div>
+
+      
     </div>
 
 
