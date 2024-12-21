@@ -49,7 +49,7 @@ export default async function Page(props: { params: Params }) {
     //         Authorization: process.env.API_TOKEN || '',
     //     },
     // });
-    const response = await fetch(`https://tonoyabd.com/api/v1/blog/getslug/${slug}`);
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/getslug/${slug}`,{ cache: 'no-store' }) // Ensure fresh data fetch for dynamic pages);
 
     if (!response.ok) {
         return (
