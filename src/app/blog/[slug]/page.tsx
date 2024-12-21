@@ -83,8 +83,8 @@ export default async function Page(props: { params: Params }) {
 
                     <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} >
                         <div>
-                            <p className="blog-subtitle"><span className='text-bold'>Author:</span> {post.author}</p>
-                            <p className="blog-subtitle"><span className='text-bold'>Tags:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
+                            <p className="blog-subtitle"><span className='text-bold'>লেখক:</span> {post.author}</p>
+                            <p className="blog-subtitle"><span className='text-bold'>ট্যাগ:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
                         </div>
                         <div style={{ display: "flex", justifyContent: "center" }} >
                             <Link href="/blog">Back</Link>
