@@ -54,6 +54,7 @@ type BlogPost = {
   imageUrl: string;
   title: string;
   id: string;
+  slug: string,
   short_description: string;
   content: string;
   author: string;
@@ -82,7 +83,7 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
 
         return (
           // {/* <div className="blog-card" > */}
-          <Link key={blog.id} href={`/blog/${blog.id}`} className="blog-card" >
+          <Link key={blog.slug} href={`/blog/${blog.slug}`} className="blog-card" >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             < img
               src={imageSrc}

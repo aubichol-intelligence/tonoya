@@ -14,7 +14,7 @@ export async function generateMetadata(props: { params: Params }) {
     const params = await props.params
     const slug = params.slug
 
-    const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`, {
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/getslug/${slug}`, {
         method: 'GET',
         headers: {
             Authorization: process.env.API_TOKEN || '', // Use environment variable for the token
@@ -49,7 +49,7 @@ export default async function Page(props: { params: Params }) {
     //         Authorization: process.env.API_TOKEN || '',
     //     },
     // });
-    const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`);
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/getslug/${slug}`);
 
     if (!response.ok) {
         return (
@@ -153,7 +153,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
     // const posts = await fetch('https://.../posts').then((res) => res.json())
 
     return blogPosts.map((post) => ({
-        slug: post.id,
+        slug: post.slug,
     }));
 }
 

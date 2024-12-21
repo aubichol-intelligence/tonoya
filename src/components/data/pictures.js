@@ -5,7 +5,8 @@ const Pic = [
         id: "1",
         short_description: "Learn the basics of Next.js, a React-based framework...",
         content: "Next.js is a React framework for building server-side rendered applications...",
-        author: "John Doe"
+        author: "John Doe",
+        slug: "test1"
     },
 
     {
@@ -14,7 +15,8 @@ const Pic = [
         id: "2",
         short_description: "Learn the basics of Next.js, a React-based framework...",
         content: "Next.js is a React framework for building server-side rendered applications...",
-        author: "John Doe"
+        author: "John Doe",
+        slug: "test12"
     },
 
     {
@@ -23,7 +25,8 @@ const Pic = [
         id: "3",
         short_description: "Learn the basics of Next.js, a React-based framework...",
         content: "Next.js is a React framework for building server-side rendered applications...",
-        author: "John Doe"
+        author: "John Doe",
+        slug: "test14"
     },
 
     {
@@ -32,7 +35,8 @@ const Pic = [
         id: "4",
         short_description: "Learn the basics of Next.js, a React-based framework...",
         content: "Next.js is a React framework for building server-side rendered applications...",
-        author: "John Doe"
+        author: "John Doe",
+        slug: "test13", 
     },
 
     {
@@ -41,7 +45,8 @@ const Pic = [
         id: "5",
         short_description: "Learn the basics of Next.js, a React-based framework...",
         content: "Next.js is a React framework for building server-side rendered applications...",
-        author: "John Doe"
+        author: "John Doe",
+        slug: "test15"
     },
     {
         imageUrl: 'https://i.ibb.co/m6snrg3/Blog-Picture6.jpg',
@@ -49,7 +54,8 @@ const Pic = [
         id: "6",
         short_description: "Learn the basics of Next.js, a React-based framework...",
         content: "Next.js is a React framework for building server-side rendered applications...",
-        author: "John Doe"
+        author: "John Doe",
+        slug: "test16"
     },
 
 
