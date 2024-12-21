@@ -37,7 +37,7 @@
 
 .card {
   position: relative;
-  background: #fff;
+  background: #FFFFFF;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -99,17 +99,21 @@
 
 .headerText{
   /*font-size: 3em;*/
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   text-align: center;
   padding-bottom:1rem ;
+  color:#010101;
 }
 
 .secondaryText{
-  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   text-align: center;
   font-weight: normal;
   padding-bottom: 3rem;
-  line-height: 1.5;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.4;
+  color:#333333;
 }
 
 
@@ -162,11 +166,12 @@
   font-weight: bold;
   margin: 5px 0;
   text-align: center;
+  color: #333333;
 }
 
 .clientDesignation {
   font-size: 1rem;
-  color: #555;
+  color: #333333;
   margin: 5px 0;
   text-align: center;
 }
@@ -174,7 +179,7 @@
 .clientReviewText {
   font-size: 1rem;
   line-height: 1.5;
-  color: #333;
+  color: #333333;
   text-align: center;
   margin: 20px 0;
 }
@@ -184,6 +189,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  color:#333333;
 }
 
 .logoContainer {
@@ -197,6 +203,7 @@
 .clientHeader{
   flex:1;
   padding-top:2rem;
+  color:#333333;
   
 }
 .clientFooter{

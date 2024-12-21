@@ -6,6 +6,7 @@
   padding-top: 6rem;
   padding-bottom: 4rem;
   margin-inline: auto;
+  color:#FFFFFF;
 }
 
 .carousel {
@@ -21,19 +22,24 @@
   height: 300px; /* Height of each image */
 }
 
+
 .headerText{
   /*font-size: 3em;*/
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   text-align: center;
   padding-bottom:1rem ;
+  color:#010101;
 }
 
 .secondaryText{
-  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   text-align: center;
   font-weight: normal;
   padding-bottom: 3rem;
-  line-height: 1.5;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.4;
+  color:#333333;
 }
 
 @media (width <= 768px) {
@@ -44,7 +50,7 @@
   .carouselWrapper {
     overflow: hidden; /* Hide anything outside the container */
     position: relative;
-    background: #fff;
+    background: #FFFFFF;
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
     border-width: 0.5rem;
