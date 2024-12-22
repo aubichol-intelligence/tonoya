@@ -47,12 +47,15 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
+ /* background-color: aquamarine;*/
   /* Three columns */
   gap: 20px;
-
   /* Space between cards */
-  padding: 10px;
+  padding-left: 8rem;
+  padding-right:8rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  
 }
 
 .blog-card {
@@ -129,11 +132,34 @@
   transition: background-color 0.3s ease;
 }
 
+
+.headerText{
+  /*font-size: 3em;*/
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  text-align: center;
+  padding-bottom:1rem ;
+  color:#010101;
+}
+
+.secondaryText{
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.4;
+  color:#333333;
+}
+
 /* Responsive Design */
 @media (width <=1024px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
-
+    padding-left: 1rem;
+    padding-right:1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     /* Two columns for medium screens */
     ;
   }
@@ -142,6 +168,10 @@
 @media (width <=768px) {
   .grid-container {
     grid-template-columns: 1fr;
+    padding-left: 0.5rem;
+    padding-right:0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     /* One column for small screens */
     ;

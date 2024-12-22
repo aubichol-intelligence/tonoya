@@ -71,6 +71,10 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
   const defaultImage = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Path to your default image
 
   return (
+    <div>
+       <h2 className="headerText">Read Our Latest Blogs</h2>
+      <p className="secondaryText"> Discover the technology and impact of sanitary pad vending machines, along with tips and stories that inspire change </p>
+    
     <div className="grid-container">
       {posts.map((blog) => {
         // Extract image URLs from blog content
@@ -111,6 +115,7 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
         );
       })}
     </div >
+    </div>
   );
 };
 
