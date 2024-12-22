@@ -163,7 +163,7 @@ const Header = () => {
                                 className={pathname === 'videos' ? styles.active : ''}
                                 onClick={toggleDrawer}
                             >
-                                Gallery
+                                Videos
                             </Link>
                             <Link
                                 href="/blog"
