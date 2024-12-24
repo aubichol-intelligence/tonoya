@@ -99,11 +99,11 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
             // }}
             />
 
-            <div className="blog-content">
+            <div className="blog-content-main">
               <div className="blog-text-container">
-                <h3 className="blog-title">{blog.title}</h3>
+                <h3 className="blog-title-main">{blog.title}</h3>
 
-                <p className="blog-description">{blog.short_description}</p>
+                <p className="blog-description-main">{blog.short_description}</p>
               </div>
 
               {/* <Link href={`/blog/${blog.id}`}> */}
