@@ -96,7 +96,7 @@ const CarouselSection: React.FC<CarouselSectionProps> = ({ from }) => {
 
           return (
             <div key={index} className={styles.card}>
-              <Link key={blog.slug} href={`/blog/${blog.slug}`} className="blog-card" >
+              <Link key={blog.slug} href={`/blog/${blog.slug}`} >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 < img
                   src={imageSrc}
