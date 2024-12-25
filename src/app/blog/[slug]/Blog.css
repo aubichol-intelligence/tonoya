@@ -277,7 +277,8 @@
   padding: 20px;
   box-sizing: border-box;
   margin-top: 6rem;
-  background-color: white;
+  /* background-color: white; */
+  background-color: #b0f4c3;
 }
 
 /* Header Section */

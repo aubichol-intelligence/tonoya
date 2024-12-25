@@ -6,6 +6,7 @@ import blogPosts from '../../../components/data/pictures';
 // import Image from 'next/image';
 import "./Blog.css";
 import parse from 'html-react-parser';
+import BlogOverview from "../../blogSum1/page"
 
 type Params = Promise<{ slug: string }>
 
@@ -49,7 +50,7 @@ export default async function Page(props: { params: Params }) {
     //         Authorization: process.env.API_TOKEN || '',
     //     },
     // });
-    const response = await fetch(`https://tonoyabd.com/api/v1/blog/getslug/${slug}`,{ cache: 'no-store' }) // Ensure fresh data fetch for dynamic pages);
+    const response = await fetch(`https://tonoyabd.com/api/v1/blog/getslug/${slug}`, { cache: 'no-store' }) // Ensure fresh data fetch for dynamic pages);
 
     if (!response.ok) {
         return (
@@ -68,7 +69,7 @@ export default async function Page(props: { params: Params }) {
 
     return (
         // <HelmetProvider>
-        <>
+        <div style={{ paddingTop: "0.1rem", backgroundColor: "#68d689" }}>
             {/* <Helmet> */}
             <Head>
                 <title>{post.title}</title>
@@ -81,46 +82,17 @@ export default async function Page(props: { params: Params }) {
                     <h1 className="blog-title">{post.title}</h1>
                     {/* <p className="blog-subtitle">Season 1 | Where the Heart Is</p> */}
 
-                    <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} >
-                        <div>
-                            <p className="blog-subtitle"><span className='text-bold'>লেখক:</span> {post.author}</p>
-                            <p className="blog-subtitle"><span className='text-bold'>ট্যাগ:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
-                        </div>
-                        <div style={{ display: "flex", justifyContent: "center" }} >
-                            <Link href="/blog">Back</Link>
-                        </div>
+                    {/* <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} > */}
+                    <div>
+                        <p className="blog-subtitle"><span className='text-bold'>Date:</span> {post.created_at.split(" ")[0]}</p>
+                        <p className="blog-subtitle"><span className='text-bold'>Author:</span> {post.author}</p>
+                        <p className="blog-subtitle"><span className='text-bold'>Tags:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
                     </div>
+                    {/* <div style={{ display: "flex", justifyContent: "center" }} >
+                            <Link href="/blog">Back</Link>
+                        </div> */}
+                    {/* </div> */}
                 </header>
-
-                {/* Hero Image Section */}
-                {/* <div className="blog-hero">
-                    <Image
-                        // src="../../../../public/file.svg"
-                        src={imageUrl}
-                        alt="Blog Image"
-                        priority
-                        layout="responsive"   // Make sure the image scales
-                        width={600}
-                        height={200}
-                        className="hero-image"
-                    />
-                </div> */}
-
-                {/* Content Section */}
-                {/* <article className="blog-content">
-                    <p>{post.content}</p>
-                    <hr />
-                    <p>
-                        Nestled in the heart of their Chennai home, Dipika and Dinesh share an
-                        abode filled with stories, emotions, and memories. Each corner reflects
-                        their vibrant personalities and cherished moments.
-                    </p>
-                    <p>
-                        Their home is more than a structure; it is a canvas of life where love,
-                        passion, and dreams converge. From intricately designed interiors to
-                        stunning outdoor spaces, it speaks of their journey.
-                    </p>
-                </article> */}
 
                 <div style={{ display: "flex", justifyContent: "center" }} >
                     <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
@@ -134,7 +106,7 @@ export default async function Page(props: { params: Params }) {
                 /> */}
 
                 <div style={{ display: "flex", justifyContent: "center" }} >
-                    <Link href="/blog">Back to Blog List</Link>
+                    <Link href="/blog" style={{ backgroundColor: "#68d689" }}>Back to Blog List</Link>
                 </div>
 
 
@@ -143,7 +115,9 @@ export default async function Page(props: { params: Params }) {
                     <p className="footer-note">© 2024 Blog Page. All rights reserved.</p>
                 </footer> */}
             </div>
-        </>
+
+            <BlogOverview from="blog" />
+        </div>
         // </HelmetProvider>
     );
 }

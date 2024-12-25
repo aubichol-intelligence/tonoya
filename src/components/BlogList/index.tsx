@@ -59,6 +59,12 @@ type BlogPost = {
   content: string;
   author: string;
   alt: string;
+  tags: string[];
+  meta_title: string;
+  meta_description: string;
+  created_at: string;
+  published_at: string;
+  updated_at: string;
 };
 
 type BlogListProps = {
@@ -72,49 +78,53 @@ const BlogGrid: React.FC<BlogListProps> = ({ posts }) => {
 
   return (
     <div>
-       <h2 className="headerText">Read Our Latest Blogs</h2>
+      <h2 className="headerText">Read Our Latest Blogs</h2>
       <p className="secondaryText"> Discover the technology and impact of sanitary pad vending machines, along with tips and stories that inspire change </p>
-    
-    <div className="grid-container">
-      {posts.map((blog) => {
-        // Extract image URLs from blog content
-        const imageUrls = [...blog.content.matchAll(/<img[^>]+src="([^">]+)"/g)].map(
-          (match) => match[1]
-        );
 
-        // Use the first extracted image, blog.imageUrl, or the default image
-        const imageSrc = imageUrls[0] || blog.imageUrl || defaultImage;
+      <div className="grid-container">
+        {posts?.map((blog) => {
+          // Extract image URLs from blog content
+          const imageUrls = [...blog.content.matchAll(/<img[^>]+src="([^">]+)"/g)].map(
+            (match) => match[1]
+          );
 
-        return (
-          // {/* <div className="blog-card" > */}
-          <Link key={blog.slug} href={`/blog/${blog.slug}`} className="blog-card" >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            < img
-              src={imageSrc}
-              alt={blog.alt || blog.title}
-              className="blog-image"
-            // onError={(e) => {
-            //   // Fallback to the default image if the image fails to load
-            //   (e.target as HTMLImageElement).src = defaultImage;
-            // }}
-            />
+          // Use the first extracted image, blog.imageUrl, or the default image
+          const imageSrc = imageUrls[0] || blog.imageUrl || defaultImage;
 
-            <div className="blog-content-main">
-              <div className="blog-text-container">
-                <h3 className="blog-title-main">{blog.title}</h3>
+          return (
+            // {/* <div className="blog-card" > */}
+            <Link key={blog.slug} href={`/blog/${blog.slug}`} className="blog-card" >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              < img
+                src={imageSrc}
+                alt={blog.alt || blog.title}
+                className="blog-image"
+              // onError={(e) => {
+              //   // Fallback to the default image if the image fails to load
+              //   (e.target as HTMLImageElement).src = defaultImage;
+              // }}
+              />
 
-                <p className="blog-description-main">{blog.short_description}</p>
+              <div className="blog-content-main">
+                <div className="blog-text-container">
+                  <p className="blog-description-main">{blog.created_at}</p>
+
+                  <h3 className="blog-title-main">{blog.title}</h3>
+
+                  <p className="blog-description-main">By {blog.author}</p>
+
+                  <p className="blog-description-main">{blog.short_description}</p>
+                </div>
+
+                {/* <Link href={`/blog/${blog.id}`}> */}
+                <button className="read-more-button">Read More</button>
+                {/* </Link> */}
               </div>
-
-              {/* <Link href={`/blog/${blog.id}`}> */}
-              <button className="read-more-button">Read More</button>
-              {/* </Link> */}
-            </div>
-          </Link>
-          // {/* </div> */}
-        );
-      })}
-    </div >
+            </Link>
+            // {/* </div> */}
+          );
+        })}
+      </div >
     </div>
   );
 };
