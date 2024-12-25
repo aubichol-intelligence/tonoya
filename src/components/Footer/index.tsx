@@ -12,13 +12,13 @@ import imageLocation from '../../../public/logos/tonoya.png';
 
 
 const Footer: NextPage = () => {
-//  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
-const router = useRouter();
+  //  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
+  const router = useRouter();
 
   const NotSSRMaps = dynamic(() => import('../map/page'), {
     ssr: false,
   });
-  
+
   return (
     <footer className={styles.footer}>
       {/* Schema Markup */}
@@ -51,7 +51,7 @@ const router = useRouter();
         })}
       </script>
 
-      
+
       <div className={styles.container}>
         {/* Logo and Address */}
         {/*<div className={styles.logoSection}>
@@ -61,23 +61,23 @@ const router = useRouter();
           className={styles.logo}
         />*/}
 
-       <div className={styles.socialMedia}>
+        <div className={styles.socialMedia}>
           <div className={styles.logoFooter1}>
-                      <button
-                          className={styles.logoButton}
-                          onClick={() => router.push('/')}
-                      >
-                          <Image
-                              src={imageLocation}
-                              // src="../../../public/logos/CHP-LOGO-1.png"
-                              alt="Logo"
-                              className={styles.logoImage}
-                              priority
-                              width={100}
-                              height={60}
-                          />
-                      </button>
-                  </div>
+            <button
+              className={styles.logoButton}
+              onClick={() => router.push('/')}
+            >
+              <Image
+                src={imageLocation}
+                // src="../../../public/logos/CHP-LOGO-1.png"
+                alt="Logo"
+                className={styles.logoImage}
+                priority
+                width={100}
+                height={60}
+              />
+            </button>
+          </div>
           <div className={styles.icons}>
             <p>Tonoya is the leading brand for sanitary pad vending machines. </p>
           </div>
@@ -97,13 +97,13 @@ const router = useRouter();
           <h4 className={styles.socialMediaHeader}>QUICK LINKS</h4>
           <div className={styles.icons}>
 
-          <Link href="/">Home</Link>
-          <Link href="/photo-gallery">Products</Link>
-          <Link href="/photo-gallery">Gallery</Link>
-          <Link href="/photo-gallery">Videos</Link>
-          <Link href="/contact">Contact Us</Link>
-          <Link href="/blog">Blog</Link>
- 
+            <Link href="/">Home</Link>
+            <Link href="/photo-gallery">Products</Link>
+            <Link href="/photo-gallery">Gallery</Link>
+            <Link href="/photo-gallery">Videos</Link>
+            <Link href="/contact">Contact Us</Link>
+            <Link href="/blog">Blog</Link>
+
           </div>
         </div>
 
@@ -146,21 +146,21 @@ const router = useRouter();
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
         <div className={styles.logoFooter}>
-                      <button
-                          className={styles.logoButton}
-                          onClick={() => router.push('/')}
-                      >
-                          <Image
-                              src={imageLocation}
-                              // src="../../../public/logos/CHP-LOGO-1.png"
-                              alt="Logo"
-                              className={styles.logoImage}
-                              priority
-                              width={100}
-                              height={60}
-                          />
-                      </button>
-                  </div>
+          <button
+            className={styles.logoButton}
+            onClick={() => router.push('/')}
+          >
+            <Image
+              src={imageLocation}
+              // src="../../../public/logos/CHP-LOGO-1.png"
+              alt="Logo"
+              className={styles.logoImage}
+              priority
+              width={100}
+              height={60}
+            />
+          </button>
+        </div>
         <p>
           &copy; {new Date().getFullYear()} Sun Beam Force Limited. All rights reserved.
           Developed by <a href="https://aubichol.com">Aubichol Intelligent Technologies</a>.

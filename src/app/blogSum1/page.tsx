@@ -113,10 +113,10 @@ const CarouselSection: React.FC<CarouselSectionProps> = ({ from }) => {
         })}
       </div>
 
-      {
-        from === "home" &&
-        <button className={styles.button} onClick={handleClick}>Read More Thoughts</button>
-      }
+      {/* {
+        from === "home" && */}
+      <button className={styles.button} onClick={handleClick}>Read More Thoughts</button>
+      {/* } */}
       {/* <ClientSideButton label="Read More Thoughts" destination="/blog" /> */}
     </section>
   );
