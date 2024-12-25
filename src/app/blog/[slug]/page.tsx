@@ -70,6 +70,7 @@ export default async function Page(props: { params: Params }) {
     return (
         // <HelmetProvider>
         <div style={{ paddingTop: "0.1rem", backgroundColor: "#68d689" }}>
+            {/* // <div style={{ paddingTop: "0.1rem", }}> */}
             {/* <Helmet> */}
             <Head>
                 <title>{post.title}</title>
@@ -77,10 +78,19 @@ export default async function Page(props: { params: Params }) {
             {/* </Helmet> */}
 
             <div className="blog-page">
-                {/* Header Section */}
-                <header className="blog-header">
-                    <h1 className="blog-title">{post.title}</h1>
-                    {/* <p className="blog-subtitle">Season 1 | Where the Heart Is</p> */}
+                <div style={{ display: "flex", justifyContent: "center" }} >
+                    <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
+                        {post?.content && parse(post?.content)}
+                    </div>
+                </div>
+
+                {/* <div
+                    dangerouslySetInnerHTML={{ __html: post?.content }}
+                    style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}
+                /> */}
+
+                <header className="blog-header" style={{ marginTop: '2rem' }}>
+                    {/* <h1 className="blog-title">{post.title}</h1> */}
 
                     {/* <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} > */}
                     <div>
@@ -93,17 +103,6 @@ export default async function Page(props: { params: Params }) {
                         </div> */}
                     {/* </div> */}
                 </header>
-
-                <div style={{ display: "flex", justifyContent: "center" }} >
-                    <div className='prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl outline-none' >
-                        {post?.content && parse(post?.content)}
-                    </div>
-                </div>
-
-                {/* <div
-                    dangerouslySetInnerHTML={{ __html: post?.content }}
-                    style={{ fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}
-                /> */}
 
                 <div style={{ display: "flex", justifyContent: "center" }} >
                     <Link href="/blog" style={{ backgroundColor: "#68d689" }}>Back to Blog List</Link>

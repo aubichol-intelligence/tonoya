@@ -274,11 +274,11 @@
   max-width: 1200px;
   /* Limits the width for readability on large screens */
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
   box-sizing: border-box;
   margin-top: 6rem;
-  /* background-color: white; */
-  background-color: #b0f4c3;
+  background-color: white;
+  /* background-color: #b0f4c3; */
 }
 
 /* Header Section */
