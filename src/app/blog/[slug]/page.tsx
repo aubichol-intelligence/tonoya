@@ -6,7 +6,7 @@ import blogPosts from '../../../components/data/pictures';
 // import Image from 'next/image';
 import "./Blog.css";
 import parse from 'html-react-parser';
-import BlogOverview from "../../blogSum1/page"
+import BlogOverview from "../../../components/blogSum1/page"
 
 type Params = Promise<{ slug: string }>
 

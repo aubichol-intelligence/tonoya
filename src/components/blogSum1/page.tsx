@@ -25,8 +25,9 @@ interface PostData {
 }
 
 // Define the props for the component
+
 interface CarouselSectionProps {
-  from: string;
+  from: "home" | "blog";
 }
 
 const CarouselSection: React.FC<CarouselSectionProps> = ({ from }) => {
