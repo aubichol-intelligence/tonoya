@@ -14,7 +14,7 @@ import ContactSummary from "../app/contactsum/page";
 import ClientReview from "../app/review1/page";
 import VideoOverview from "../app/videoOverview/page";
 import ProductDetails from "../app/productClassification/page";
-import BlogOverview from "../app/blogSum1/page"
+import BlogOverview from "../components/blogSum1/page";
 import Head from 'next/head';
 import { NextPage } from "next";
 import GalleryOverview from "../components/galleryOverview/page";
