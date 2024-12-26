@@ -1,37 +1,47 @@
+'use client'
+
 import React from "react";
 import styles from "./page.module.css";
 //import Map from "../map/page"
-//import Image from "next/image";
-//import Link from 'next/link'
+import Image from "next/image";
+import Link from 'next/link';
+import { NextPage } from "next";
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
+import imageLocation from '../../../public/logos/tonoya.png';
 
-const Footer = () => {
+
+const Footer: NextPage = () => {
 //  const scrollToTop = () => {    if (typeof window !== "undefined") {      window.scrollTo({ top: 0, behavior: "smooth" });    }  };
+const router = useRouter();
 
+  const NotSSRMaps = dynamic(() => import('../map/page'), {
+    ssr: false,
+  });
+  
   return (
-
-
     <footer className={styles.footer}>
       {/* Schema Markup */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "http://schema.org",
           "@type": "Organization",
-          name: "Your Company Name",
-          url: "https://yourwebsite.com",
-          logo: "https://yourwebsite.com/logo.png",
+          name: "Sunbeam Force Limited",
+          url: "https://tonoyabd.com",
+          logo: "https://tonoyabd.com/logo.png",
           contactPoint: [
             {
               "@type": "ContactPoint",
-              telephone: "+123456789",
+              telephone: "8801705686655",
               contactType: "Customer Service",
             },
           ],
           address: {
             "@type": "PostalAddress",
-            streetAddress: "123 Main Street",
-            addressLocality: "Your City",
-            postalCode: "12345",
-            addressCountry: "Your Country",
+            streetAddress: "270, Sultanganj Road, Rayer Bazar",
+            addressLocality: "Dhaka",
+            postalCode: "1209",
+            addressCountry: "Bangladesh",
           },
           sameAs: [
             "https://www.facebook.com/yourpage",
@@ -41,6 +51,7 @@ const Footer = () => {
         })}
       </script>
 
+      
       <div className={styles.container}>
         {/* Logo and Address */}
         {/*<div className={styles.logoSection}>
@@ -49,41 +60,57 @@ const Footer = () => {
           alt="Company Logo"
           className={styles.logo}
         />*/}
+
+       <div className={styles.socialMedia}>
+          <div className={styles.logoFooter1}>
+                      <button
+                          className={styles.logoButton}
+                          onClick={() => router.push('/')}
+                      >
+                          <Image
+                              src={imageLocation}
+                              // src="../../../public/logos/CHP-LOGO-1.png"
+                              alt="Logo"
+                              className={styles.logoImage}
+                              priority
+                              width={100}
+                              height={60}
+                          />
+                      </button>
+                  </div>
+          <div className={styles.icons}>
+            <p>Tonoya is the leading brand for sanitary pad vending machines. </p>
+          </div>
+        </div>
+
         <div className={styles.socialMedia}>
-          <h4 className={styles.socialMediaHeader}>Quick Links</h4>
-          <p className={styles.address}>
-            123 Office St, Business City, 56789 <br />
-            Contact: (123) 456-7890 <br />
-            Email: info@company.com
-          </p>
+          <h4 className={styles.socialMediaHeader}>GET IN TOUCH</h4>
+          <div className={styles.icons}>
+            <p>270, Sultanganj Road, Dhaka </p>
+            <p>Contact: +8801705686655 </p>
+            <p>Email: sunbeamforce@gmail.com</p>
+          </div>
         </div>
 
         {/* Navigation Links */}
         <div className={styles.socialMedia}>
-          <h4 className={styles.socialMediaHeader}>Quick Links</h4>
+          <h4 className={styles.socialMediaHeader}>QUICK LINKS</h4>
           <div className={styles.icons}>
 
-            <a href="/about-us">About Us</a>
-            <a href="/services">Services</a>
-            <a href="/contact">Contact</a>
-            <a href="/privacy-policy">Privacy Policy</a>
+          <Link href="/">Home</Link>
+          <Link href="/photo-gallery">Products</Link>
+          <Link href="/photo-gallery">Gallery</Link>
+          <Link href="/photo-gallery">Videos</Link>
+          <Link href="/contact">Contact Us</Link>
+          <Link href="/blog">Blog</Link>
+ 
           </div>
         </div>
 
         {/* Social Media Links */}
         <div className={styles.socialMedia}>
-          <h1 className={styles.socialMediaHeader}>Follow Us</h1>
+          <h1 className={styles.socialMediaHeader}>FOLLOW US</h1>
           <div className={styles.icons}>
-            {/*<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="/facebook-icon.png" alt="Facebook" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="/twitter-icon.png" alt="Twitter" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.png" alt="LinkedIn" />
-  </a>*/}
-
             <a
               href="https://www.facebook.com/"
               target="_blank"
@@ -114,11 +141,29 @@ const Footer = () => {
 
       </div>
 
+      <NotSSRMaps />
+
       {/* Copyright and Back to Top */}
       <div className={styles.bottomBar}>
+        <div className={styles.logoFooter}>
+                      <button
+                          className={styles.logoButton}
+                          onClick={() => router.push('/')}
+                      >
+                          <Image
+                              src={imageLocation}
+                              // src="../../../public/logos/CHP-LOGO-1.png"
+                              alt="Logo"
+                              className={styles.logoImage}
+                              priority
+                              width={100}
+                              height={60}
+                          />
+                      </button>
+                  </div>
         <p>
           &copy; {new Date().getFullYear()} Sun Beam Force Limited. All rights reserved.
-          Developed by <a href="https://developerportfolio.com">Your Name</a>.
+          Developed by <a href="https://aubichol.com">Aubichol Intelligent Technologies</a>.
         </p>
         {/*
         <button className={styles.backToTop} onClick={scrollToTop}>

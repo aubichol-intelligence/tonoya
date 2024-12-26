@@ -1,25 +1,28 @@
-
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 50px 20px;
+  padding: 4rem;
   background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  background-color: cadetblue;
   text-align: center;
   border-radius: 10px;
-  overflow: hidden;
-  margin: 40px auto;
-  
+  margin-inline: auto;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   width: 90vw;
-  position: relative;
+
+  /* position: relative;
+    overflow: hidden;
+  */
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* Heading Animation */
@@ -46,18 +49,19 @@
 
 /* Button Animation */
 .contactButton {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
-  background: #007bff;
+  background: black;
   border: none;
   padding: 2rem 4rem;
-  border-radius: 5px;
-  
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards;
+  width: 20vw;
 }
 
 .contactButton:hover {
@@ -67,9 +71,7 @@
 
 /* Button Hover Effect */
 
-
 .contactButton::after {
-  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -100,42 +102,37 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
+ ;}
 }
 
-
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .start-project-heading {
     font-size: 2rem;
-  }
-
+ ;}
 
   .container {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 50px 20px;
+    justify-content: center;
+    padding-top:2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     background: linear-gradient(to right, #f8f9fa, #e9ecef);
     text-align: center;
     border-radius: 10px;
-    overflow: hidden;
-    margin: 40px auto;
-    
-    width: 90vw;
-    position: relative;
-  }
-
-
-  
+    margin-inline: auto;
+    width: 100vw;
+ ;}
 
   .start-project-description {
     font-size: 1rem;
-  }
+ ;}
 
-  .contact-button {
-    font-size: 0.9rem;
-    padding: 12px 25px;
-  }
+  .contactButton {
+    font-size: 1.2rem;
+    padding: 1.5rem 3rem;
+    width: 90vw;
+ ;}
 }

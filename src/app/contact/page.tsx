@@ -1,27 +1,25 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from "react";
-import styles from "../page.module.css";
-import Form from "../form1/page";
+import styles from "./page.module.css";
+import Form from "../contact-form/page";
+// import Footer from "../footer1/page";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
+    // Simulate the animation duration (e.g., 2 seconds)
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // Simulate a 2-second loading delay
+      setIsAnimating(false);
+    }, 2000); // 2 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className={styles.pageContainer}>
-      {isLoading ? (
-        <div className={styles.loader}></div>
-      ) : (
-        <Form/>
-        
-      )}
+      {isAnimating && <div className={styles.animationOverlay}></div>}
+      <Form />
     </div>
   );
 }

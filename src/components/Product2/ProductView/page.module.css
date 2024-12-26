@@ -1,0 +1,277 @@
+.productView {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    /*border: 1px dotted black;*/
+  }
+  
+  .productImage {
+    width:30vw;
+    
+  }
+  
+  .productDescription {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    
+    .productView {
+      flex-direction: column;
+      padding:0.5rem,
+    }
+    .productImage {
+      width:90vw;
+    }
+  }
+
+  /* Sticky Note Background */
+.stickyNote {
+  position: relative;
+  padding: 2rem;
+  background-color: #ffef9f; /* Sticky note yellow */
+  border: 1px solid #d4c284;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 20%),
+              inset -3px -3px 10px rgb(255 255 255 / 60%);
+  transform: rotate(-2deg); /* Slight rotation for authenticity */
+  border-radius: 5px;
+  max-width: 420px;
+  margin: 2rem auto;
+}
+
+.paperEffect {
+  position: relative;
+  padding: 2rem;
+  background-color: #fafafa; /* Slightly off-white color */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 
+    0 1px 3px rgb(0 0 0 / 10%),  /* Subtle top shadow */
+    0 10px 15px rgb(0 0 0 / 20%); /* Slight shadow for depth */
+
+  max-width: 420px;
+  margin: 2rem auto;
+  background-image: radial-gradient(rgb(0 0 0 / 2%) 1px, transparent 1px);
+  background-size: 5px 5px; /* Subtle paper texture */
+}
+
+/* Section Container */
+.cardSection {
+  background-color: transparent;
+  text-align: center;
+  width: 98vw;
+  margin-inline: auto;
+}
+
+.cardContainer {
+  /* display: flex;
+  
+  flex-direction: row;
+  
+  justify-content: center;
+  background-color: transparent;
+  top:8rem;
+  margin-inline: auto;
+  background-color: darksalmon; */
+
+
+  
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding-top:4rem;
+    margin-inline: auto;
+
+
+    /* background-color: darksalmon; */
+}
+
+
+.container {
+  padding: 4rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-inline: auto;
+  width: 90vw;
+ 
+  
+}
+
+
+/* Card Container */
+.card1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  top:-16rem;
+  
+}
+
+.card {
+  background-color:transparent;
+  /*box-shadow: 0 4px 6px rgb(0 0 0 / 10%);*/
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  text-align: left;
+  padding: 1rem;
+  
+  margin-left: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Necessary for the hover effect */
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 15%);
+}
+
+/* Icon Section */
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background-color: #eaf7ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainIcon {
+  font-size: 5rem;
+  color: #333;
+}
+
+/* Details Section */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.detailIcon {
+  font-size: 1.8rem;
+  color: #555;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (width <= 768px) {
+  .cardContainer {
+    padding: 0.2rem;
+    gap:1rem;
+    margin-top:2rem;
+    margin-bottom: 5rem;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:transparent;
+    
+  }
+
+  .card {
+    padding: 2rem;
+    top:2rem;
+
+    /* background-color: antiquewhite; */
+    
+    
+  }
+
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .mainIcon {
+    font-size: 2rem;
+  }
+
+  .detailItem {
+    gap: 0.75rem;
+  }
+
+  .detailIcon {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (width <= 480px) {
+  .cardContainer {
+    padding: 0.2rem;
+    gap:1rem;
+    top:2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .card {
+    padding: 2rem;
+    top:2rem;
+    
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mainIcon {
+    font-size: 1.8rem;
+  }
+
+  .detailIcon {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+}
