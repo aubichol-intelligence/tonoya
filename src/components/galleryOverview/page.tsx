@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from './page.module.css';
-import Link from "next/link";
-import { GrGallery } from "react-icons/gr";
+// import Link from "next/link";
+// import { GrGallery } from "react-icons/gr";
 import { useRouter } from 'next/navigation';
 
 
@@ -24,16 +24,15 @@ interface ImageData {
 }
 
 
-
 const PhotoGallery = () => {
 
   const router = useRouter();
 
-const handleGalleryClick = () => {
-  // Redirect to a contact page or open a modal
-  // window.location.href = "/carousal2";
-  router.push('/photo-gallery');
-};
+  const handleGalleryClick = () => {
+    // Redirect to a contact page or open a modal
+    // window.location.href = "/carousal2";
+    router.push('/photo-gallery');
+  };
 
   const [imagesWithData, setImagesWithData] = useState<ImageData[]>([]);
 
@@ -96,9 +95,9 @@ const handleGalleryClick = () => {
         Go to Gallery
         <GrGallery />
         </Link>*/}
-<div className={styles.buttonCont}>
-<button className={styles.button} onClick={handleGalleryClick}>See More</button>
-</div>
+      <div className={styles.buttonCont}>
+        <button className={styles.button} onClick={handleGalleryClick}>See More</button>
+      </div>
     </div>
   );
 };

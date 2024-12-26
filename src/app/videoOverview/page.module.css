@@ -31,15 +31,15 @@
   cursor: pointer;
 }
 
-.headerText{
+.headerText {
   /*font-size: 3em;*/
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   text-align: center;
-  padding-bottom:1rem ;
-  color:#010101;
+  padding-bottom: 1rem;
+  color: #010101;
 }
 
-.secondaryText{
+.secondaryText {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   text-align: center;
   font-weight: normal;
@@ -47,7 +47,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   line-height: 1.4;
-  color:#333333;
+  color: #333333;
 }
 
 .button {
@@ -60,7 +60,7 @@
   cursor: pointer;
   justify-content: center;
   margin-top: 2rem;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
   transition: background-color 0.3s ease;
 }

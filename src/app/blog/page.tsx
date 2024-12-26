@@ -48,13 +48,15 @@ export default async function Home() {
 
 
   return (
-    <div style={{ marginTop: "7rem", }}>
+    <div style={{ paddingTop: "7rem", backgroundColor: "white" }}>
+      {/* <div style={{ paddingTop: "7rem" }}> */}
       {/* <div style={{ marginTop: 14, marginBottom: 14, }}>
         <Link href={`/blog/create`} style={{ backgroundColor: 'blue', padding: 10, borderRadius: 10, }}>
           Create New Blog
         </Link>
       </div> */}
 
+      {/* <div style={{ backgroundColor: "#68d689" }}> */}
       <div style={{}}>
         <BlogList posts={data} />
       </div>

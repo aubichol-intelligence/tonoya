@@ -1,5 +1,6 @@
 
 "use client"
+
 import React from "react";
 import { useRouter } from 'next/navigation';
 import styles from "./page.module.css";
@@ -13,10 +14,8 @@ import ContactSummary from "../app/contactsum/page";
 import ClientReview from "../app/review1/page";
 import VideoOverview from "../app/videoOverview/page";
 import ProductDetails from "../app/productClassification/page";
-//import BlogOverview from "../app/blogSum1/page"
-
+import BlogOverview from "../app/blogSum1/page"
 import Head from 'next/head';
-
 import { NextPage } from "next";
 import GalleryOverview from "../components/galleryOverview/page";
 //import dynamic from 'next/dynamic';
@@ -86,7 +85,8 @@ const Home: NextPage = () => {
         <div className={styles.content}>
           <div className={styles.image}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://i.ibb.co.com/qyFfTFN/file.png" alt="Product" />
+            <img src="https://tonoyabd.com/api/v1/image/read/676a9e944eda7d91a322264e" alt="Product" />
+            {/* <img src="https://i.ibb.co.com/qyFfTFN/file.png" alt="Product" /> */}
           </div>
           <div className={styles.text}>
             <h1>Welcome to Tonoya</h1>
@@ -102,17 +102,17 @@ const Home: NextPage = () => {
       <ProductOverview />
       <Speciality />
       <Institution />
-     < ProductDetails/>
+      < ProductDetails />
       <ContactSummary />
       <VideoOverview />
       <ClientReview />
-      {/*<BlogOverview/>*/}
+      <BlogOverview from="home" />
       <GalleryOverview />
       {/* <NotSSRMaps /> */}
 
-        {/*<BlogOverview/>*/}
-       {/* <NotSSRMaps /> */}    
-       
+      {/*<BlogOverview/>*/}
+      {/* <NotSSRMaps /> */}
+
     </div>
   );
 }

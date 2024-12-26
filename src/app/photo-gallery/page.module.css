@@ -1,7 +1,23 @@
+.outerContainer {
+  /* background-color: #68d689; */
+  background-color: white;
+}
+
+/* .container { */
+/* padding: 10rem 10rem; */
+/* background: linear-gradient(145deg, #8ae490, #e1e1e1);*/
+/* width: 100vw; */
+/* } */
+
 .container {
-  padding: 10rem 10rem;
-  /* background: linear-gradient(145deg, #8ae490, #e1e1e1);*/
-  width: 100vw;
+  max-width: 1200px;
+  /* width: 100vw; */
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
 }
 
 .loading {
@@ -85,10 +101,10 @@
 
 .headerText {
   /*font-size: 3em;*/
-
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   text-align: center;
   padding-bottom: 2rem;
+  color: black;
 }
 
 .paginationContainer {
