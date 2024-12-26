@@ -85,8 +85,12 @@ const CarouselSection: React.FC<CarouselSectionProps> = ({ from }) => {
           <h1 className={styles.headerText}>Explore Trending Tonoya Publications</h1>
         </div>
       }
+      {
+        from === "blog" &&
+        <h1 className={styles.headerText2}>Recent Blogs</h1>
+      }
 
-      <div className={styles.cardContainer} style={{ marginTop: from === 'home' ? '-8rem' : '3rem' }}>
+      <div className={styles.cardContainer} style={{ marginTop: from === 'home' ? '-8rem' : '1rem' }}>
         {posts.map((blog, index) => {
           // Extract image URLs from blog content
           const imageUrls = [...blog.content.matchAll(/<img[^>]+src="([^">]+)"/g)].map(
