@@ -63,7 +63,7 @@ export default async function Page(props: { params: Params }) {
     // console.log(post);
 
     // Construct the page URL
-    const baseUrl = process.env.NEXT_PUBLIC_ROOT_URL || "https://yourwebsite.com";
+    const baseUrl = process.env.NEXT_PUBLIC_ROOT_URL || "https://tonoyabd.com";
     const pageUrl = `${baseUrl}/blog/${params.slug}`;
     // console.log(pageUrl);
     const pageTitle = post?.title || "";
