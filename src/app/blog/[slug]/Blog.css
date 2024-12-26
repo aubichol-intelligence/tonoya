@@ -299,7 +299,8 @@
   font-size: 1.0rem;
   color: #9c9a9a;
   margin: 5px 0 15px;
-  text-align: left;
+  /* text-align: left; */
+  text-align: center;
 }
 
 .text-bold {

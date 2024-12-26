@@ -1,14 +1,12 @@
 import Link from 'next/link';
-// import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Head from 'next/head';
-// import blogPosts from '../../../components/data/blogs.json';
 import blogPosts from '../../../components/data/pictures';
-// import Image from 'next/image';
 import "./Blog.css";
 import parse from 'html-react-parser';
-import BlogOverview from "../../../components/blogSum1/page"
+import BlogOverview from "../../../components/blogSum1/page";
+import SocialMediaShare from "../../../components/SocialMediaShare/page";
 
-type Params = Promise<{ slug: string }>
+type Params = Promise<{ slug: string }>;
 
 // Generate metadata dynamically
 export async function generateMetadata(props: { params: Params }) {
@@ -41,8 +39,8 @@ export async function generateMetadata(props: { params: Params }) {
 // Dynamic blog post page
 // export default async function Page({ params }: { params: { slug: string } }) {
 export default async function Page(props: { params: Params }) {
-    const params = await props.params
-    const slug = params.slug
+    const params = await props.params;
+    const slug = params.slug;
 
     // const response = await fetch(`https://tonoyabd.com/api/v1/blog/get/${slug}`, {
     //     method: 'GET',
@@ -64,8 +62,13 @@ export default async function Page(props: { params: Params }) {
     const post = await response.json();
     // console.log(post);
 
-    // const defaultImageUrl = "https://i.ibb.co/28NtxhS/Blog-Picture1.jpg"; // Ensure this file exists in the public folder.
-    // const imageUrl = post.imageUrl || defaultImageUrl;
+    // Construct the page URL
+    const baseUrl = process.env.NEXT_PUBLIC_ROOT_URL || "https://yourwebsite.com";
+    const pageUrl = `${baseUrl}/blog/${params.slug}`;
+    // console.log(pageUrl);
+    const pageTitle = post?.title || "";
+    // console.log(pageTitle);
+
 
     return (
         // <HelmetProvider>
@@ -92,17 +95,22 @@ export default async function Page(props: { params: Params }) {
                 <header className="blog-header" style={{ marginTop: '2rem' }}>
                     {/* <h1 className="blog-title">{post.title}</h1> */}
 
-                    {/* <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center' }} > */}
-                    <div>
+                    <div style={{ display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'center' }} >
+                        {/* <div> */}
                         <p className="blog-subtitle"><span className='text-bold'>Date:</span> {post.created_at.split(" ")[0]}</p>
                         <p className="blog-subtitle"><span className='text-bold'>Author:</span> {post.author}</p>
                         <p className="blog-subtitle"><span className='text-bold'>Tags:</span> {post.tags?.length > 0 ? post.tags.join(", ") : "N/A"}</p>
                     </div>
                     {/* <div style={{ display: "flex", justifyContent: "center" }} >
                             <Link href="/blog">Back</Link>
-                        </div> */}
+                            </div> */}
                     {/* </div> */}
                 </header>
+
+                <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }} >
+                    <SocialMediaShare url={pageUrl} title={pageTitle} />
+                    {/* <SocialMediaShare title={pageTitle} /> */}
+                </div>
 
                 <div style={{ display: "flex", justifyContent: "center" }} >
                     <Link href="/blog" style={{ backgroundColor: "#68d689" }}>Back to Blog List</Link>
